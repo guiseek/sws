@@ -21,7 +21,15 @@
             "polyfills": "apps/swsapp/src/polyfills.ts",
             "tsConfig": "apps/swsapp/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/swsapp/src/favicon.ico", "apps/swsapp/src/assets"],
+            "assets": [
+              "apps/swsapp/src/favicon.ico",
+              "apps/swsapp/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./libs/shared/assets/",
+                "output": "./assets"
+              }
+            ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/swsapp/src/styles.scss"
@@ -478,6 +486,102 @@
             "jestConfig": "libs/shared/utils/jest.config.js",
             "tsConfig": "libs/shared/utils/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "organization-shared-schema": {
+      "root": "libs/organization/shared/schema",
+      "sourceRoot": "libs/organization/shared/schema/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/organization/shared/schema/tsconfig.lib.json",
+              "libs/organization/shared/schema/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/organization/shared/schema/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/organization/shared/schema/jest.config.js",
+            "tsConfig": "libs/organization/shared/schema/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "organization-feature-shell": {
+      "projectType": "library",
+      "root": "libs/organization/feature/shell",
+      "sourceRoot": "libs/organization/feature/shell/src",
+      "prefix": "sws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/organization/feature/shell/tsconfig.lib.json",
+              "libs/organization/feature/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/organization/feature/shell/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/organization/feature/shell/jest.config.js",
+            "tsConfig": "libs/organization/feature/shell/tsconfig.spec.json",
+            "setupFile": "libs/organization/feature/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "ui-kit-svg-viewer": {
+      "projectType": "library",
+      "root": "libs/ui-kit/svg/viewer",
+      "sourceRoot": "libs/ui-kit/svg/viewer/src",
+      "prefix": "svg",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/svg/viewer/tsconfig.lib.json",
+            "project": "libs/ui-kit/svg/viewer/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/svg/viewer/tsconfig.lib.json",
+              "libs/ui-kit/svg/viewer/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/svg/viewer/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/svg/viewer/jest.config.js",
+            "tsConfig": "libs/ui-kit/svg/viewer/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/svg/viewer/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

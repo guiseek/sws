@@ -1,8 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-form-field>
+  <mat-form-field color="accent">
     <input type="email" matInput placeholder="E-mail" formControlName="email" />
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field color="accent">
     <input
       type="password"
       matInput
@@ -10,7 +10,7 @@
       formControlName="password"
     />
   </mat-form-field>
-  <button mat-flat-button>
+  <button mat-button color="accent">
     Login
   </button>
 </form>

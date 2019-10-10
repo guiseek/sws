@@ -31,7 +31,14 @@
       "@sws/shared/api/exceptions": ["libs/shared/api/exceptions/src/index.ts"],
       "@sws/ui-kit/form/builder": ["libs/ui-kit/form/builder/src/index.ts"],
       "@sws/ui-kit/form/error": ["libs/ui-kit/form/error/src/index.ts"],
-      "@sws/shared/utils": ["libs/shared/utils/src/index.ts"]
+      "@sws/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@sws/organization/shared/schema": [
+        "libs/organization/shared/schema/src/index.ts"
+      ],
+      "@sws/organization/feature/shell": [
+        "libs/organization/feature/shell/src/index.ts"
+      ],
+      "@sws/ui-kit/svg/viewer": ["libs/ui-kit/svg/viewer/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -40,6 +40,15 @@
     },
     "shared-utils": {
       "tags": ["shared:utils"]
+    },
+    "organization-shared-schema": {
+      "tags": ["org:schema"]
+    },
+    "organization-feature-shell": {
+      "tags": []
+    },
+    "ui-kit-svg-viewer": {
+      "tags": ["ui:svg"]
     }
   }
 }

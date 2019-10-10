@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  .org-shell {
+    margin: 10px;
+    max-width: 1000px;
+  }
+}

@@ -17,6 +17,10 @@ import { AccountSharedAuthModule } from '@sws/account/shared/auth';
       path: '',
       loadChildren: () =>
         import('@sws/account/feature/auth').then(module => module.AccountFeatureAuthModule)
+    }, {
+      path: 'org',
+      loadChildren: () =>
+        import('@sws/organization/feature/shell').then(module => module.OrganizationFeatureShellModule)
     }]),
     RouterModule,
     BrowserAnimationsModule
@@ -24,4 +28,4 @@ import { AccountSharedAuthModule } from '@sws/account/shared/auth';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
