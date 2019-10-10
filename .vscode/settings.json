@@ -1,0 +1,3 @@
+{
+  "pgsql.connection": "postgres://root:root@localhost:5455/seek_workspace"
+}

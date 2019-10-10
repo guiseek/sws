@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  seek_workspace:
+
+services:
+  postgres:
+    # TypeORM fails with Postgres v.12
+    image: postgres:11.5
+    ports:
+      - 5455:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: seek_workspace
+    networks:
+      - seek_workspace
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6399:6379
+    command: redis-server
+    networks:
+      - seek_workspace

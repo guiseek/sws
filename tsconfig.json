@@ -9,14 +9,23 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "esnext",
+    "module": "commonjs",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sws/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@sws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "api/users": ["libs/account/api/users/src"],
+      "api/users/*": ["libs/account/api/users/src/*"],
+      "api/auth": ["libs/account/api/auth/src"],
+      "api/auth/*": ["libs/account/api/auth/src/*"],
+      "org/companies": ["libs/organization/api/companies/src"],
+      "org/companies/*": ["libs/organization/api/companies/src/*"],
+      "org/projects": ["libs/organization/api/projects/src"],
+      "org/projects/*": ["libs/organization/api/projects/src/*"],
+      "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

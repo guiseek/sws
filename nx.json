@@ -19,6 +19,9 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "shared-api-entities": {
+      "tags": ["shared:entities"]
     }
   }
 }

@@ -200,6 +200,31 @@
           }
         }
       }
+    },
+    "shared-api-entities": {
+      "root": "libs/shared/api/entities",
+      "sourceRoot": "libs/shared/api/entities/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/api/entities/tsconfig.lib.json",
+              "libs/shared/api/entities/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/api/entities/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/api/entities/jest.config.js",
+            "tsConfig": "libs/shared/api/entities/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
