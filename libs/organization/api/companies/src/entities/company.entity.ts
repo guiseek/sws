@@ -6,10 +6,6 @@ import { BaseEntity } from '@sws/shared/api/entities';
 import { User } from 'api/users';
 import { Project } from 'org/projects';
 
-// import { BaseEntity } from '../base-entity';
-// import { Project } from '../projects/project.entity';
-// import { User } from '../users/user.entity';
-
 const { CREATE, UPDATE } = CrudValidationGroups;
 
 @Entity('companies')

@@ -13,10 +13,6 @@ import { User } from 'api/users';
 import { Company } from 'org/companies';
 import { UserProject } from './user-project.entity';
 
-// import { BaseEntity } from '../base-entity';
-// import { Company } from '../companies/company.entity';
-// import { User } from '../users/user.entity';
-// import { UserProject } from './user-project.entity';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
