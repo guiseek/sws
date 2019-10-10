@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '@sws/api-interfaces';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'sws-root',
@@ -8,6 +9,7 @@ import { Message } from '@sws/api-interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  isDev = !environment.production
+  hello$ = this.http.get<Message>('/api/ping');
   constructor(private http: HttpClient) {}
 }

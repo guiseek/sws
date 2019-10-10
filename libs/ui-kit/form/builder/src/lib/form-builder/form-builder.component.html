@@ -1,0 +1,9 @@
+<form class="sws-form" [formGroup]="form" (submit)="onSubmit($event)">
+  <ng-container
+    *ngFor="let field of elements"
+    swsFieldBuilder
+    [field]="field"
+    [group]="form"
+  >
+  </ng-container>
+</form>

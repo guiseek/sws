@@ -11,7 +11,7 @@ CrudConfigService.load({
   },
 });
 
-
+import { HttpExceptionFilter } from '@sws/shared/api/exceptions';
 import { AppModule } from './app/app.module';
 
 
@@ -19,6 +19,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);

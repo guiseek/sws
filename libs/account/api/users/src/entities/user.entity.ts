@@ -1,3 +1,4 @@
+import * as crypto from 'crypto';
 import { CrudValidationGroups } from '@nestjsx/crud';
 import { Type } from 'class-transformer';
 import {
@@ -8,13 +9,13 @@ import {
   IsString,
   MaxLength,
   ValidateNested,
+  MinLength,
 } from 'class-validator';
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne, ManyToMany, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne, ManyToMany, OneToMany, BeforeInsert, BeforeUpdate } from 'typeorm';
 import { UserProfile } from './user-profile.entity';
 import { BaseEntity } from '@sws/shared/api/entities';
 import { Company } from 'org/companies';
 import { UserProject, Project } from 'org/projects';
-// import { BaseEntity } from './base.entity';
 
 
 const { CREATE, UPDATE } = CrudValidationGroups;
@@ -41,6 +42,29 @@ export class User extends BaseEntity {
   @IsEmail({ require_tld: false }, { always: true })
   @Column({ type: 'varchar', length: 255, nullable: false, unique: true })
   email: string;
+
+  @IsOptional({ groups: [UPDATE] })
+  @Column({
+    type: 'text',
+    nullable: true,
+    name: 'confirmation_code'
+  })
+  confirmationCode: string;
+
+  @Column({
+    type: 'timestamp',
+    nullable: true,
+    name: 'confirmation_time'
+  })
+  confirmationTime: Date | null;
+
+  @IsOptional({ groups: [UPDATE] })
+  @IsNotEmpty({ groups: [CREATE] })
+  @IsString({ always: true })
+  @MinLength(4, { always: true })
+  @MaxLength(255, { always: true })
+  @Column({ nullable: false, select: false })
+  public password!: string;
 
   @IsOptional({ groups: [UPDATE] })
   @IsNotEmpty({ groups: [CREATE] })
@@ -78,4 +102,23 @@ export class User extends BaseEntity {
     onDelete: 'CASCADE',
   })
   userProjects?: UserProject[];
+
+  @BeforeInsert()
+  createPassword() {
+    if (this.password) {
+      this.password = this.hashPassword(this.password);
+    }
+  }
+  @BeforeInsert()
+  confirmCode() {
+    if (!this.confirmationCode) {
+      this.confirmationCode = ("" + Math.random()).substring(2, 7);
+    }
+  }
+  hashPassword(password: string) {
+    return crypto.createHmac('sha256', password).digest('hex');
+  }
+  validatePassword(password: string) {
+    return this.hashPassword(password) === this.password;
+  }
 }
