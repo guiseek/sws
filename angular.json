@@ -379,6 +379,107 @@
           }
         }
       }
+    },
+    "ui-kit-form-builder": {
+      "projectType": "library",
+      "root": "libs/ui-kit/form/builder",
+      "sourceRoot": "libs/ui-kit/form/builder/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/form/builder/tsconfig.lib.json",
+            "project": "libs/ui-kit/form/builder/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/form/builder/tsconfig.lib.json",
+              "libs/ui-kit/form/builder/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/form/builder/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/form/builder/jest.config.js",
+            "tsConfig": "libs/ui-kit/form/builder/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/form/builder/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-kit-form-error": {
+      "projectType": "library",
+      "root": "libs/ui-kit/form/error",
+      "sourceRoot": "libs/ui-kit/form/error/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/form/error/tsconfig.lib.json",
+            "project": "libs/ui-kit/form/error/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/form/error/tsconfig.lib.json",
+              "libs/ui-kit/form/error/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/form/error/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/form/error/jest.config.js",
+            "tsConfig": "libs/ui-kit/form/error/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/form/error/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "shared-utils": {
+      "root": "libs/shared/utils",
+      "sourceRoot": "libs/shared/utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/utils/tsconfig.lib.json",
+              "libs/shared/utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/utils/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/utils/jest.config.js",
+            "tsConfig": "libs/shared/utils/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

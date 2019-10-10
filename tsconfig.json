@@ -28,7 +28,10 @@
       "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"],
       "@sws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
       "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"],
-      "@sws/shared/api/exceptions": ["libs/shared/api/exceptions/src/index.ts"]
+      "@sws/shared/api/exceptions": ["libs/shared/api/exceptions/src/index.ts"],
+      "@sws/ui-kit/form/builder": ["libs/ui-kit/form/builder/src/index.ts"],
+      "@sws/ui-kit/form/error": ["libs/ui-kit/form/error/src/index.ts"],
+      "@sws/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

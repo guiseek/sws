@@ -1,3 +1,6 @@
 <p>layout works!</p>
 
+<sws-form-builder [elements]="formElements" #formRef="swsForm"></sws-form-builder>
+
+<pre>{{formRef.form.value | json }}</pre>
 <auth-login></auth-login>

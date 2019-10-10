@@ -31,6 +31,15 @@
     },
     "shared-api-exceptions": {
       "tags": ["shared:exceptions"]
+    },
+    "ui-kit-form-builder": {
+      "tags": ["ui:form"]
+    },
+    "ui-kit-form-error": {
+      "tags": ["ui:form"]
+    },
+    "shared-utils": {
+      "tags": ["shared:utils"]
     }
   }
 }
