@@ -1,9 +1,7 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-import { JWT_CONFIG_TOKEN } from '../configs/jwt.config';
-import { IJwtConfig } from '../interfaces/jwt-config.interface';
 import { TokenService } from '../services/token.service';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
@@ -12,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class TokenInterceptor implements HttpInterceptor {
 
   constructor(
-    @Inject(JWT_CONFIG_TOKEN) private _jwtConfig: IJwtConfig,
+    // @Inject(JWT_CONFIG_TOKEN) private _jwtConfig: IJwtConfig,
     private _tokenService: TokenService,
     private router: Router
   ) { }

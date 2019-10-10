@@ -14,14 +14,31 @@ export class UsersService extends TypeOrmCrudService<User> {
       select: ['password']
     })
     
-    if (
-      user.hashPassword(old) === user.password
-    ) {
+    if (user.validatePassword(old)) {
       user.password = user.hashPassword(password)
       return await this.repo.update(id, user)
     } else {
       throw new BadRequestException()
     }
+  }
+  async validateUser({ email, password }) {
+    try {
+      const user = await this.repo.findOneOrFail(
+        { email }, { select: [
+          'id', 'email', 'password'
+        ] }
+      )
+      if (user.validatePassword(password)) {
+        return user
+      } else {
+        throw new BadRequestException('Invalid credentials')  
+      }
+    } catch (err) {
+      throw new BadRequestException('Invalid credentials')
+    }
+  }
+  async create(user: User) {
+    return await this.repo.save(user)
   }
 }
 

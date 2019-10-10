@@ -28,6 +28,9 @@
     },
     "account-feature-auth": {
       "tags": ["account:auth"]
+    },
+    "shared-api-exceptions": {
+      "tags": ["shared:exceptions"]
     }
   }
 }

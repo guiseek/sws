@@ -27,7 +27,8 @@
       "org/projects/*": ["libs/organization/api/projects/src/*"],
       "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"],
       "@sws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
-      "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"]
+      "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"],
+      "@sws/shared/api/exceptions": ["libs/shared/api/exceptions/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
