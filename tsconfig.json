@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "commonjs",
+    "module": "esnext",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
@@ -25,7 +25,9 @@
       "org/companies/*": ["libs/organization/api/companies/src/*"],
       "org/projects": ["libs/organization/api/projects/src"],
       "org/projects/*": ["libs/organization/api/projects/src/*"],
-      "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"]
+      "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"],
+      "@sws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
+      "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

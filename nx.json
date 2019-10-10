@@ -22,6 +22,12 @@
     },
     "shared-api-entities": {
       "tags": ["shared:entities"]
+    },
+    "account-shared-auth": {
+      "tags": ["shared:auth"]
+    },
+    "account-feature-auth": {
+      "tags": ["account:auth"]
     }
   }
 }

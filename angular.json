@@ -69,6 +69,19 @@
             }
           }
         },
+        "serve-with-api": {
+          "builder": "@angular-devkit/architect:allOf",
+          "options": {
+            "targets": [
+              {
+                "target": "swsapp:serve"
+              },
+              {
+                "target": "api:serve"
+              }
+            ]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
@@ -91,6 +104,43 @@
             "jestConfig": "apps/swsapp/jest.config.js",
             "tsConfig": "apps/swsapp/tsconfig.spec.json",
             "setupFile": "apps/swsapp/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/swsapp-server",
+            "main": "apps/swsapp/src/main.server.ts",
+            "tsConfig": "apps/swsapp/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/swsapp/src/environments/environment.ts",
+                  "with": "apps/swsapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "swsapp:build",
+            "serverTarget": "swsapp:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "swsapp:build:production",
+              "serverTarget": "swsapp:server:production"
+            }
           }
         }
       }
@@ -223,6 +273,82 @@
             "jestConfig": "libs/shared/api/entities/jest.config.js",
             "tsConfig": "libs/shared/api/entities/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "account-shared-auth": {
+      "projectType": "library",
+      "root": "libs/account/shared/auth",
+      "sourceRoot": "libs/account/shared/auth/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/account/shared/auth/tsconfig.lib.json",
+            "project": "libs/account/shared/auth/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/shared/auth/tsconfig.lib.json",
+              "libs/account/shared/auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/account/shared/auth/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/shared/auth/jest.config.js",
+            "tsConfig": "libs/account/shared/auth/tsconfig.spec.json",
+            "setupFile": "libs/account/shared/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "account-feature-auth": {
+      "projectType": "library",
+      "root": "libs/account/feature/auth",
+      "sourceRoot": "libs/account/feature/auth/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/account/feature/auth/tsconfig.lib.json",
+            "project": "libs/account/feature/auth/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/auth/tsconfig.lib.json",
+              "libs/account/feature/auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/account/feature/auth/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/auth/jest.config.js",
+            "tsConfig": "libs/account/feature/auth/tsconfig.spec.json",
+            "setupFile": "libs/account/feature/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }
