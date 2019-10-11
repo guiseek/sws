@@ -1,5 +1,5 @@
-import { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { join } from 'path'
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { join } from 'path';
 
 export const ormConfig = (config = {}): TypeOrmModuleOptions => {
   return Object.assign(
@@ -17,11 +17,11 @@ export const ormConfig = (config = {}): TypeOrmModuleOptions => {
         type: 'redis',
         options: {
           host: '127.0.0.1',
-          port: 6399,
-        },
-      },
+          port: 6399
+        }
+      }
       // entities: [join(__dirname, './**/*.entity{.ts,.js}')],
     },
-    config,
-  ) as TypeOrmModuleOptions
-}
+    config
+  ) as TypeOrmModuleOptions;
+};

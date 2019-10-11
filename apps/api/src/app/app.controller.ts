@@ -10,7 +10,7 @@ export class AppController {
 
   @Get('ping')
   getData(): Message {
-    const ping = new Date().getTime()
+    const ping = new Date().getTime();
     return this.appService.getData(ping);
   }
 }

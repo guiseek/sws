@@ -10,4 +10,3 @@ export class ProjectsService extends TypeOrmCrudService<Project> {
     super(repo);
   }
 }
-

@@ -14,16 +14,16 @@ export class UserProject {
   @Column({ nullable: true })
   public review!: string;
 
-  @ManyToOne((type) => Project, (el) => el.userProjects, {
+  @ManyToOne(type => Project, el => el.userProjects, {
     primary: true,
     persistence: false,
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
   })
   public project: Project;
 
-  @ManyToOne((type) => User, (el) => el.userProjects, {
+  @ManyToOne(type => User, el => el.userProjects, {
     primary: true,
-    persistence: false,
+    persistence: false
   })
   public user: User;
 }

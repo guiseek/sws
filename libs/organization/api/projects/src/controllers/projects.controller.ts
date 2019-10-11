@@ -5,26 +5,26 @@ import { ProjectsService } from '../projects.service';
 
 @Crud({
   model: {
-    type: Project,
+    type: Project
   },
   params: {
     companyId: {
       field: 'companyId',
-      type: 'number',
+      type: 'number'
     },
     id: {
       field: 'id',
       type: 'number',
-      primary: true,
-    },
+      primary: true
+    }
   },
   query: {
     join: {
-      users: {},
-    },
-  },
+      users: {}
+    }
+  }
 })
 @Controller('/companies/:companyId/projects')
 export class ProjectsController {
-  constructor(public service: ProjectsService) { }
+  constructor(public service: ProjectsService) {}
 }

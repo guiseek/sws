@@ -1,5 +1,3 @@
 import { Company } from './company.entity';
 
-export {
-  Company
-}
+export { Company };

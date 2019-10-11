@@ -1,4 +1,9 @@
-import { Directive, ComponentFactoryResolver, OnInit, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  ComponentFactoryResolver,
+  OnInit,
+  ViewContainerRef
+} from '@angular/core';
 import { ElementBase } from '../elements/element-base';
 import { FORM_ELEMENTS_MAPPER } from '../elements/form-elements';
 

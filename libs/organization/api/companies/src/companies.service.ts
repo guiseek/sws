@@ -10,4 +10,3 @@ export class CompaniesService extends TypeOrmCrudService<Company> {
     super(repo);
   }
 }
-

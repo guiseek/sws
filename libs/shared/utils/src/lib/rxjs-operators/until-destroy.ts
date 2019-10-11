@@ -10,7 +10,9 @@ export const destroy$ = Symbol('destroy$');
  * An operator that takes until destroy it takes a components this a parameter
  * returns a pipeable RxJS operator.
  */
-export const untilDestroy = <T>(component: any): MonoTypeOperatorFunction<T> => {
+export const untilDestroy = <T>(
+  component: any
+): MonoTypeOperatorFunction<T> => {
   if (component[destroy$] === undefined) {
     // only hookup each component once.
     addDestroyObservableToComponent(component);
@@ -31,7 +33,9 @@ export function addDestroyObservableToComponent(component: any) {
     if (orignalDestroy == null) {
       // Angular does not support dynamic added destroy methods
       // so make sure there is one.
-      throw new Error('untilDestroy operator needs the component to have an ngOnDestroy method');
+      throw new Error(
+        'untilDestroy operator needs the component to have an ngOnDestroy method'
+      );
     }
     // replace the ngOndestroy
     component.ngOnDestroy = () => {

@@ -1,4 +1,4 @@
-import { DialogConfig } from "../interfaces/dialog-config.interface";
+import { DialogConfig } from '../interfaces/dialog-config.interface';
 
 export const DIALOG_CONFIG: DialogConfig = {
   backdropClass: '',

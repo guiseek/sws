@@ -11,7 +11,6 @@ const { CREATE, UPDATE } = CrudValidationGroups;
 
 @Entity('companies')
 export class Company extends BaseEntity {
-
   @ApiModelProperty({
     required: true,
     maxLength: 100
@@ -43,10 +42,10 @@ export class Company extends BaseEntity {
    * Relations
    */
 
-  @OneToMany((type) => User, (u) => u.company)
-  @Type((t) => User)
+  @OneToMany(type => User, u => u.company)
+  @Type(t => User)
   users: User[];
 
-  @OneToMany((type) => Project, (p) => p.company)
+  @OneToMany(type => Project, p => p.company)
   projects: Project[];
 }

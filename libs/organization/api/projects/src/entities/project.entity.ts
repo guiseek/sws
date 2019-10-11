@@ -5,14 +5,20 @@ import {
   IsNumber,
   IsOptional,
   IsString,
-  MaxLength,
+  MaxLength
 } from 'class-validator';
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToMany
+} from 'typeorm';
 import { BaseEntity } from '@sws/shared/api/entities';
 import { User } from 'api/users';
 import { Company } from 'org/companies';
 import { UserProject } from './user-project.entity';
-
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
@@ -43,26 +49,26 @@ export class Project extends BaseEntity {
    * Relations
    */
 
-  @ManyToOne((type) => Company, (c) => c.projects)
+  @ManyToOne(type => Company, c => c.projects)
   company?: Company;
 
-  @ManyToMany((type) => User, (u) => u.projects, { cascade: true })
+  @ManyToMany(type => User, u => u.projects, { cascade: true })
   @JoinTable({
     name: 'user_projects',
     joinColumn: {
       name: 'projectId',
-      referencedColumnName: 'id',
+      referencedColumnName: 'id'
     },
     inverseJoinColumn: {
       name: 'userId',
-      referencedColumnName: 'id',
-    },
+      referencedColumnName: 'id'
+    }
   })
   users?: User[];
 
-  @OneToMany((type) => UserProject, (el) => el.project, {
+  @OneToMany(type => UserProject, el => el.project, {
     persistence: false,
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
   })
   userProjects!: UserProject[];
 }

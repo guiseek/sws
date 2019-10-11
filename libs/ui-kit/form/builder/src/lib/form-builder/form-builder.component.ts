@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormElement } from '../interfaces';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -15,27 +22,21 @@ export class FormBuilderComponent implements OnInit {
   public form: FormGroup;
 
   get value() {
-    return this.form.value
+    return this.form.value;
   }
-  constructor(
-    private fb: FormBuilder
-  ) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.form = this.createControl()
+    this.form = this.createControl();
   }
   onSubmit() {
-    this.formSubmit.emit(
-      this.value
-    )
+    this.formSubmit.emit(this.value);
   }
-  createControl(
-    { updateOn } = { updateOn: 'change' }
-  ) {
-    console.log('updateOn: ', { updateOn })
+  createControl({ updateOn } = { updateOn: 'change' }) {
+    console.log('updateOn: ', { updateOn });
     const group = this.fb.group({}, { updateOn });
     this.elements.forEach(field => {
-      if (field.type === "button") return;
+      if (field.type === 'button') return;
       const control = this.fb.control(
         field.value,
         this.bindValidations(field.validations || [])

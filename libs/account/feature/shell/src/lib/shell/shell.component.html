@@ -1,9 +1,13 @@
-<sws-toolbar title="SWS" [iconHome]="iconHome" [searchbar]="true">
+<sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">
   <mat-menu #appMenu="matMenu" xPosition="before">
     <a routerLink="perfil" mat-menu-item>Perfil</a>
     <a routerLink="configuracoes" mat-menu-item>Configurações</a>
     <mat-divider></mat-divider>
     <a routerLink="/organizacao" mat-menu-item>Organização</a>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="logout()">
+      Sair
+    </button>
   </mat-menu>
 
   <button

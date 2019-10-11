@@ -6,20 +6,13 @@ import { Observable } from 'rxjs';
   selector: 'sws-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  providers: [
-    HttpService
-  ]
+  providers: [HttpService]
 })
 export class OverviewComponent implements OnInit {
-  users$: Observable<any[]>
-  constructor(
-    private service: HttpService
-  ) { }
+  users$: Observable<any[]>;
+  constructor(private service: HttpService) {}
 
   ngOnInit() {
-    this.users$ = this.service.read(
-      '/api/users'
-    )
+    this.users$ = this.service.read('/api/users');
   }
-
 }

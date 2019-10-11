@@ -5,12 +5,14 @@ import { getFeature, getAction } from '@nestjsx/crud';
 @Injectable()
 export class RolesGuard implements CanActivate {
   canActivate(
-    context: ExecutionContext,
+    context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
     // return true;
     const handler = context.getHandler();
     const controller = context.getClass();
 
+    const request = context.switchToHttp().getRequest()
+    console.log(request.user)
     const feature = getFeature(controller);
     const action = getAction(handler);
 

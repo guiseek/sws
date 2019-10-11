@@ -36,7 +36,9 @@ import { AccountSharedAuthModule } from '@sws/account/shared/auth';
           )
       },
       {
-        path: '', redirectTo: 'conta', pathMatch: 'full'
+        path: '',
+        redirectTo: 'conta',
+        pathMatch: 'full'
       }
     ]),
     RouterModule,

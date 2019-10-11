@@ -4,7 +4,6 @@ import { FORM_ERRORS } from './configs/tokens';
 import { untilDestroy } from '@sws/shared/utils';
 import { NgControl } from '@angular/forms';
 
-
 @Directive({
   selector: '[swsFormError] [formControlName], [formControl]',
   exportAs: 'swsError'
@@ -14,11 +13,11 @@ export class FormErrorDirective implements OnInit, OnDestroy {
   public error: string;
 
   private subs: Subscription[] = [];
-  
+
   constructor(
     @Inject(FORM_ERRORS) private errors,
     private controlDir: NgControl
-  ) { }
+  ) {}
 
   get control() {
     return this.controlDir.control;
@@ -32,16 +31,14 @@ export class FormErrorDirective implements OnInit, OnDestroy {
       // debounceTime(this.errorDebounceTime),
       untilDestroy(this)
     );
-    const $merge = merge$.subscribe((v) => {
+    const $merge = merge$.subscribe(v => {
       const controlErrors = this.control.errors;
       if (controlErrors) {
-        const text = this.getError(
-          this.control.errors
-        );
-        this.error = text
+        const text = this.getError(this.control.errors);
+        this.error = text;
       }
-    })
-    this.subs.push($merge)
+    });
+    this.subs.push($merge);
   }
   getError(errors) {
     if (!errors) {
@@ -59,6 +56,6 @@ export class FormErrorDirective implements OnInit, OnDestroy {
     }
   }
   ngOnDestroy() {
-    return this.subs && this.subs.forEach((sub) => sub.unsubscribe())
+    return this.subs && this.subs.forEach(sub => sub.unsubscribe());
   }
 }

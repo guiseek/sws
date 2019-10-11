@@ -1,11 +1,14 @@
 import { Observable } from 'rxjs';
 
 export interface ImageFileCompressed {
-  file: File
-  data: string
+  file: File;
+  data: string;
 }
 
-export function handleImageSize(file: File, width = 600): Observable<ImageFileCompressed> {
+export function handleImageSize(
+  file: File,
+  width = 600
+): Observable<ImageFileCompressed> {
   const reader = new FileReader();
   reader.readAsDataURL(file);
   return new Observable(observer => {
@@ -21,18 +24,16 @@ export function handleImageSize(file: File, width = 600): Observable<ImageFileCo
         ctx.drawImage(img, 0, 0, width, img.height * scaleFactor);
         ctx.canvas.toBlob(
           blob => {
-            observer.next(
-              {
-                file: new File([blob], file.name, {
-                  type: 'image/jpeg',
-                  lastModified: Date.now(),
-                }),
-                data: ctx.canvas.toDataURL()
-              }
-            );
+            observer.next({
+              file: new File([blob], file.name, {
+                type: 'image/jpeg',
+                lastModified: Date.now()
+              }),
+              data: ctx.canvas.toDataURL()
+            });
           },
           'image/jpeg',
-          1,
+          1
         );
       }),
         (reader.onerror = error => observer.error(error));

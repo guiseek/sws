@@ -8,7 +8,7 @@ import { ElementBase } from '../element-base';
 })
 export class AsyncSelectComponent extends ElementBase implements OnInit {
   constructor() {
-    super()
+    super();
     console.log(this.field);
   }
   ngOnInit() {

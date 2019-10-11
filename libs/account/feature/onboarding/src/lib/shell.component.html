@@ -1,0 +1,23 @@
+<div
+  class="auth-layout bg-liquid-cheese"
+  fxLayout="row wrap"
+  fxLayoutGap="20px"
+>
+  <div
+    class="auth-content"
+    fxFlex
+    fxFlex.gt-sm="25"
+    fxflex.gt.xs="50"
+    fxFlexOffset.gt-sm="60"
+    fxflexoffset="0"
+    [@animate]="{ value: '*', params: { duration: '400ms', y: '200px' } }"
+  >
+    <mat-card>
+      <mat-card-title>Criar conta</mat-card-title>
+      <router-outlet></router-outlet>
+      <!-- <auth-signup></auth-signup> -->
+      <!-- <auth-login (logged)="onLogged($event)"></auth-login> -->
+    </mat-card>
+    <a routerLink="/auth" mat-button>Fazer login</a>
+  </div>
+</div>

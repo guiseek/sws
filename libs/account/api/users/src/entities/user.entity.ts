@@ -9,14 +9,24 @@ import {
   IsString,
   MaxLength,
   ValidateNested,
-  MinLength,
+  MinLength
 } from 'class-validator';
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne, ManyToMany, OneToMany, BeforeInsert, BeforeUpdate } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn,
+  ManyToOne,
+  ManyToMany,
+  OneToMany,
+  BeforeInsert,
+  BeforeUpdate
+} from 'typeorm';
 import { UserProfile } from './user-profile.entity';
 import { BaseEntity } from '@sws/shared/api/entities';
 import { Company } from 'org/companies';
 import { UserProject, Project } from 'org/projects';
-
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
@@ -72,8 +82,8 @@ export class User extends BaseEntity {
   @Column({ type: 'boolean', default: true })
   isActive: boolean;
 
-  @Type((t) => Name)
-  @Column((type) => Name)
+  @Type(t => Name)
+  @Column(type => Name)
   name: Name;
 
   @Column({ nullable: true })
@@ -81,25 +91,25 @@ export class User extends BaseEntity {
 
   /**
    * Relations
-  */
+   */
 
   @IsOptional({ groups: [UPDATE] })
   @IsNotEmpty({ groups: [CREATE] })
   @ValidateNested({ always: true })
-  @Type((t) => UserProfile)
-  @OneToOne((type) => UserProfile, (p) => p.user, { cascade: true })
+  @Type(t => UserProfile)
+  @OneToOne(type => UserProfile, p => p.user, { cascade: true })
   @JoinColumn()
   profile?: UserProfile;
 
-  @ManyToOne((type) => Company, (c) => c.users)
+  @ManyToOne(type => Company, c => c.users)
   company?: Company;
 
-  @ManyToMany((type) => Project, (c) => c.users)
+  @ManyToMany(type => Project, c => c.users)
   projects?: Project[];
 
-  @OneToMany((type) => UserProject, (el) => el.user, {
+  @OneToMany(type => UserProject, el => el.user, {
     persistence: false,
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
   })
   userProjects?: UserProject[];
 
@@ -112,7 +122,7 @@ export class User extends BaseEntity {
   @BeforeInsert()
   confirmCode() {
     if (!this.confirmationCode) {
-      this.confirmationCode = ("" + Math.random()).substring(2, 7);
+      this.confirmationCode = ('' + Math.random()).substring(2, 7);
     }
   }
   hashPassword(password: string) {

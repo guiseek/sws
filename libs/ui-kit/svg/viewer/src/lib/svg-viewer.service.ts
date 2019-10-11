@@ -11,10 +11,7 @@ export class SvgViewerService {
 
   private static baseUrl: string;
 
-  constructor(
-    @Optional() config: SvgViewerConfig,
-    private http: HttpClient
-  ) {
+  constructor(@Optional() config: SvgViewerConfig, private http: HttpClient) {
     if (config && !SvgViewerService.baseUrl) {
       this.setBaseUrl(config);
     }
@@ -24,7 +21,10 @@ export class SvgViewerService {
     }
 
     if (!SvgViewerService.inProgressReqs) {
-      SvgViewerService.inProgressReqs = new Map<string, Observable<SVGElement>>();
+      SvgViewerService.inProgressReqs = new Map<
+        string,
+        Observable<SVGElement>
+      >();
     }
   }
 
@@ -50,7 +50,7 @@ export class SvgViewerService {
         const svgEl = this.svgElementFromString(svgText);
         SvgViewerService.cache.set(absUrl, svgEl);
         return this.cloneSVG(svgEl);
-      }),
+      })
     );
 
     SvgViewerService.inProgressReqs.set(absUrl, req);

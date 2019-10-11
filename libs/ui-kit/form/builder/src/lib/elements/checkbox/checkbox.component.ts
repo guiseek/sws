@@ -6,4 +6,4 @@ import { ElementBase } from '../element-base';
   templateUrl: './checkbox.component.html',
   styles: []
 })
-export class CheckboxComponent extends ElementBase { }
+export class CheckboxComponent extends ElementBase {}

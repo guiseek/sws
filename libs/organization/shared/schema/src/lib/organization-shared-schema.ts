@@ -3,8 +3,6 @@ import { Injectable, ReflectiveInjector, Injector } from '@angular/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { FormValidator, FormElement } from '@sws/ui-kit/form/builder';
 
-
-
 // @Injectable()
 // class Engine {
 // }
@@ -19,7 +17,6 @@ import { FormValidator, FormElement } from '@sws/ui-kit/form/builder';
 // const injector = ReflectiveInjector.fromResolvedProviders(providers);
 
 // console.log(injector.get(Car))
-
 
 // export function logReturnType(target: any, key: string) {
 //   const t = Reflect.getMetadata("design:returntype", target, key);
@@ -37,7 +34,7 @@ import { FormValidator, FormElement } from '@sws/ui-kit/form/builder';
 //   const types = Reflect.getMetadata("design:paramtypes", target, key);
 //   const s = types.map(a => a.name).join();
 //   console.log(`${key} param types: ${s}`);
-// }  
+// }
 
 // class Foo { }
 // interface IFoo { }
@@ -81,22 +78,24 @@ import { FormValidator, FormElement } from '@sws/ui-kit/form/builder';
 
 // console.log(Object.isFrozen(CompanySchema));
 
-
 function FieldRequired() {
-  return function (target: Object, key: string | symbol) {
-    console.log('target: ', target, 'key: ', key)
-    target['validations'] = [{
-      name: 'required',
-      message: 'Obrigatório',
-      validator: Validators
-    }]
-  }
+  return function(target: Object, key: string | symbol) {
+    console.log('target: ', target, 'key: ', key);
+    target['validations'] = [
+      {
+        name: 'required',
+        message: 'Obrigatório',
+        validator: Validators
+      }
+    ];
+  };
 }
 
 function UseState(seed: any) {
-  return function (target, key) {
+  return function(target, key) {
     target[key] = seed;
-    target[`set${key.replace(/^\w/, c => c.toUpperCase())}`] = (val) => target[key] = val;
+    target[`set${key.replace(/^\w/, c => c.toUpperCase())}`] = val =>
+      (target[key] = val);
   };
 }
 
@@ -126,77 +125,72 @@ interface IElement {
   min?: number;
   max?: number;
 }
-function SelectAsyncElement() {
-
-}
+function SelectAsyncElement() {}
 
 function Element(el: IElement) {
-  const validations = []
+  const validations = [];
   if (el.required) {
     validations.push({
       name: 'required',
       // message: 'Obrigatório',
       validator: Validators.required
-    })
-    delete el.required
+    });
+    delete el.required;
   }
   if (el.email) {
     validations.push({
       name: 'email',
       validator: Validators.email
-    })
-    delete el.email
+    });
+    delete el.email;
   }
   if (el.minlength) {
     validations.push({
       name: 'email',
       validator: Validators.minLength(el.minlength)
-    })
-    delete el.minlength
+    });
+    delete el.minlength;
   }
   if (el.maxlength) {
     validations.push({
       name: 'email',
       validator: Validators.maxLength(el.maxlength)
-    })
-    delete el.maxlength
+    });
+    delete el.maxlength;
   }
-  return function (target, key) {
+  return function(target, key) {
     // target.elements.push(el)
     // const element: FormElement = el
     if (!target['elements']) {
-      target['elements'] = []
+      target['elements'] = [];
     }
-    const t = Reflect.getMetadata("design:type", target, key);
+    const t = Reflect.getMetadata('design:type', target, key);
 
-    el.name = key
-    console.log('el: ', el)
-    console.log(t.name)
+    el.name = key;
+    console.log('el: ', el);
+    console.log(t.name);
 
-    
-    const tc = Reflect.getMetadata("design:type", target, key);
-    console.table(tc)
-    el['validations'] = validations
-    target['elements'].push(
-      el
-    )
-    console.log('target: ', target['elements'])
+    const tc = Reflect.getMetadata('design:type', target, key);
+    console.table(tc);
+    el['validations'] = validations;
+    target['elements'].push(el);
+    console.log('target: ', target['elements']);
 
     // target.elements[key].name = key
 
     // switch ()
-  }
+  };
 }
 interface IElementSchema<T> {
-  elements: IElement[]
+  elements: IElement[];
   endpoint: string;
 }
 
 export class CompanySchema {
-  public elements: IElement[]
-  collection = '/api/companies'
-  keyValue = 'id'
-  viewValue = 'name'
+  public elements: IElement[];
+  collection = '/api/companies';
+  keyValue = 'id';
+  viewValue = 'name';
 
   @Element({
     type: 'input',
@@ -223,7 +217,7 @@ export class CompanySchema {
 }
 export class ProjectSchema {
   public form: FormGroup;
-  public elements: IElement[]
+  public elements: IElement[];
 
   // @FieldRequired()
   // name: string
@@ -238,7 +232,7 @@ export class ProjectSchema {
     required: true,
     maxlength: 100
   })
-  name: string
+  name: string;
 
   @Element({
     type: 'input',
@@ -248,21 +242,20 @@ export class ProjectSchema {
     minlength: 2,
     maxlength: 6
   })
-  description: string
+  description: string;
 
   @Element({
     type: 'checkbox',
     label: 'Projeto ativo'
   })
-  isActive: boolean
+  isActive: boolean;
 
   @Element({
     type: 'asyncSelect',
     required: true
   })
-  companyId: CompanySchema
+  companyId: CompanySchema;
 }
-
 
 export class IceCreamComponent {
   @Emoji()
@@ -271,14 +264,13 @@ export class IceCreamComponent {
 
 // Property Decorator
 function Emoji() {
-  return function (target: Object, key: string | symbol) {
-
+  return function(target: Object, key: string | symbol) {
     let val = target[key];
 
     const getter = () => {
       return val;
     };
-    const setter = (next) => {
+    const setter = next => {
       console.log('updating flavor...');
       val = `🍦 ${next} 🍦`;
     };
@@ -287,8 +279,7 @@ function Emoji() {
       get: getter,
       set: setter,
       enumerable: true,
-      configurable: true,
+      configurable: true
     });
-
   };
 }

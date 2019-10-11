@@ -16,13 +16,11 @@ import { jwtConstants } from './config/constants';
     }),
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '2h' },
-    }),
+      signOptions: { expiresIn: '2h' }
+    })
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],
   exports: [AuthService],
-  controllers: [AuthController],
+  controllers: [AuthController]
 })
-export class AuthModule {
-
-}
+export class AuthModule {}

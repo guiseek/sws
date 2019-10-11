@@ -21,11 +21,15 @@ const modules = [
   MatIconModule,
   MatButtonModule,
   DragDropModule
-]
+];
 
 @NgModule({
   imports: [CommonModule, ...modules],
-  declarations: [DialogContainerComponent, DialogShellComponent, DialogCloseDirective],
+  declarations: [
+    DialogContainerComponent,
+    DialogShellComponent,
+    DialogCloseDirective
+  ],
   providers: [DialogService],
   entryComponents: [DialogContainerComponent, DialogShellComponent],
   exports: [DialogShellComponent, DialogCloseDirective]

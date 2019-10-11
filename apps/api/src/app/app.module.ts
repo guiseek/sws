@@ -15,7 +15,7 @@ import { AuthModule } from 'api/auth';
     CompaniesModule,
     ProjectsModule,
     TypeOrmModule.forRootAsync({
-      useFactory: () => (environment.ormConfig)
+      useFactory: () => environment.ormConfig
     })
   ],
   controllers: [AppController],

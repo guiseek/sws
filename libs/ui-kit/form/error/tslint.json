@@ -4,21 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      [
-        "sws",
-        "form",
-        "test"
-      ],
+      ["sws", "form", "test"],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      [
-        "sws",
-        "form",
-        "test"
-      ],
+      ["sws", "form", "test"],
       "kebab-case"
     ]
   }

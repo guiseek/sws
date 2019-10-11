@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpService } from '@sws/shared/utils';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProjectService {
-
-  constructor() { }
+  constructor(private httpService: HttpService) {}
 }

@@ -1,11 +1,19 @@
-import { Controller, Post, Body, Param, BadRequestException, Put, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Param,
+  BadRequestException,
+  Put,
+  UseGuards
+} from '@nestjs/common';
 import {
   Crud,
   CrudController,
   CrudRequest,
   Override,
   ParsedRequest,
-  Feature,
+  Feature
 } from '@nestjsx/crud';
 import { User } from '../entities/user.entity';
 import { UsersService } from '../users.service';
@@ -16,24 +24,28 @@ import { AuthGuard } from '@nestjs/passport';
 
 @Crud({
   model: {
-    type: User,
+    type: User
   },
   params: {
     companyId: {
       field: 'companyId',
-      type: 'number',
+      type: 'number'
     },
     id: {
       field: 'id',
       type: 'number',
-      primary: true,
-    },
+      primary: true
+    }
   },
   query: {
     exclude: ['password'],
     join: {
       company: {
         exclude: ['description'],
+        // eager: true,
+      },
+      usersProjects: {
+        eager: true
       },
       // 'company.projects': {
       //   alias: 'pr',
@@ -41,17 +53,17 @@ import { AuthGuard } from '@nestjs/passport';
       // },
       profile: {
         eager: true,
-        exclude: ['updatedAt'],
+        exclude: ['updatedAt']
       }
-    },
-  },
+    }
+  }
 })
 @ApiUseTags('users')
 @Controller('/users')
 @UseGuards(RolesGuard)
 @Feature('Users')
 export class UsersController implements CrudController<User> {
-  constructor(public service: UsersService) { }
+  constructor(public service: UsersService) {}
 
   get base(): CrudController<User> {
     return this;
@@ -63,20 +75,20 @@ export class UsersController implements CrudController<User> {
   }
   @UseGuards(AuthGuard('jwt'))
   @Override('getOneBase')
-  getOneAndDoStuff(
-    @ParsedRequest() req: CrudRequest,
-  ) {
-    console.log(req['user'])
+  getOneAndDoStuff(@ParsedRequest() req: CrudRequest) {
+    console.log(req['user']);
     return this.base.getOneBase(req);
   }
 
   @Put(':id/change-password')
-  async changePassword(@Param('id') id: string, @Body() data: ChangePasswordDto) {
+  async changePassword(
+    @Param('id') id: string,
+    @Body() data: ChangePasswordDto
+  ) {
     try {
-      return await this.service.changePassword(id, data)
+      return await this.service.changePassword(id, data);
     } catch (err) {
-      throw new BadRequestException(err)
+      throw new BadRequestException(err);
     }
   }
 }
-

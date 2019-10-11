@@ -8,4 +8,4 @@ export const FORM_ELEMENTS_MAPPER = {
   checkbox: CheckboxComponent,
   button: ButtonComponent,
   asyncSelect: AsyncSelectComponent
-}
+};

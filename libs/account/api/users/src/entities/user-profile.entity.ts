@@ -3,7 +3,6 @@ import { IsOptional, IsString, MaxLength } from 'class-validator';
 import { Column, Entity, OneToOne } from 'typeorm';
 import { BaseEntity } from '@sws/shared/api/entities';
 
-
 @Entity('user_profiles')
 export class UserProfile extends BaseEntity {
   @IsOptional({ always: true })
@@ -16,6 +15,6 @@ export class UserProfile extends BaseEntity {
    * Relations
    */
 
-  @OneToOne((type) => User, (u) => u.profile)
+  @OneToOne(type => User, u => u.profile)
   user?: User;
 }

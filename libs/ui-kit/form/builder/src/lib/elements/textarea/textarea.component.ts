@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class TextareaComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

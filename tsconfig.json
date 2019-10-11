@@ -46,6 +46,9 @@
       "@sws/ui-kit/nav/toolbar": ["libs/ui-kit/nav/toolbar/src/index.ts"],
       "@sws/organization/shared/company": [
         "libs/organization/shared/company/src/index.ts"
+      ],
+      "@sws/account/feature/onboarding": [
+        "libs/account/feature/onboarding/src/index.ts"
       ]
     }
   },

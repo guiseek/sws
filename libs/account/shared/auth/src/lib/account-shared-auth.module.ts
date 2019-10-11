@@ -2,7 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import {
-  MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatSnackBarModule
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,17 +30,12 @@ import { SignupComponent } from './components/signup/signup.component';
     FlexLayoutModule
   ],
   declarations: [LoginComponent, SignupComponent],
-  providers: [
-    AuthService,
-    TokenService
-  ],
+  providers: [AuthService, TokenService],
   exports: [LoginComponent, SignupComponent],
   entryComponents: [LoginComponent, SignupComponent]
 })
 export class AccountSharedAuthModule {
-  static forRoot(
-    options?: {}
-  ): ModuleWithProviders {
+  static forRoot(options?: {}): ModuleWithProviders {
     return {
       ngModule: AccountSharedAuthModule,
       providers: [
@@ -53,6 +52,6 @@ export class AccountSharedAuthModule {
           multi: true
         }
       ]
-    }
+    };
   }
 }

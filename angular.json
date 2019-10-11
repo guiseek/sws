@@ -725,6 +725,40 @@
           "styleext": "scss"
         }
       }
+    },
+    "account-feature-onboarding": {
+      "projectType": "library",
+      "root": "libs/account/feature/onboarding",
+      "sourceRoot": "libs/account/feature/onboarding/src",
+      "prefix": "sws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/onboarding/tsconfig.lib.json",
+              "libs/account/feature/onboarding/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/onboarding/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/onboarding/jest.config.js",
+            "tsConfig": "libs/account/feature/onboarding/tsconfig.spec.json",
+            "setupFile": "libs/account/feature/onboarding/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

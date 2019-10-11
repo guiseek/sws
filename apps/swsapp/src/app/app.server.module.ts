@@ -7,16 +7,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { HttpClientModule } from '@angular/common/http';
 
-const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
+const routes: Routes = [{ path: 'shell', component: AppShellComponent }];
 
 @NgModule({
   imports: [
     AppModule,
     ServerModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent],
-  declarations: [AppShellComponent],
+  declarations: [AppShellComponent]
 })
 export class AppServerModule {}

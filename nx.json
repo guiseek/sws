@@ -61,6 +61,9 @@
     },
     "organization-shared-company": {
       "tags": ["org:shared"]
+    },
+    "account-feature-onboarding": {
+      "tags": ["account:auth"]
     }
   }
 }

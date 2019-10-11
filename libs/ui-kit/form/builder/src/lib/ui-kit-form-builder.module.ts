@@ -11,7 +11,7 @@ import { AsyncSelectComponent } from './elements/async-select/async-select.compo
 import { TextareaComponent } from './elements/textarea/textarea.component';
 import { FieldBuilderDirective } from './directives/field-builder.directive';
 
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import {
   MatButtonModule,
   MatIconModule,
@@ -24,7 +24,7 @@ import {
   MatCheckboxModule,
   MatRadioModule,
   MAT_DATE_LOCALE
-} from "@angular/material";
+} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -52,28 +52,13 @@ const components = [
   SelectComponent,
   AsyncSelectComponent,
   TextareaComponent
-]
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    ...modules
-  ],
-  declarations: [
-    ...components,
-    FieldBuilderDirective
-  ],
-  exports: [
-    ...components,
-    FieldBuilderDirective
-  ],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
-  ],
-  entryComponents: [
-    ...components
-  ]
+  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, ...modules],
+  declarations: [...components, FieldBuilderDirective],
+  exports: [...components, FieldBuilderDirective],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
+  entryComponents: [...components]
 })
-export class UiKitFormBuilderModule { }
+export class UiKitFormBuilderModule {}

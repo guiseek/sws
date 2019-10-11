@@ -8,18 +8,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-
   user$: Observable<IJwtPayload>
   iconHome = {
     icon: 'home',
     link: '/conta'
-  }
-  constructor(
-    private authService: AuthService
-  ) { }
+  };
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.user$ = this.authService.me()
   }
-
+  logout() {
+    this.authService.logout()
+  }
 }

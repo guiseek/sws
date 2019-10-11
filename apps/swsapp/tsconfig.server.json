@@ -3,9 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc-server"
   },
-  "files": [
-    "src/main.server.ts"
-  ],
+  "files": ["src/main.server.ts"],
   "angularCompilerOptions": {
     "entryModule": "./src/app/app.server.module#AppServerModule"
   }

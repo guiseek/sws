@@ -1,7 +1,18 @@
-<sws-toolbar title="SWS"></sws-toolbar>
-
+<sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">
+  <div class="nav">
+    <a routerLink="/organizacao" mat-button>
+      Dashboard
+    </a>
+    <a routerLink="empresas" mat-button>
+      Empresas
+    </a>
+  </div>
+</sws-toolbar>
 <div class="org-shell">
-  <p>shell works!</p>
+  <main [@fadeAnimation]="getRouterOutletState(o)">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
+
   <!-- <sws-form-builder [elements]="project.elements"></sws-form-builder>
 
   <sws-async-select></sws-async-select> -->

@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isDev = !environment.production
+  isDev = !environment.production;
   hello$ = this.http.get<Message>('/api/ping');
   constructor(private http: HttpClient) {}
 }

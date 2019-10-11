@@ -1,9 +1,8 @@
-import { Component, OnInit, Optional } from '@angular/core';
+import { Component, OnInit, Optional, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { take, catchError } from 'rxjs/operators';
-import { DialogRef } from '@sws/ui-kit/floating/dialog';
 
 @Component({
   selector: 'auth-signup',
@@ -11,69 +10,54 @@ import { DialogRef } from '@sws/ui-kit/floating/dialog';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  form: FormGroup
+  form: FormGroup;
+
+  @Output() upped = new EventEmitter()
+
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private service: AuthService,
-    private dialogRef: DialogRef<string>,
+    private service: AuthService
   ) {
     this.form = this.fb.group({
-      email: ['', [
-        Validators.required,
-        Validators.email
-      ]],
-      password: ['', [
-        Validators.required,
-        Validators.minLength(4)
-      ]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
       name: this.fb.group({
-        first: ['', [
-          Validators.required,
-          Validators.maxLength(32)
-        ]],
-        last: ['', [
-          Validators.required,
-          Validators.maxLength(32)
-        ]],
+        first: ['', [Validators.required, Validators.maxLength(32)]],
+        last: ['', [Validators.required, Validators.maxLength(32)]]
       }),
       profile: this.fb.group({
-        name: ['', [
-          Validators.required,
-          Validators.maxLength(32)
-        ]]
-      })
-    })
+        name: ['', [Validators.required, Validators.maxLength(32)]]
+      }),
+      isActive: [true]
+    });
   }
   get name() {
-    return this.form.get('name')
+    return this.form.get('name');
   }
   get profile() {
-    return this.form.get('profile')
+    return this.form.get('profile');
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
   onSubmit() {
-    this.form.markAllAsTouched()
-    if (this.form.valid) {
-      this.service.login(
-        this.form.value
-      ).pipe(
-        take(1),
-        catchError(this.openSnack.bind(this))
-        // catchError(error => {
-        //   console.log(error)
-        //   this.openSnack(error)
-        //   return throwError(error)
-        // })
-      ).subscribe((auth) => this.dialogRef.close(auth))
-    }
+    this.form.markAllAsTouched();
+    // if (this.form.valid) {
+      this.service
+        .signup(this.form.value)
+        .pipe(
+          take(1),
+          catchError(this.openSnack.bind(this))
+        )
+        .subscribe(auth => this.upped.emit(auth));
+    // }
   }
 
   openSnack({ message }) {
-    return this.snackBar.open(message, 'Fechar', {
-      duration: 10000
-    }).onAction()
+    return this.snackBar
+      .open(message, 'Fechar', {
+        duration: 10000
+      })
+      .onAction();
   }
 }
 // {

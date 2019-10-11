@@ -7,23 +7,28 @@ import { IJwtPayload } from '../interfaces/jwt-payload.interface';
 
 @Injectable()
 export class AuthService {
-
   constructor(
     private tokenService: TokenService,
     private http: HttpClient
-  ) { }
+  ) {}
 
   login(data) {
-    return this.http.post(
-      '/api/auth/login', data
-    ).pipe(
+    return this.http.post('/api/auth/login', data).pipe(
+      catchError(({ error }) => throwError(error)),
+      tap(response => this.tokenService.setToken(response))
+    )
+  }
+  signup(data) {
+    return this.http.post('/api/users', data).pipe(
       catchError(({ error }) => throwError(error)),
       tap(response => this.tokenService.setToken(response))
     )
   }
   me() {
-    return this.http.get<IJwtPayload>(
-      '/api/auth/me'
-    )
+    return this.http.get<IJwtPayload>('/api/auth/me');
+  }
+  logout() {
+    this.tokenService.clear()
+    return this.me().toPromise()
   }
 }

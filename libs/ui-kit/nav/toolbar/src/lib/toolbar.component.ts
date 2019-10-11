@@ -1,24 +1,32 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'sws-toolbar',
   templateUrl: './toolbar.component.html',
-  styles: []
+  encapsulation: ViewEncapsulation.None
 })
 export class ToolbarComponent implements OnInit {
-  @Input() title: string
+  @Input() title: string;
   @Input() iconHome: {
-    icon: string
-    link: string
-  }
-  @Input() searchbar: boolean
-  @Output() searchChange = new EventEmitter<string>()
+    icon: string;
+    link: string;
+  };
+  @Input() search: boolean;
+  @Output() searchChange = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   onSearchChange(event) {
-    this.searchChange.emit(event)
+    this.searchChange.emit(event);
   }
 }

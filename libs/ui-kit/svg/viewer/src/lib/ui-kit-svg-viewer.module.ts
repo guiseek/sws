@@ -17,7 +17,7 @@ export class UiKitSvgViewerModule {
   static forRoot(config: SvgViewerConfig): ModuleWithProviders {
     return {
       ngModule: UiKitSvgViewerModule,
-      providers: [{ provide: SvgViewerConfig, useValue: config }],
+      providers: [{ provide: SvgViewerConfig, useValue: config }]
     };
   }
 }

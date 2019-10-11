@@ -1,6 +1,4 @@
-
 // export type EntityType = 'input' | 'textarea' | 'date'
-
 
 // export interface EntityMetadataArgs {
 
@@ -76,12 +74,9 @@
 //   };
 // }
 
-
-
 // // export function EntitySchema(constructor: Function) {
-  
-// // }
 
+// // }
 
 // declare type EntityClassDecorator = <TFunction extends Function>(
 //   target: TFunction

@@ -1,6 +1,6 @@
 <mat-toolbar
-  color="accent"
-  class="toolbar"
+  color="primary"
+  class="sws-toolbar"
   fxLayout="row"
   fxLayoutAlign="space-between center"
 >
@@ -13,7 +13,13 @@
     </ng-container>
     <span>{{ title }}</span>
 
-    <sws-search-bar *ngIf="searchbar" (searchChange)="onSearchChange($event)"></sws-search-bar>
+    <sws-search-bar
+      *ngIf="search"
+      (searchChange)="onSearchChange($event)"
+    ></sws-search-bar>
+
+    <ng-content select=".subtitle"></ng-content>
+    <ng-content select=".nav"></ng-content>
   </div>
   <div fxLayout="row">
     <div fxFlex fxFill></div>

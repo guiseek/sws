@@ -1,5 +1,5 @@
 export interface DialogHeader {
-  title: string
-  subtitle?: string,
-  color?: 'primary' | 'accent'
+  title: string;
+  subtitle?: string;
+  color?: 'primary' | 'accent';
 }

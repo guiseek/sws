@@ -7,13 +7,12 @@ import { CrudConfigService } from '@nestjsx/crud';
 // https://github.com/nestjsx/crud/wiki/Controllers#global-options
 CrudConfigService.load({
   routes: {
-    exclude: ['createManyBase'],
-  },
+    exclude: ['createManyBase']
+  }
 });
 
 import { HttpExceptionFilter } from '@sws/shared/api/exceptions';
 import { AppModule } from './app/app.module';
-
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -31,6 +30,7 @@ async function bootstrap() {
     .setDescription('@sws')
     .setBasePath(globalPrefix)
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
@@ -44,11 +44,14 @@ async function bootstrap() {
   //   )
   // }, 1000)
 
-
   const port = process.env.port || 3333;
   await app.listen(port, () => {
-    console.log('Aguardando requisições em http://localhost:' + port + '/' + globalPrefix);
-    console.log('Swagger disponível em http://localhost:' + port + '/' + swaggerPrefix);
+    console.log(
+      'Aguardando requisições em http://localhost:' + port + '/' + globalPrefix
+    );
+    console.log(
+      'Swagger disponível em http://localhost:' + port + '/' + swaggerPrefix
+    );
   });
 }
 
