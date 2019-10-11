@@ -13,19 +13,36 @@ import { AccountSharedAuthModule } from '@sws/account/shared/auth';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AccountSharedAuthModule.forRoot(),
-    RouterModule.forRoot([{
-      path: '',
-      loadChildren: () =>
-        import('@sws/account/feature/auth').then(module => module.AccountFeatureAuthModule)
-    }, {
-      path: 'org',
-      loadChildren: () =>
-        import('@sws/organization/feature/shell').then(module => module.OrganizationFeatureShellModule)
-    }]),
+    RouterModule.forRoot([
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('@sws/account/feature/auth').then(
+            module => module.AccountFeatureAuthModule
+          )
+      },
+      {
+        path: 'organizacao',
+        loadChildren: () =>
+          import('@sws/organization/feature/shell').then(
+            module => module.OrganizationFeatureShellModule
+          )
+      },
+      {
+        path: 'conta',
+        loadChildren: () =>
+          import('@sws/account/feature/shell').then(
+            module => module.AccountFeatureShellModule
+          )
+      },
+      {
+        path: '', redirectTo: 'conta', pathMatch: 'full'
+      }
+    ]),
     RouterModule,
     BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

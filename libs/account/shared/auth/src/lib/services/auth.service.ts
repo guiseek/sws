@@ -3,6 +3,7 @@ import { TokenService } from './token.service';
 import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { IJwtPayload } from '../interfaces/jwt-payload.interface';
 
 @Injectable()
 export class AuthService {
@@ -18,6 +19,11 @@ export class AuthService {
     ).pipe(
       catchError(({ error }) => throwError(error)),
       tap(response => this.tokenService.setToken(response))
+    )
+  }
+  me() {
+    return this.http.get<IJwtPayload>(
+      '/api/auth/me'
     )
   }
 }

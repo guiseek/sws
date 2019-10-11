@@ -1,7 +1,10 @@
+
+
 :host {
   display: flex;
   flex-flow: column;
   align-items: center;
+  height: 100vh;
   .org-shell {
     margin: 10px;
     max-width: 1000px;

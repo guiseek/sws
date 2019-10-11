@@ -38,7 +38,15 @@
       "@sws/organization/feature/shell": [
         "libs/organization/feature/shell/src/index.ts"
       ],
-      "@sws/ui-kit/svg/viewer": ["libs/ui-kit/svg/viewer/src/index.ts"]
+      "@sws/ui-kit/svg/viewer": ["libs/ui-kit/svg/viewer/src/index.ts"],
+      "@sws/account/feature/shell": ["libs/account/feature/shell/src/index.ts"],
+      "@sws/ui-kit/floating/dialog": [
+        "libs/ui-kit/floating/dialog/src/index.ts"
+      ],
+      "@sws/ui-kit/nav/toolbar": ["libs/ui-kit/nav/toolbar/src/index.ts"],
+      "@sws/organization/shared/company": [
+        "libs/organization/shared/company/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

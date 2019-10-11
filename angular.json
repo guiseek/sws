@@ -31,7 +31,7 @@
               }
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "apps/swsapp/src/styles.scss"
             ],
             "scripts": []
@@ -576,6 +576,147 @@
             "jestConfig": "libs/ui-kit/svg/viewer/jest.config.js",
             "tsConfig": "libs/ui-kit/svg/viewer/tsconfig.spec.json",
             "setupFile": "libs/ui-kit/svg/viewer/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "account-feature-shell": {
+      "projectType": "library",
+      "root": "libs/account/feature/shell",
+      "sourceRoot": "libs/account/feature/shell/src",
+      "prefix": "sws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/shell/tsconfig.lib.json",
+              "libs/account/feature/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/account/feature/shell/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/shell/jest.config.js",
+            "tsConfig": "libs/account/feature/shell/tsconfig.spec.json",
+            "setupFile": "libs/account/feature/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-kit-floating-dialog": {
+      "projectType": "library",
+      "root": "libs/ui-kit/floating/dialog",
+      "sourceRoot": "libs/ui-kit/floating/dialog/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/floating/dialog/tsconfig.lib.json",
+            "project": "libs/ui-kit/floating/dialog/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/floating/dialog/tsconfig.lib.json",
+              "libs/ui-kit/floating/dialog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/floating/dialog/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/floating/dialog/jest.config.js",
+            "tsConfig": "libs/ui-kit/floating/dialog/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/floating/dialog/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-kit-nav-toolbar": {
+      "projectType": "library",
+      "root": "libs/ui-kit/nav/toolbar",
+      "sourceRoot": "libs/ui-kit/nav/toolbar/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/nav/toolbar/tsconfig.lib.json",
+            "project": "libs/ui-kit/nav/toolbar/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/nav/toolbar/tsconfig.lib.json",
+              "libs/ui-kit/nav/toolbar/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/nav/toolbar/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/nav/toolbar/jest.config.js",
+            "tsConfig": "libs/ui-kit/nav/toolbar/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/nav/toolbar/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "organization-shared-company": {
+      "projectType": "library",
+      "root": "libs/organization/shared/company",
+      "sourceRoot": "libs/organization/shared/company/src",
+      "prefix": "org",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/organization/shared/company/tsconfig.lib.json",
+              "libs/organization/shared/company/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/organization/shared/company/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/organization/shared/company/jest.config.js",
+            "tsConfig": "libs/organization/shared/company/tsconfig.spec.json",
+            "setupFile": "libs/organization/shared/company/src/test-setup.ts"
           }
         }
       },

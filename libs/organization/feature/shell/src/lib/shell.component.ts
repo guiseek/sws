@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { IceCreamComponent, ProjectSchema } from '@sws/organization/shared/schema';
 
 @Component({
@@ -8,6 +8,9 @@ import { IceCreamComponent, ProjectSchema } from '@sws/organization/shared/schem
 })
 export class ShellComponent implements OnInit {
   // company = new CompanySchema()
+  @HostBinding('class.bg-win-sun')
+  bgClass = true;
+  
   project = new ProjectSchema()
   iceCream = new IceCreamComponent()
   constructor() { }

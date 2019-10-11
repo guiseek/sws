@@ -8,8 +8,6 @@ import { CompaniesModule } from 'org/companies';
 import { ProjectsModule } from 'org/projects';
 import { AuthModule } from 'api/auth';
 
-console.log(environment.ormConfig)
-
 @Module({
   imports: [
     UsersModule,

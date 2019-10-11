@@ -1,24 +1,28 @@
-import { Controller, Post, Body, Param, BadRequestException, Put } from '@nestjs/common';
+import { Controller, Post, Body, Param, BadRequestException, Put, UseGuards } from '@nestjs/common';
 import {
   Crud,
   CrudController,
   CrudRequest,
   Override,
   ParsedRequest,
+  Feature,
 } from '@nestjsx/crud';
 import { User } from '../entities/user.entity';
 import { UsersService } from '../users.service';
 import { ChangePasswordDto } from '../dtos/change-password.dto';
+import { ApiUseTags } from '@nestjs/swagger';
+import { RolesGuard } from 'api/auth/guards';
+import { AuthGuard } from '@nestjs/passport';
 
 @Crud({
   model: {
     type: User,
   },
   params: {
-    // companyId: {
-    //   field: 'companyId',
-    //   type: 'number',
-    // },
+    companyId: {
+      field: 'companyId',
+      type: 'number',
+    },
     id: {
       field: 'id',
       type: 'number',
@@ -31,14 +35,21 @@ import { ChangePasswordDto } from '../dtos/change-password.dto';
       company: {
         exclude: ['description'],
       },
+      // 'company.projects': {
+      //   alias: 'pr',
+      //   exclude: ['description'],
+      // },
       profile: {
         eager: true,
         exclude: ['updatedAt'],
-      },
+      }
     },
   },
 })
+@ApiUseTags('users')
 @Controller('/users')
+@UseGuards(RolesGuard)
+@Feature('Users')
 export class UsersController implements CrudController<User> {
   constructor(public service: UsersService) { }
 
@@ -49,6 +60,14 @@ export class UsersController implements CrudController<User> {
   @Override('getManyBase')
   getAll(@ParsedRequest() req: CrudRequest) {
     return this.base.getManyBase(req);
+  }
+  @UseGuards(AuthGuard('jwt'))
+  @Override('getOneBase')
+  getOneAndDoStuff(
+    @ParsedRequest() req: CrudRequest,
+  ) {
+    console.log(req['user'])
+    return this.base.getOneBase(req);
   }
 
   @Put(':id/change-password')

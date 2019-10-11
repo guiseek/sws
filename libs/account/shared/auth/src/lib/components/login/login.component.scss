@@ -1,4 +1,15 @@
 form {
   display: flex;
   flex-flow: column;
+  .mat-form-field {
+    .mat-icon {
+      opacity: 0.2;
+      transition: opacity 300ms ease-in-out;
+    }
+    &.mat-focused {
+      .mat-icon {
+        opacity: 0.6;
+      }
+    }
+  }
 }

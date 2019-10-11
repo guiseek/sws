@@ -49,6 +49,18 @@
     },
     "ui-kit-svg-viewer": {
       "tags": ["ui:svg"]
+    },
+    "account-feature-shell": {
+      "tags": ["account:shell"]
+    },
+    "ui-kit-floating-dialog": {
+      "tags": ["ui:floating"]
+    },
+    "ui-kit-nav-toolbar": {
+      "tags": ["ui:floating"]
+    },
+    "organization-shared-company": {
+      "tags": ["org:shared"]
     }
   }
 }
