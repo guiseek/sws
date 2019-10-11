@@ -27,6 +27,11 @@ export class TokenService {
   clear(): void {
     window.localStorage.removeItem(this._jwtConfig.storage);
   }
+  currentPayload() {
+    return jwt_decode(
+      this.token
+    )
+  }
   payload(token: string) {
     // return payload
     return jwt_decode(token);

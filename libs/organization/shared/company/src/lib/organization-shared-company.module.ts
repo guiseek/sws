@@ -7,9 +7,21 @@ import { ProjectService } from './services/project.service';
 import { HttpService } from '@sws/shared/utils';
 import { ProjectDataSource } from './services/project.datasource';
 import { CompanyDataSource } from './services/company.datasource';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AccountSharedAuthModule } from '@sws/account/shared/auth';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, MatIconModule } from '@angular/material';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    AccountSharedAuthModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule
+  ],
   providers: [
     HttpService,
     CompanyService,

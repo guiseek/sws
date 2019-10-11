@@ -7,8 +7,31 @@ import { RequestQueryBuilder } from '@nestjsx/crud-request';
 @Injectable()
 export class CompanyService {
   private api = '/api/companies';
-  constructor(private httpService: HttpService) {}
+  constructor(
+    private httpService: HttpService
+  ) {}
+  getMany() {
+    return this.httpService.get<ICompany[]>('/api/companies')
+  }
+  getOne(id: number) {
+    return this.httpService.get<ICompany>(`/api/companies/${id}`)
+  }
+  createOne(company: ICompany) {
+    return this.httpService.post('/api/companies', company)
+  }
+  updateOne(company: Partial<ICompany>) {
+    return this.httpService.put(`/api/companies/${company.id}`, company)
+  }
+  deleteOne(id: number) {
+    return this.httpService.delete(`/api/companies/${id}`)
+  }
+  addCompany(companyId: number, company: Partial<ICompany>) {
+    return this.httpService.put(`/api/companies/${companyId}`, { company })
+  }
 
+  /**
+   * Old
+   */
   getCompanies() {
     return this.httpService.read<ICompany>(this.api);
   }

@@ -1,0 +1,29 @@
+<div class="account-toolbar-menu-container">
+  <ng-container *ngIf="user$ | async as user">
+    <button
+      type="button"
+      mat-button
+      [matMenuTriggerFor]="accountMenu"
+      #menu="matMenuTrigger"
+      [class.open]="menu.menuOpen"
+    >
+      {{ user.email }}
+    </button>
+    <mat-menu
+      [class]="'account-toolbar-menu'"
+      #accountMenu="matMenu"
+      xPosition="before"
+    >
+      <a mat-menu-item routerLink="/conta">Conta</a>
+      <mat-divider></mat-divider>
+      <button mat-menu-item disabled>Organização</button>
+      <a mat-menu-item [routerLink]="['/organizacao','empresas', user.company.id]">
+        {{ user.company.name }}
+      </a>
+      <mat-divider></mat-divider>
+      <button mat-menu-item type="button" (click)="logout()">
+        Sair
+      </button>
+    </mat-menu>
+  </ng-container>
+</div>

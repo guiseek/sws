@@ -1,5 +1,11 @@
 <sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">
-  <mat-menu #appMenu="matMenu" xPosition="before">
+  <account-toolbar-menu></account-toolbar-menu>
+</sws-toolbar>
+
+<router-outlet></router-outlet>
+
+
+  <!-- <mat-menu #appMenu="matMenu" xPosition="before">
     <a routerLink="perfil" mat-menu-item>Perfil</a>
     <a routerLink="configuracoes" mat-menu-item>Configurações</a>
     <mat-divider></mat-divider>
@@ -18,7 +24,4 @@
   >
     <span>{{ user.email }}</span>
     <mat-icon>more_vert</mat-icon>
-  </button>
-</sws-toolbar>
-
-<router-outlet></router-outlet>
+  </button> -->

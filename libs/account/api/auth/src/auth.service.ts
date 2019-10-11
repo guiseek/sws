@@ -25,4 +25,9 @@ export class AuthService {
       };
     });
   }
+  async getUser(id: number) {
+    return await this.usersService.findOne(id, {
+      relations: ['company']
+    })
+  }
 }

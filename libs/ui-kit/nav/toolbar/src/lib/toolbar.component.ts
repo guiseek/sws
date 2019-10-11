@@ -12,7 +12,11 @@ import {
 @Component({
   selector: 'sws-toolbar',
   templateUrl: './toolbar.component.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  styles: [`
+    .sws-toolbar.mat-toolbar-single-row { height: 50px }
+    .sws-toolbar > * { height: 100%; }
+  `]
 })
 export class ToolbarComponent implements OnInit {
   @Input() title: string;

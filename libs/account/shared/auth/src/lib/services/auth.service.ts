@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { IJwtPayload } from '../interfaces/jwt-payload.interface';
+import { IUser } from '@sws/api-interfaces';
 
 @Injectable()
 export class AuthService {
@@ -26,6 +27,12 @@ export class AuthService {
   }
   me() {
     return this.http.get<IJwtPayload>('/api/auth/me');
+  }
+  info() {
+    return this.http.get<IUser>('/api/auth/info');
+  }
+  get payload() {
+    return this.tokenService.currentPayload()
   }
   logout() {
     this.tokenService.clear()

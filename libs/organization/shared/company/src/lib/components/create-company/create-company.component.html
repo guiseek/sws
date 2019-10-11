@@ -1,1 +1,27 @@
-<p>create-company works!</p>
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Nome da empresa" formControlName="name" />
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      name="firstname"
+      matInput
+      placeholder="Domínio"
+      formControlName="domain"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      name="description"
+      rows="4"
+      matInput
+      placeholder="Descrição"
+      formControlName="description"
+    ></textarea>
+  </mat-form-field>
+  <button mat-button>
+    Começar
+  </button>
+</form>
+<pre>{{ form.value | json }}</pre>

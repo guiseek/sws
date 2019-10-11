@@ -6,6 +6,7 @@ import {
   AccountSharedAuthModule,
   TokenInterceptor
 } from '@sws/account/shared/auth';
+import { AccountSharedUserModule} from '@sws/account/shared/user';
 import { ShellComponent } from './shell/shell.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -26,6 +27,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MatButtonModule,
     MatDividerModule,
     AccountSharedAuthModule,
+    AccountSharedUserModule,
     UiKitNavToolbarModule,
     RouterModule.forChild([
       {

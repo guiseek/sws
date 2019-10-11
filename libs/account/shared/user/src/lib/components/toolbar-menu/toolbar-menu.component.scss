@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex: 0 0 auto;
+}
+.account-toolbar-menu-container {
+  height: 100%;
+  position: relative;
+  .mat-menu-trigger {
+    &.open {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+  & > .mat-button {
+    height: 100%;
+  }
+}
+::ng-deep .account-toolbar-menu.mat-menu-panel {
+  min-width: 140px;
+  max-width: 200px;
+  min-height: 50px;
+  min-height: unset;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+    &:disabled {
+      height: 34px;
+      opacity: 0.8;
+    }
+  }
+  & > .mat-menu-content:not(:empty) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}

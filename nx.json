@@ -64,6 +64,9 @@
     },
     "account-feature-onboarding": {
       "tags": ["account:auth"]
+    },
+    "account-shared-user": {
+      "tags": ["account:user"]
     }
   }
 }

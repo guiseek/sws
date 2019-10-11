@@ -34,4 +34,11 @@ export class AuthController {
   async me(@Request() req) {
     return req.user;
   }
+  @UseGuards(AuthGuard('jwt'))
+  @Get('info')
+  async info(@Request() req) {
+    return await this.authService.getUser(
+      req.user.id
+    )
+  }
 }

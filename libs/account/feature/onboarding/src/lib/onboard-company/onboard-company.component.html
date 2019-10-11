@@ -1,3 +1,4 @@
 <div [@animate]="{ value: '*', params: { duration: '400ms', y: '200px' } }">
   Criar empresa
+  <org-create-company (created)="onCreate($event)"></org-create-company>
 </div>

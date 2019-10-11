@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { swsAnimations } from '@sws/shared/utils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sws-onboard-company',
@@ -10,7 +11,13 @@ import { swsAnimations } from '@sws/shared/utils';
   ]
 })
 export class OnboardCompanyComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {}
+  onCreate(data) {
+    console.log('created: ', data)
+    this.router.navigateByUrl('/conta')
+  }
 }

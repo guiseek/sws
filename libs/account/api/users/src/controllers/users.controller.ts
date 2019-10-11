@@ -5,7 +5,8 @@ import {
   Param,
   BadRequestException,
   Put,
-  UseGuards
+  UseGuards,
+  Get
 } from '@nestjs/common';
 import {
   Crud,
@@ -21,16 +22,17 @@ import { ChangePasswordDto } from '../dtos/change-password.dto';
 import { ApiUseTags } from '@nestjs/swagger';
 import { RolesGuard } from 'api/auth/guards';
 import { AuthGuard } from '@nestjs/passport';
+import { FindOneOptions, JoinOptions } from 'typeorm';
 
 @Crud({
   model: {
     type: User
   },
   params: {
-    companyId: {
-      field: 'companyId',
-      type: 'number'
-    },
+    // companyId: {
+    //   field: 'companyId',
+    //   type: 'number'
+    // },
     id: {
       field: 'id',
       type: 'number',
@@ -42,7 +44,7 @@ import { AuthGuard } from '@nestjs/passport';
     join: {
       company: {
         exclude: ['description'],
-        // eager: true,
+        eager: true,
       },
       usersProjects: {
         eager: true
