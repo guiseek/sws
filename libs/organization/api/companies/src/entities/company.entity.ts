@@ -5,11 +5,17 @@ import { Column, Entity, OneToMany } from 'typeorm';
 import { BaseEntity } from '@sws/shared/api/entities';
 import { User } from 'api/users';
 import { Project } from 'org/projects';
+import { ApiModelProperty } from '@nestjs/swagger';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
 @Entity('companies')
 export class Company extends BaseEntity {
+
+  @ApiModelProperty({
+    required: true,
+    maxLength: 100
+  })
   @IsOptional({ groups: [UPDATE] })
   @IsNotEmpty({ groups: [CREATE] })
   @IsString({ always: true })
@@ -17,6 +23,10 @@ export class Company extends BaseEntity {
   @Column({ type: 'varchar', length: 100, nullable: false })
   name: string;
 
+  @ApiModelProperty({
+    required: true,
+    maxLength: 100
+  })
   @IsOptional({ groups: [UPDATE] })
   @IsNotEmpty({ groups: [CREATE] })
   @IsString({ groups: [CREATE, UPDATE] })

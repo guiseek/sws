@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormElement } from '@sws/ui-kit/form/builder';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DialogService } from '@sws/ui-kit/floating/dialog';
+import { SignupComponent } from '@sws/account/shared/auth';
 
 @Component({
   selector: 'auth-layout',
@@ -28,9 +31,21 @@ export class LayoutComponent implements OnInit {
     name: 'terms',
     label: 'Concordo com os termos'
   }]
-  constructor() { }
+  constructor(
+    private router: Router,
+    private dialogService: DialogService
+  ) { }
 
   ngOnInit() {
   }
-
+  onLogged() {
+    this.router.navigate(['/conta'])
+  }
+  openSignUp() {
+    const ref = this.dialogService.open(
+      SignupComponent, {
+        panelClass: 'bg-liquid-cheese'
+      }
+    )
+  }
 }

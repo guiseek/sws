@@ -1,0 +1,46 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      type="email"
+      name="email"
+      matInput
+      placeholder="E-mail"
+      formControlName="email"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="password"
+      matInput
+      placeholder="Senha"
+      formControlName="password"
+    />
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <div [formGroup]="name">
+    <mat-form-field>
+      <input
+        name="firstname"
+        matInput
+        placeholder="Nome"
+        formControlName="first"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sobrenome" formControlName="last" />
+    </mat-form-field>
+  </div>
+  <div [formGroup]="profile">
+    <mat-form-field>
+      <input
+        name="profilename"
+        matInput
+        placeholder="Apelido"
+        formControlName="name"
+      />
+    </mat-form-field>
+  </div>
+  <button mat-button>
+    Login
+  </button>
+</form>

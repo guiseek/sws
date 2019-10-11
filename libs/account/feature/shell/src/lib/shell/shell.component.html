@@ -1,0 +1,20 @@
+<sws-toolbar title="SWS" [iconHome]="iconHome" [searchbar]="true">
+  <mat-menu #appMenu="matMenu" xPosition="before">
+    <a routerLink="perfil" mat-menu-item>Perfil</a>
+    <a routerLink="configuracoes" mat-menu-item>Configurações</a>
+    <mat-divider></mat-divider>
+    <a routerLink="/organizacao" mat-menu-item>Organização</a>
+  </mat-menu>
+
+  <button
+    *ngIf="user$ | async as user"
+    mat-button
+    class="dropdown-menu"
+    [matMenuTriggerFor]="appMenu"
+  >
+    <span>{{ user.email }}</span>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</sws-toolbar>
+
+<router-outlet></router-outlet>

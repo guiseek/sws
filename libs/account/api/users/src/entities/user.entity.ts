@@ -22,11 +22,11 @@ const { CREATE, UPDATE } = CrudValidationGroups;
 
 export class Name {
   @IsString({ always: true })
-  @Column({ nullable: true })
+  @Column({ nullable: true, select: true })
   first: string;
 
   @IsString({ always: true })
-  @Column({ nullable: true })
+  @Column({ nullable: true, select: true })
   last: string;
 }
 

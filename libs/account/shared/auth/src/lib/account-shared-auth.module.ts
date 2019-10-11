@@ -2,14 +2,16 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import {
-  MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule
+  MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatSnackBarModule
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JWT_CONFIG_TOKEN, JWT_CONFIG } from './configs/jwt.config';
 import { AuthService } from './services/auth.service';
 import { TokenService } from './services/token.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   imports: [
@@ -20,14 +22,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
+    FlexLayoutModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SignupComponent],
   providers: [
     AuthService,
     TokenService
   ],
-  exports: [LoginComponent],
-  entryComponents: [LoginComponent]
+  exports: [LoginComponent, SignupComponent],
+  entryComponents: [LoginComponent, SignupComponent]
 })
 export class AccountSharedAuthModule {
   static forRoot(

@@ -32,8 +32,17 @@ async function bootstrap() {
     .setBasePath(globalPrefix)
     .setVersion('1.0')
     .build();
+
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(swaggerPrefix, app, document);
+
+  // Schemes.paths = document.paths
+  // setTimeout(() => {
+  //   console.table(document.paths['/companies'])
+  //   console.log(
+  //     // JSON.stringify(document.paths['/companies'])
+  //   )
+  // }, 1000)
 
 
   const port = process.env.port || 3333;

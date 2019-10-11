@@ -1,0 +1,79 @@
+{
+  "deps": {
+    "organization-shared-schema": [
+      {
+        "projectName": "ui-kit-form-builder",
+        "type": "es6Import"
+      }
+    ],
+    "organization-feature-shell": [
+      {
+        "projectName": "ui-kit-form-builder",
+        "type": "es6Import"
+      },
+      {
+        "projectName": "organization-shared-schema",
+        "type": "es6Import"
+      }
+    ],
+    "shared-api-exceptions": [],
+    "account-feature-auth": [
+      {
+        "projectName": "account-shared-auth",
+        "type": "es6Import"
+      },
+      {
+        "projectName": "ui-kit-form-builder",
+        "type": "es6Import"
+      }
+    ],
+    "shared-api-entities": [],
+    "account-shared-auth": [],
+    "ui-kit-form-builder": [],
+    "ui-kit-form-error": [
+      {
+        "projectName": "shared-utils",
+        "type": "es6Import"
+      }
+    ],
+    "ui-kit-svg-viewer": [],
+    "api-interfaces": [],
+    "shared-utils": [],
+    "swsapp-e2e": [
+      {
+        "projectName": "swsapp",
+        "type": "implicit"
+      }
+    ],
+    "swsapp": [
+      {
+        "projectName": "api-interfaces",
+        "type": "es6Import"
+      },
+      {
+        "projectName": "account-shared-auth",
+        "type": "es6Import"
+      },
+      {
+        "projectName": "account-feature-auth",
+        "type": "loadChildren"
+      },
+      {
+        "projectName": "organization-feature-shell",
+        "type": "loadChildren"
+      }
+    ],
+    "api": [
+      {
+        "projectName": "api-interfaces",
+        "type": "es6Import"
+      },
+      {
+        "projectName": "shared-api-exceptions",
+        "type": "es6Import"
+      }
+    ]
+  },
+  "affectedProjects": [],
+  "criticalPath": []
+}

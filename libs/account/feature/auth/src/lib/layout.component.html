@@ -1,6 +1,12 @@
-<p>layout works!</p>
+<!-- <sws-form-builder [elements]="formElements" #formRef="swsForm"></sws-form-builder> -->
 
-<sws-form-builder [elements]="formElements" #formRef="swsForm"></sws-form-builder>
-
-<pre>{{formRef.form.value | json }}</pre>
-<auth-login></auth-login>
+<!-- <pre>{{formRef.form.value | json }}</pre> -->
+<!-- <div class="auth-layout bg-liquid-cheese"> -->
+<div class="auth-layout bg-liquid-cheese">
+  <div class="auth-content">
+    <mat-card>
+      <auth-login (logged)="onLogged($event)"></auth-login>
+    </mat-card>
+    <button mat-button (click)="openSignUp()">Criar conta</button>
+  </div>
+</div>

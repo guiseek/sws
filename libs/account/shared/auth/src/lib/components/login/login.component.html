@@ -1,6 +1,12 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
   <mat-form-field>
-    <input type="email" matInput placeholder="E-mail" formControlName="email" />
+    <input
+      type="email"
+      name="email"
+      matInput
+      placeholder="E-mail"
+      formControlName="email"
+    />
   </mat-form-field>
   <mat-form-field>
     <input
@@ -9,8 +15,9 @@
       placeholder="Senha"
       formControlName="password"
     />
+    <mat-icon matSuffix>lock</mat-icon>
   </mat-form-field>
-  <button mat-flat-button>
+  <button mat-button>
     Login
   </button>
 </form>
