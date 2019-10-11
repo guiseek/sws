@@ -27,7 +27,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "doc:repo": "npx compodoc -p tsconfig.app.json -n \"SWS - Global documentation\" -d ./docs"
+    "doc:repo": "npx compodoc -p tsconfig.json -n \"SWS - Global documentation\" -d ./docs"
   },
   "private": true,
   "dependencies": {
