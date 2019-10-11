@@ -14,6 +14,8 @@ import {
   templateUrl: './toolbar.component.html',
   encapsulation: ViewEncapsulation.None,
   styles: [`
+    sws-toolbar { display: block; height: 50px; }
+    .sws-toolbar { position: fixed; }
     .sws-toolbar.mat-toolbar-single-row { height: 50px }
     .sws-toolbar > * { height: 100%; }
   `]

@@ -15,6 +15,14 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
 
+  tableConfig = {
+    endpoint: '/api/companies',
+    columns: [
+      { columnDef: 'name', header: 'Nome', cell: (element) => element.name },
+      { columnDef: 'domain', header: 'Domínio', cell: (element) => element.domain }
+    ]
+  }
+
   constructor(private companyService: CompanyService) {}
 
   ngOnInit() {

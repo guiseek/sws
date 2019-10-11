@@ -50,7 +50,10 @@
       "@sws/account/feature/onboarding": [
         "libs/account/feature/onboarding/src/index.ts"
       ],
-      "@sws/account/shared/user": ["libs/account/shared/user/src/index.ts"]
+      "@sws/account/shared/user": ["libs/account/shared/user/src/index.ts"],
+      "@sws/ui-kit/table/async-table": [
+        "libs/ui-kit/table/async-table/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

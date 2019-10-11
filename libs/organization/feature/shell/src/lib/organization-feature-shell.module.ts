@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UiKitNavToolbarModule } from '@sws/ui-kit/nav/toolbar';
 import { AccountSharedUserModule } from '@sws/account/shared/user';
 import { OrganizationSharedCompanyModule } from '@sws/organization/shared/company';
+import { AsyncTableModule } from '@sws/ui-kit/table/async-table';
+
 import {
   MatTableModule,
   MatSortModule,
@@ -33,6 +35,7 @@ import { TokenInterceptor } from '@sws/account/shared/auth';
     FlexLayoutModule,
     AccountSharedUserModule,
     OrganizationSharedCompanyModule,
+    AsyncTableModule,
     UiKitNavToolbarModule,
     UiKitFormBuilderModule,
     RouterModule.forChild([

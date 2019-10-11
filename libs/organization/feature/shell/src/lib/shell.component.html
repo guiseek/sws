@@ -9,12 +9,6 @@
   </div>
   <account-toolbar-menu></account-toolbar-menu>
 </sws-toolbar>
-<div class="org-shell">
-  <main [@fadeAnimation]="getRouterOutletState(o)">
-    <router-outlet #o="outlet"></router-outlet>
-  </main>
-
-  <!-- <sws-form-builder [elements]="project.elements"></sws-form-builder>
-
-  <sws-async-select></sws-async-select> -->
-</div>
+<main [@fadeAnimation]="getRouterOutletState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>

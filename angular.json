@@ -790,6 +790,47 @@
           "styleext": "scss"
         }
       }
+    },
+    "ui-kit-table-async-table": {
+      "projectType": "library",
+      "root": "libs/ui-kit/table/async-table",
+      "sourceRoot": "libs/ui-kit/table/async-table/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/table/async-table/tsconfig.lib.json",
+            "project": "libs/ui-kit/table/async-table/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/table/async-table/tsconfig.lib.json",
+              "libs/ui-kit/table/async-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/table/async-table/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/table/async-table/jest.config.js",
+            "tsConfig": "libs/ui-kit/table/async-table/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/table/async-table/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

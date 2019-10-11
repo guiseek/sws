@@ -1,0 +1,67 @@
+<div class="sws-table-container">
+  <table
+    mat-table
+    #table
+    [dataSource]="dataSource"
+    matSort
+    matSortActive="id"
+    matSortDisableClear
+    matSortDirection="desc"
+    class="mat-table"
+  >
+    <!-- <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox
+        (change)="$event ? masterToggle() : null"
+        [checked]="selection.hasValue() && isAllSelected()"
+        [indeterminate]="selection.hasValue() && !isAllSelected()"
+        [aria-label]="checkboxLabel()"
+      >
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection.isSelected(row)"
+        [aria-label]="checkboxLabel(row)"
+      >
+      </mat-checkbox>
+    </td>
+  </ng-container> -->
+    <ng-container
+      *ngFor="let column of meta.columns"
+      [cdkColumnDef]="column.columnDef"
+    >
+      <th class="mat-header-cell" *cdkHeaderCellDef mat-sort-header>{{ column.header }}</th>
+      <td class="mat-cell" *cdkCellDef="let row">
+        {{ column.cell(row) | formatCell: column.format }}
+      </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+    <td mat-cell *matCellDef="let row">
+      <button type="button" mat-icon-button (click)="editClicked(row)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let row">
+      <button type="button" mat-icon-button (click)="delete.emit(row)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container> -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="dataSource.resultsLength"
+    [pageSize]="config.paginator.pageSize"
+    [hidePageSize]="config.paginator.hidePageSize"
+    [showFirstLastButtons]="config.paginator.showFirstLastButtons"
+  ></mat-paginator>
+</div>

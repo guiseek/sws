@@ -67,6 +67,9 @@
     },
     "account-shared-user": {
       "tags": ["account:user"]
+    },
+    "ui-kit-table-async-table": {
+      "tags": ["ui:table"]
     }
   }
 }
