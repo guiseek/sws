@@ -188,6 +188,7 @@
                     <b>Type parameters :</b>
                     <ul class="type-parameters">
                         <li>D</li>
+                        <li>R</li>
                     </ul>
                 </td>
             </tr>
@@ -242,7 +243,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/DialogRef.html" target="_self" >DialogRef&lt;D&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/DialogRef.html" target="_self" >DialogRef&lt;R&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -282,11 +283,11 @@ import { DIALOG_DATA } from &#x27;./configs/dialog.token&#x27;;
 export class DialogService {
   constructor(private overlay: Overlay, private injector: Injector) {}
 
-  open&lt;D &#x3D; any&gt;(
+  open&lt;D &#x3D; any, R &#x3D; any&gt;(
     componentOrTemplate: ComponentType&lt;any&gt; | TemplateRef&lt;any&gt;,
     config: Partial&lt;DialogConfig&gt; &#x3D; {}
-  ): DialogRef&lt;D&gt; {
-    const dialogConfig: DialogConfig &#x3D; Object.assign({}, DIALOG_CONFIG, config);
+  ): DialogRef&lt;R&gt; {
+    const dialogConfig: DialogConfig&lt;D&gt; &#x3D; Object.assign({}, DIALOG_CONFIG, config);
 
     const positionStrategy &#x3D; this.overlay
       .position()
@@ -301,7 +302,7 @@ export class DialogService {
       panelClass: dialogConfig.panelClass
     });
 
-    const dialogRef &#x3D; new DialogRef(overlayRef, positionStrategy, dialogConfig);
+    const dialogRef &#x3D; new DialogRef&lt;R&gt;(overlayRef, positionStrategy, dialogConfig);
 
     const dialog &#x3D; overlayRef.attach(
       new ComponentPortal(
@@ -326,7 +327,7 @@ export class DialogService {
       // rendering a provided template dynamically
       dialog.attachTemplatePortal(
         new TemplatePortal(componentOrTemplate, null, {
-          $implicit: config.data,
+          $implicit: &lt;D&gt;config.data,
           dialog: dialogRef
         })
       );

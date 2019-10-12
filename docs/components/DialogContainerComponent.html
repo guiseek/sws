@@ -46,6 +46,9 @@
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -89,6 +92,13 @@
             </tr>
 
 
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>:host {
+    background: white;
+    border-radius: 6px;
+  }</code></td>
+            </tr>
 
             <tr>
                 <td class="col-md-3">template</td>
@@ -175,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -256,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -334,8 +344,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -417,7 +427,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -444,7 +454,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -480,7 +490,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -508,7 +518,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog-container.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -542,7 +552,10 @@ import { DialogRef } from &#x27;./dialog-ref&#x27;;
   template: &#x60;
     &lt;ng-container cdkPortalOutlet&gt;&lt;/ng-container&gt;
   &#x60;,
-  styles: []
+  styles: [&#x60;:host {
+    background: white;
+    border-radius: 6px;
+  }&#x60;]
 })
 export class DialogContainerComponent extends BasePortalOutlet {
   @ViewChild(CdkPortalOutlet, { static: true }) portalOutlet: CdkPortalOutlet;
@@ -567,6 +580,13 @@ export class DialogContainerComponent extends BasePortalOutlet {
     </div>
 
 
+    <div class="tab-pane fade " id="c-styleData">
+            <pre class="line-numbers"><code class="language-scss">:host {
+    background: white;
+    border-radius: 6px;
+  }
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -594,7 +614,7 @@ export class DialogContainerComponent extends BasePortalOutlet {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-container cdkPortalOutlet></ng-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
     var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
     var ACTUAL_COMPONENT = {'name': 'DialogContainerComponent'};
 </script>

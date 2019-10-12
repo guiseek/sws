@@ -484,15 +484,9 @@ export class ShellComponent implements OnInit {
   &lt;/div&gt;
   &lt;account-toolbar-menu&gt;&lt;/account-toolbar-menu&gt;
 &lt;/sws-toolbar&gt;
-&lt;div class&#x3D;&quot;org-shell&quot;&gt;
-  &lt;main [@fadeAnimation]&#x3D;&quot;getRouterOutletState(o)&quot;&gt;
-    &lt;router-outlet #o&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
-  &lt;/main&gt;
-
-  &lt;!-- &lt;sws-form-builder [elements]&#x3D;&quot;project.elements&quot;&gt;&lt;/sws-form-builder&gt;
-
-  &lt;sws-async-select&gt;&lt;/sws-async-select&gt; --&gt;
-&lt;/div&gt;
+&lt;main [@fadeAnimation]&#x3D;&quot;getRouterOutletState(o)&quot;&gt;
+  &lt;router-outlet #o&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
+&lt;/main&gt;
 </code></pre>
     </div>
 
@@ -500,62 +494,7 @@ export class ShellComponent implements OnInit {
                 <p class="comment">
                     <code>./shell.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &#x27;~@angular/material/theming&#x27;;
-
-:host {
-  display: block;
-  height: 100%;
-  // display: flex;
-  // flex-flow: column;
-  // align-items: center;
-  // height: 100vh;
-  .org-shell {
-    // margin: 10px;
-    height: 100%;
-  }
-  main {
-    flex: 1;
-    position: relative;
-    display: flex;
-  }
-  ::ng-deep .mat-toolbar {
-    // z-index: 1;
-    height: 50px;
-    @include mat-elevation(2);
-    margin-bottom: 4px;
-    // color: mat-color($custom-blue, contrast-500);
-    // background-color: rgba(#2c6cd3, 0.3);
-    // background-color: mat-color($custom-blue, 500);
-    // .mat-icon-button {
-    //   height: 36px;
-    //   line-height: 22px;
-    // }
-  }
-  ::ng-deep router-outlet ~ * {
-    &amp; &gt; .mat-toolbar {
-      // z-index: 1;
-      height: 50px;
-      @include mat-elevation(2);
-      margin-bottom: 4px;
-      // color: mat-color($custom-blue, 500);
-      // background-color: mat-color($custom-blue, contrast-500);
-      .mat-icon-button {
-        height: 36px;
-        line-height: 22px;
-      }
-    }
-  }
-  // ::ng-deep router-outlet ~ * {
-  //   display: flex;
-  //   flex-flow: column;
-  //   flex: 1;
-  //   position: absolute;
-  //   width: 100%;
-  //   // height: 100%;
-  //   overflow: auto;
-  // }
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -583,8 +522,8 @@ export class ShellComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">  <div class="nav">    <a routerLink="/organizacao" mat-button>      Dashboard    </a>    <a routerLink="empresas" mat-button>      Empresas    </a>  </div>  <account-toolbar-menu></account-toolbar-menu></sws-toolbar><div class="org-shell">  <main [@fadeAnimation]="getRouterOutletState(o)">    <router-outlet #o="outlet"></router-outlet>  </main>  <!-- <sws-form-builder [elements]="project.elements"></sws-form-builder>  <sws-async-select></sws-async-select> --></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+        var COMPONENT_TEMPLATE = '<div><sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">  <div class="nav">    <a routerLink="/organizacao" mat-button>      Dashboard    </a>    <a routerLink="empresas" mat-button>      Empresas    </a>  </div>  <account-toolbar-menu></account-toolbar-menu></sws-toolbar><main [@fadeAnimation]="getRouterOutletState(o)">  <router-outlet #o="outlet"></router-outlet></main></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
     var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
     var ACTUAL_COMPONENT = {'name': 'ShellComponent-1'};
 </script>

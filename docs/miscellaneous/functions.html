@@ -61,7 +61,16 @@
                             <a href="#addDestroyObservableToComponent" title="libs/shared/utils/src/lib/rxjs-operators/until-destroy.ts"><b>addDestroyObservableToComponent</b>&nbsp;&nbsp;&nbsp;(libs/.../until-destroy.ts)</a>
                         </li>
                         <li>
+                            <a href="#bindValidations" title="libs/ui-kit/form/builder/src/lib/utils.ts"><b>bindValidations</b>&nbsp;&nbsp;&nbsp;(libs/.../utils.ts)</a>
+                        </li>
+                        <li>
                             <a href="#bootstrap" title="apps/api/src/main.ts"><b>bootstrap</b>&nbsp;&nbsp;&nbsp;(apps/.../main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#buildControl" title="libs/ui-kit/form/builder/src/lib/utils.ts"><b>buildControl</b>&nbsp;&nbsp;&nbsp;(libs/.../utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#buildGroup" title="libs/ui-kit/form/builder/src/lib/utils.ts"><b>buildGroup</b>&nbsp;&nbsp;&nbsp;(libs/.../utils.ts)</a>
                         </li>
                         <li>
                             <a href="#Element" title="libs/organization/shared/schema/src/lib/organization-shared-schema.ts"><b>Element</b>&nbsp;&nbsp;&nbsp;(libs/.../organization-shared-schema.ts)</a>
@@ -70,16 +79,58 @@
                             <a href="#Emoji" title="libs/organization/shared/schema/src/lib/organization-shared-schema.ts"><b>Emoji</b>&nbsp;&nbsp;&nbsp;(libs/.../organization-shared-schema.ts)</a>
                         </li>
                         <li>
+                            <a href="#enumToArray" title="libs/shared/utils/src/lib/from-to/from-enum.ts"><b>enumToArray</b>&nbsp;&nbsp;&nbsp;(libs/.../from-enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#enumToBoolObject" title="libs/shared/utils/src/lib/from-to/from-enum.ts"><b>enumToBoolObject</b>&nbsp;&nbsp;&nbsp;(libs/.../from-enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#enumToSelect" title="libs/shared/utils/src/lib/from-to/from-enum.ts"><b>enumToSelect</b>&nbsp;&nbsp;&nbsp;(libs/.../from-enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#enumToValue" title="libs/shared/utils/src/lib/from-to/from-enum.ts"><b>enumToValue</b>&nbsp;&nbsp;&nbsp;(libs/.../from-enum.ts)</a>
+                        </li>
+                        <li>
                             <a href="#FieldRequired" title="libs/organization/shared/schema/src/lib/organization-shared-schema.ts"><b>FieldRequired</b>&nbsp;&nbsp;&nbsp;(libs/.../organization-shared-schema.ts)</a>
                         </li>
                         <li>
+                            <a href="#format" title="libs/api-interfaces/src/lib/schemas/project.schema.ts"><b>format</b>&nbsp;&nbsp;&nbsp;(libs/.../project.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#format" title="libs/shared/utils/src/lib/decorators/format.decorator.ts"><b>format</b>&nbsp;&nbsp;&nbsp;(libs/.../format.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formatFieldOptions" title="libs/ui-kit/form/builder/src/lib/utils.ts"><b>formatFieldOptions</b>&nbsp;&nbsp;&nbsp;(libs/.../utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFormat" title="libs/api-interfaces/src/lib/schemas/project.schema.ts"><b>getFormat</b>&nbsp;&nbsp;&nbsp;(libs/.../project.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFormat" title="libs/shared/utils/src/lib/decorators/format.decorator.ts"><b>getFormat</b>&nbsp;&nbsp;&nbsp;(libs/.../format.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getValidationMessages" title="libs/ui-kit/form/builder/src/lib/utils.ts"><b>getValidationMessages</b>&nbsp;&nbsp;&nbsp;(libs/.../utils.ts)</a>
+                        </li>
+                        <li>
                             <a href="#handleImageSize" title="libs/shared/utils/src/lib/rxjs-operators/handle-image-size.ts"><b>handleImageSize</b>&nbsp;&nbsp;&nbsp;(libs/.../handle-image-size.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#required" title="libs/api-interfaces/src/lib/schemas/project.schema.ts"><b>required</b>&nbsp;&nbsp;&nbsp;(libs/.../project.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#required" title="libs/shared/utils/src/lib/decorators/meta-key-required.decorator.ts"><b>required</b>&nbsp;&nbsp;&nbsp;(libs/.../meta-key-required.decorator.ts)</a>
                         </li>
                         <li>
                             <a href="#SelectAsyncElement" title="libs/organization/shared/schema/src/lib/organization-shared-schema.ts"><b>SelectAsyncElement</b>&nbsp;&nbsp;&nbsp;(libs/.../organization-shared-schema.ts)</a>
                         </li>
                         <li>
                             <a href="#UseState" title="libs/organization/shared/schema/src/lib/organization-shared-schema.ts"><b>UseState</b>&nbsp;&nbsp;&nbsp;(libs/.../organization-shared-schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validate" title="libs/api-interfaces/src/lib/schemas/project.schema.ts"><b>validate</b>&nbsp;&nbsp;&nbsp;(libs/.../project.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validate" title="libs/shared/utils/src/lib/decorators/meta-key-required.decorator.ts"><b>validate</b>&nbsp;&nbsp;&nbsp;(libs/.../meta-key-required.decorator.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -131,6 +182,295 @@
                                     <td>
                                                 <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/ui-kit/form/builder/src/lib/utils.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bindValidations"></a>
+                    <span class="name">
+                        <b>
+                            bindValidations
+                        </b>
+                        <a href="#bindValidations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>bindValidations(validations: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>validations</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildControl"></a>
+                    <span class="name">
+                        <b>
+                            buildControl
+                        </b>
+                        <a href="#buildControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buildControl(field)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildGroup"></a>
+                    <span class="name">
+                        <b>
+                            buildGroup
+                        </b>
+                        <a href="#buildGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buildGroup(fields)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fields</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatFieldOptions"></a>
+                    <span class="name">
+                        <b>
+                            formatFieldOptions
+                        </b>
+                        <a href="#formatFieldOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>formatFieldOptions(options, config?)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>config</td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getValidationMessages"></a>
+                    <span class="name">
+                        <b>
+                            getValidationMessages
+                        </b>
+                        <a href="#getValidationMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getValidationMessages(group, fields)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>group</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fields</td>
 
                                     <td>
                                         No
@@ -357,6 +697,650 @@
             </tr>
         </tbody>
     </table>
+</section>    <h3>libs/shared/utils/src/lib/from-to/from-enum.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumToArray"></a>
+                    <span class="name">
+                        <b>
+                            enumToArray
+                        </b>
+                        <a href="#enumToArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enumToArray(enumObj)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>enumObj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumToBoolObject"></a>
+                    <span class="name">
+                        <b>
+                            enumToBoolObject
+                        </b>
+                        <a href="#enumToBoolObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enumToBoolObject(enumObj, bool)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>enumObj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>bool</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Record&lt;TEnum, boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumToSelect"></a>
+                    <span class="name">
+                        <b>
+                            enumToSelect
+                        </b>
+                        <a href="#enumToSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enumToSelect(enumObj, obj)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>enumObj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>obj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumToValue"></a>
+                    <span class="name">
+                        <b>
+                            enumToValue
+                        </b>
+                        <a href="#enumToValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enumToValue(enumObj, obj)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>enumObj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>obj</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/api-interfaces/src/lib/schemas/project.schema.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="format"></a>
+                    <span class="name">
+                        <b>
+                            format
+                        </b>
+                        <a href="#format"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>format(formatString)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formatString</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFormat"></a>
+                    <span class="name">
+                        <b>
+                            getFormat
+                        </b>
+                        <a href="#getFormat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFormat(target: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, propertyKey)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyKey</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="required"></a>
+                    <span class="name">
+                        <b>
+                            required
+                        </b>
+                        <a href="#required"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>required(target, propertyKey, parameterIndex)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyKey</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>parameterIndex</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <b>
+                            validate
+                        </b>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validate(target: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, propertyName, descriptor)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyName</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>descriptor</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/utils/src/lib/decorators/format.decorator.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="format"></a>
+                    <span class="name">
+                        <b>
+                            format
+                        </b>
+                        <a href="#format"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>format(formatString)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formatString</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFormat"></a>
+                    <span class="name">
+                        <b>
+                            getFormat
+                        </b>
+                        <a href="#getFormat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFormat(target: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, propertyKey)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyKey</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    <h3>libs/shared/utils/src/lib/rxjs-operators/handle-image-size.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -429,6 +1413,158 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/utils/src/lib/decorators/meta-key-required.decorator.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="required"></a>
+                    <span class="name">
+                        <b>
+                            required
+                        </b>
+                        <a href="#required"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>required(target, propertyKey, parameterIndex)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyKey</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>parameterIndex</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <b>
+                            validate
+                        </b>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validate(target: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, propertyName, descriptor)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propertyName</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>descriptor</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
                     </div>
                 </td>
             </tr>
