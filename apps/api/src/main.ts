@@ -37,8 +37,9 @@ async function bootstrap() {
   SwaggerModule.setup(swaggerPrefix, app, document);
 
   // Schemes.paths = document.paths
-  // setTimeout(() => {
-  //   console.table(document.paths['/companies'])
+  setTimeout(() => {
+    console.table(document.paths['/companies'])
+  }, 1500)
   //   console.log(
   //     // JSON.stringify(document.paths['/companies'])
   //   )

@@ -11,8 +11,8 @@ export const ormConfig = (config = {}): TypeOrmModuleOptions => {
       username: 'root',
       password: 'root',
       database: 'seek_workspace',
-      synchronize: true,
-      logging: true,
+      synchronize: false,
+      // logging: true,
       cache: {
         type: 'redis',
         options: {

@@ -16,7 +16,7 @@ $sws-theme: mat-light-theme(
 @include angular-material-theme($sws-theme);
 
 @include sws-toolbar-theme($sws-theme);
-// @include sws-dialog-theme($sws-theme);
+@include sws-dialog-theme($sws-theme);
 
 
 $background: map-get($sws-theme, background);

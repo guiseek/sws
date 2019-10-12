@@ -19,7 +19,10 @@ import { DialogRef } from './dialog-ref';
   template: `
     <ng-container cdkPortalOutlet></ng-container>
   `,
-  styles: []
+  styles: [`:host {
+    background: white;
+    border-radius: 6px;
+  }`]
 })
 export class DialogContainerComponent extends BasePortalOutlet {
   @ViewChild(CdkPortalOutlet, { static: true }) portalOutlet: CdkPortalOutlet;

@@ -22,11 +22,11 @@ import { DIALOG_DATA } from './configs/dialog.token';
 export class DialogService {
   constructor(private overlay: Overlay, private injector: Injector) {}
 
-  open<D = any>(
+  open<D = any, R = any>(
     componentOrTemplate: ComponentType<any> | TemplateRef<any>,
     config: Partial<DialogConfig> = {}
-  ): DialogRef<D> {
-    const dialogConfig: DialogConfig = Object.assign({}, DIALOG_CONFIG, config);
+  ): DialogRef<R> {
+    const dialogConfig: DialogConfig<D> = Object.assign({}, DIALOG_CONFIG, config);
 
     const positionStrategy = this.overlay
       .position()
@@ -41,7 +41,7 @@ export class DialogService {
       panelClass: dialogConfig.panelClass
     });
 
-    const dialogRef = new DialogRef(overlayRef, positionStrategy, dialogConfig);
+    const dialogRef = new DialogRef<R>(overlayRef, positionStrategy, dialogConfig);
 
     const dialog = overlayRef.attach(
       new ComponentPortal(
@@ -66,7 +66,7 @@ export class DialogService {
       // rendering a provided template dynamically
       dialog.attachTemplatePortal(
         new TemplatePortal(componentOrTemplate, null, {
-          $implicit: config.data,
+          $implicit: <D>config.data,
           dialog: dialogRef
         })
       );

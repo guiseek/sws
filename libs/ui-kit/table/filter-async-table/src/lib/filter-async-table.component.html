@@ -1,0 +1,47 @@
+<mat-list>
+  <mat-list-item *ngFor="let f of filter; index as i">
+    <h3 mat-line>{{ f.view.field }} {{ f.view.operator }} {{ f.value }}</h3>
+    <button type="button" color="warn" mat-icon-button (click)="remove(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<button type="button" mat-icon-button (click)="openFilter()">
+  <mat-icon>add_circle</mat-icon>
+</button>
+
+<!-- <form [formGroup]="initForm">
+  <mat-form-field>
+    <mat-label>Campo</mat-label>
+    <mat-select
+      formControlName="field"
+      (selectionChange)="onSelectField($event)"
+    >
+      <mat-option *ngFor="let f of fields" [value]="f.field">
+        {{ f.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Operador</mat-label>
+    <mat-select
+      formControlName="operator"
+      (selectionChange)="onSelectOperator($event)"
+    >
+      <mat-option *ngFor="let o of operators" [value]="o.operator">
+        {{ o.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Valor</mat-label>
+    <input type="text" matInput formControlName="value">
+  </mat-form-field>
+  <button type="button" mat-icon-button (click)="addFilter()">
+    <mat-icon>add</mat-icon>
+  </button>
+</form>
+<button type="button" mat-button (click)="onExec()">
+  Executar
+</button> -->

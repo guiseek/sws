@@ -1,0 +1,133 @@
+@import '~@angular/material/theming';
+@import '~@angular/cdk/overlay';
+@include cdk-overlay();
+
+$sws-dialog-padding: 24px !default;
+$sws-dialog-border-radius: 4px !default;
+$sws-dialog-max-width: 85vh !default;
+$sws-dialog-max-height: 85vh !default;
+$sws-dialog-button-margin: 8px !default;
+
+@mixin sws-dialog-base {
+  .sws-dialog-container {
+    position: relative;
+    display: block;
+    padding: $sws-dialog-padding;
+    border-radius: $sws-dialog-border-radius;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+
+    width: 100%;
+    height: 100%;
+
+    .arrow {
+      border-radius: 5px;
+    }
+    .sws-dialog-content {
+      display: block;
+      margin: 0 $sws-dialog-padding * -1;
+      padding: 0 $sws-dialog-padding;
+      max-width: $sws-dialog-max-width;
+      max-height: $sws-dialog-max-height;
+      // max-height: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sws-dialog-close {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+    .sws-dialog-title {
+      margin: 0 0 10px;
+      display: block;
+    }
+
+    .sws.dialog-actions {
+      margin: 0;
+      padding: 16px 0 8px 0;
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 50px;
+      align-items: center;
+
+      // Pull the actions down to avoid their padding stacking with the dialog's padding.
+      margin-bottom: -$sws-dialog-padding;
+
+      &.between {
+        justify-content: space-between;
+      }
+      &[align='end'] {
+        justify-content: flex-end;
+      }
+
+      &[align='center'] {
+        justify-content: center;
+      }
+
+      &[align='end'] {
+        justify-content: flex-end;
+      }
+
+      &[align='space-between'] {
+        justify-content: space-between;
+      }
+      .mat-button + .mat-button,
+      .mat-raised-button + .mat-raised-button,
+      .mat-button + .mat-raised-button,
+      .mat-raised-button + .mat-button {
+        margin-left: $sws-dialog-button-margin;
+
+        [dir='rtl'] & {
+          margin-left: 0;
+          margin-right: $sws-dialog-button-margin;
+        }
+      }
+    }
+  }
+}
+@mixin sws-dialog-theme($theme) {
+  // $primary: map-get($theme, primary);
+
+  $background: map-get($theme, background);
+  $background-color: map-get($background, background);
+
+  $primary: map-get($theme, primary);
+  @include sws-dialog-base();
+  .sws-dialog-container {
+    // max-width: $sws-dialog-max-width;
+    // max-height: $sws-dialog-max-height;
+
+    background-color: $background-color;
+    // background: mat-color($primary, dark);
+    color: mat-color($primary, '50-contrast');
+  }
+}
+.warn {
+  @include sws-dialog-base();
+  .sws-dialog-container {
+    background: mat-color($mat-red, 600);
+    color: mat-color($mat-red, 50);
+  }
+}
+.info {
+  @include sws-dialog-base();
+  .sws-dialog-container .sws-dialog-title {
+    $pad: $sws-dialog-padding;
+    margin: $pad * -1 $pad * -1 10px;
+    display: block;
+    padding: $pad;
+    font-size: $pad;
+    background-color: mat-color($mat-blue, 400);
+    color: mat-color($mat-blue, 50);
+  }
+}
+.no-padding {
+  @include sws-dialog-base();
+  .sws-dialog-container {
+    padding: 0;
+    border-radius: 4px;
+  }
+}

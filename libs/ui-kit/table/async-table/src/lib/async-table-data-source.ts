@@ -5,10 +5,13 @@ import { CollectionViewer } from '@angular/cdk/collections';
 import { startWith, switchMap, map, catchError } from 'rxjs/operators';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { QueryFilter, RequestQueryParser, RequestQueryBuilder } from '@nestjsx/crud-request';
 
 export class AsyncTableDataSource<T = any> extends DataSource<T> {
   private dataSubject = new BehaviorSubject<T[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
+
+  refresh = new Subject()
 
   public data
   public loading$ = this.loadingSubject.asObservable();
@@ -32,17 +35,21 @@ export class AsyncTableDataSource<T = any> extends DataSource<T> {
   setup(
     endpoint: string,
     paginator: MatPaginator,
-    sort: MatSort
+    sort: MatSort,
+    filters: BehaviorSubject<QueryFilter[]>,
+    refresh: Subject<boolean>
   ) {
 
     merge(
       sort.sortChange,
-      paginator.page
+      paginator.page,
+      filters,
+      refresh
     ).pipe(
       startWith({}),
       switchMap(() => this.request(
         endpoint,
-        this.getParams(sort, paginator)
+        this.getParams(sort, paginator, filters)
       ))
     ).subscribe((data) => {
       this.dataSubject.next(data)
@@ -70,6 +77,9 @@ export class AsyncTableDataSource<T = any> extends DataSource<T> {
       })
     )
   }
+  getFilterParams({ value }) {
+
+  }
   /**
    * 
    * @param sort: MatSort 
@@ -79,9 +89,33 @@ export class AsyncTableDataSource<T = any> extends DataSource<T> {
   getParams(
     { active, direction }: MatSort,
     { pageIndex, pageSize }: MatPaginator,
+    { value }: BehaviorSubject<QueryFilter[]>
     // { value }: BehaviorSubject<string> = ''
   ) {
-    return new HttpParams()
+
+    const httpParams = new HttpParams({
+      fromString: RequestQueryBuilder.create({
+        filter: value
+      }).query()
+    })
+    console.log(value)
+
+    if (!!value) {
+      const req = RequestQueryBuilder.create({
+        filter: value
+      })
+      // value.map(({ field, operator, ...values }) => {
+      //   req.setFilter()
+      // })
+      // req.filter = { ...value }
+
+      // console.log('req: ', req)
+
+      console.log('query: ', req.query())
+
+      // httpParams.set()
+    }
+    return httpParams
       .set('sort', `${active},${direction.toUpperCase()}`)
       .set('page', `${pageIndex + 1}`)
       .set('per_page', `${pageSize}`)

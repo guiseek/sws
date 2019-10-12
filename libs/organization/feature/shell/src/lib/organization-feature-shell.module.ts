@@ -15,26 +15,40 @@ import {
   MatPaginatorModule,
   MatButtonModule,
   MatCardModule,
-  MatTabsModule
+  MatTabsModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 import { CompaniesComponent } from './companies/companies.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CompanyResolverService } from '@sws/organization/shared/company';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@sws/account/shared/auth';
+import { FilterAsyncTableModule } from '@sws/ui-kit/table/filter-async-table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UiKitFormErrorModule } from '@sws/ui-kit/form/error';
+import { UiKitFloatingDialogModule } from '@sws/ui-kit/floating/dialog';
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    UiKitFormErrorModule,
+    MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatTableModule,
     MatSortModule,
+    MatFormFieldModule,
     MatPaginatorModule,
+    MatIconModule,
     MatTabsModule,
     FlexLayoutModule,
+    FilterAsyncTableModule,
     AccountSharedUserModule,
     OrganizationSharedCompanyModule,
+    UiKitFloatingDialogModule,
     AsyncTableModule,
     UiKitNavToolbarModule,
     UiKitFormBuilderModule,

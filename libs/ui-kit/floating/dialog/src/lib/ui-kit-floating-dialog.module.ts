@@ -13,6 +13,8 @@ import { DialogCloseDirective } from './dialog-close.directive';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { DialogService } from './dialog.service';
+import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
+import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
 
 const modules = [
   OverlayModule,
@@ -28,7 +30,9 @@ const modules = [
   declarations: [
     DialogContainerComponent,
     DialogShellComponent,
-    DialogCloseDirective
+    DialogCloseDirective,
+    DialogAlertComponent,
+    DialogConfirmComponent
   ],
   providers: [DialogService],
   entryComponents: [DialogContainerComponent, DialogShellComponent],
