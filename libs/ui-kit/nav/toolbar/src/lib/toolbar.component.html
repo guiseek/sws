@@ -1,0 +1,28 @@
+<mat-toolbar
+  color="accent"
+  class="sws-toolbar"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+    <ng-content select="img"></ng-content>
+    <ng-container *ngIf="iconHome">
+      <a mat-icon-button [routerLink]="iconHome.link">
+        <mat-icon>{{ iconHome.icon }}</mat-icon>
+      </a>
+    </ng-container>
+    <span>{{ title }}</span>
+
+    <sws-search-bar
+      *ngIf="search"
+      (searchChange)="onSearchChange($event)"
+    ></sws-search-bar>
+
+    <ng-content select=".subtitle"></ng-content>
+    <ng-content select=".nav"></ng-content>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex fxFill></div>
+    <ng-content select="account-toolbar-menu"></ng-content>
+  </div>
+</mat-toolbar>

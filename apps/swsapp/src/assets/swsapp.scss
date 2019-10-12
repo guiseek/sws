@@ -1,0 +1,44 @@
+@include mat-core();
+
+$sws-primary: mat-palette($custom-blue);
+$sws-accent: mat-palette($mat-blue, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$sws-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$sws-theme: mat-light-theme(
+  $sws-primary,
+  $sws-accent,
+  $sws-warn
+);
+
+@include angular-material-theme($sws-theme);
+
+@include sws-toolbar-theme($sws-theme);
+@include sws-dialog-theme($sws-theme);
+
+
+$background: map-get($sws-theme, background);
+$foreground: map-get($sws-theme, foreground);
+
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// body {
+//   margin: 0;
+//   font-family: sofia-pro, sans-serif;
+//   background-color: mat-color($background, background);
+// }
+// a {
+//   color: white;
+//   text-decoration: none;
+// }

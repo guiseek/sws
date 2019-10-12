@@ -1,0 +1,28 @@
+<sws-filter-async-table
+  [fields]="filterConfig"
+  #query="filter"
+  (exec)="filters.next($event)"
+></sws-filter-async-table>
+<pre>{{ query.filters | json }}</pre>
+
+<div fxLayout="row" fxLayoutAlign="space-between">
+  <button type="button" mat-icon-button (click)="refresh.next(true)">
+    <mat-icon>refresh</mat-icon>
+  </button>
+
+  <button type="button" mat-icon-button (click)="openFilters()">
+    <mat-icon>filter_list </mat-icon>
+  </button>
+</div>
+<sws-async-table
+  [meta]="tableConfig"
+  [refresh]="refresh"
+  [filters]="filters"
+></sws-async-table>
+
+<!-- <sws-form-builder [elements]="formConfig"></sws-form-builder> -->
+<!-- <pre>{{ companies$ | async | json }}</pre> -->
+
+<ng-template #asyncFilterTable>
+  <sws-form-builder [elements]="elements"></sws-form-builder>
+</ng-template>

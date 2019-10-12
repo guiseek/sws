@@ -1,0 +1,24 @@
+<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="space-between">
+  <mat-card
+    fxFlex
+    *ngFor="let company of companies$ | async"
+    class="company-card mat-elevation-z10"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ company.name }}</mat-card-title>
+      <mat-card-subtitle>{{ company.domain }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- <img mat-card-image [src]="company.iconUrl" /> -->
+
+    <mat-card-content>
+      <p>{{ company.description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="company-actions">
+      <a mat-button [routerLink]="[company.id]">
+        ACESSAR
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>

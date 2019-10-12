@@ -3,7 +3,8 @@ import { Message } from '@sws/api-interfaces';
 
 @Injectable()
 export class AppService {
-  getData(): Message {
-    return { message: 'Welcome to api!' };
+  getData(ping: number): Message {
+    const pong = new Date().getTime();
+    return { message: `Pong: ${pong - ping}ms` };
   }
 }

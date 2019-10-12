@@ -8,8 +8,9 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
+  @Get('ping')
   getData(): Message {
-    return this.appService.getData();
+    const ping = new Date().getTime();
+    return this.appService.getData(ping);
   }
 }

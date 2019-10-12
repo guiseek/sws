@@ -1,0 +1,20 @@
+<div fxLayout="column">
+  <nav mat-tab-nav-bar mat-stretch-tabs>
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      {{ link.label }}
+    </a>
+    <a mat-tab-link>
+      {{ company.name }}
+    </a>
+  </nav>
+  <main fxFlex>
+    <router-outlet></router-outlet>
+  </main>
+</div>

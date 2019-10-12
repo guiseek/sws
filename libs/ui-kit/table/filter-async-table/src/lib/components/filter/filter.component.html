@@ -1,0 +1,45 @@
+<div cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+  <mat-toolbar
+    class="sws dialog-header dialog-draggable"
+    cdkDragHandle
+    color="accent"
+  >
+    <mat-toolbar-row class="title">
+      <span>Filtro</span>
+      <button class="dialog-close-button" mat-icon-button (click)="ref.close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div class="sws dialog-content">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Campo</mat-label>
+      <mat-select formControlName="field">
+        <mat-option *ngFor="let f of data.fields" [value]="f">
+          {{ f.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Operador</mat-label>
+      <mat-select formControlName="operator">
+        <mat-option *ngFor="let o of operators" [value]="o">
+          {{ o.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Valor</mat-label>
+      <input type="text" matInput formControlName="value" />
+    </mat-form-field>
+  </form>
+</div>
+<div class="sws dialog-actions between">
+  <button type="button" mat-button (click)="onCancel()">Cancelar</button>
+  <button type="button" color="accent" mat-button (click)="onConfirm()">
+    Confirmar
+  </button>
+</div>

@@ -1,0 +1,14 @@
+<sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">
+  <div class="nav">
+    <a routerLink="/organizacao" mat-button>
+      Dashboard
+    </a>
+    <a routerLink="empresas" mat-button>
+      Empresas
+    </a>
+  </div>
+  <account-toolbar-menu></account-toolbar-menu>
+</sws-toolbar>
+<main [@fadeAnimation]="getRouterOutletState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>

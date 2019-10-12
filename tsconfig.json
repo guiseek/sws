@@ -16,7 +16,47 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sws/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@sws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "api/users": ["libs/account/api/users/src"],
+      "api/users/*": ["libs/account/api/users/src/*"],
+      "api/auth": ["libs/account/api/auth/src"],
+      "api/auth/*": ["libs/account/api/auth/src/*"],
+      "org/companies": ["libs/organization/api/companies/src"],
+      "org/companies/*": ["libs/organization/api/companies/src/*"],
+      "org/projects": ["libs/organization/api/projects/src"],
+      "org/projects/*": ["libs/organization/api/projects/src/*"],
+      "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"],
+      "@sws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
+      "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"],
+      "@sws/shared/api/exceptions": ["libs/shared/api/exceptions/src/index.ts"],
+      "@sws/ui-kit/form/builder": ["libs/ui-kit/form/builder/src/index.ts"],
+      "@sws/ui-kit/form/error": ["libs/ui-kit/form/error/src/index.ts"],
+      "@sws/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@sws/organization/shared/schema": [
+        "libs/organization/shared/schema/src/index.ts"
+      ],
+      "@sws/organization/feature/shell": [
+        "libs/organization/feature/shell/src/index.ts"
+      ],
+      "@sws/ui-kit/svg/viewer": ["libs/ui-kit/svg/viewer/src/index.ts"],
+      "@sws/account/feature/shell": ["libs/account/feature/shell/src/index.ts"],
+      "@sws/ui-kit/floating/dialog": [
+        "libs/ui-kit/floating/dialog/src/index.ts"
+      ],
+      "@sws/ui-kit/nav/toolbar": ["libs/ui-kit/nav/toolbar/src/index.ts"],
+      "@sws/organization/shared/company": [
+        "libs/organization/shared/company/src/index.ts"
+      ],
+      "@sws/account/feature/onboarding": [
+        "libs/account/feature/onboarding/src/index.ts"
+      ],
+      "@sws/account/shared/user": ["libs/account/shared/user/src/index.ts"],
+      "@sws/ui-kit/table/async-table": [
+        "libs/ui-kit/table/async-table/src/index.ts"
+      ],
+      "@sws/ui-kit/table/filter-async-table": [
+        "libs/ui-kit/table/filter-async-table/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,22 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  .auth-layout {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .mat-card {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+    .mat-button {
+      margin-top: 8px;
+    }
+  }
+}
+.mat-card {
+  background-color: rgba(0, 0, 0, 0.06);
+}

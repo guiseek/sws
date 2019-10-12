@@ -19,6 +19,60 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "shared-api-entities": {
+      "tags": ["shared:entities"]
+    },
+    "account-shared-auth": {
+      "tags": ["shared:auth"]
+    },
+    "account-feature-auth": {
+      "tags": ["account:auth"]
+    },
+    "shared-api-exceptions": {
+      "tags": ["shared:exceptions"]
+    },
+    "ui-kit-form-builder": {
+      "tags": ["ui:form"]
+    },
+    "ui-kit-form-error": {
+      "tags": ["ui:form"]
+    },
+    "shared-utils": {
+      "tags": ["shared:utils"]
+    },
+    "organization-shared-schema": {
+      "tags": ["org:schema"]
+    },
+    "organization-feature-shell": {
+      "tags": []
+    },
+    "ui-kit-svg-viewer": {
+      "tags": ["ui:svg"]
+    },
+    "account-feature-shell": {
+      "tags": ["account:shell"]
+    },
+    "ui-kit-floating-dialog": {
+      "tags": ["ui:floating"]
+    },
+    "ui-kit-nav-toolbar": {
+      "tags": ["ui:floating"]
+    },
+    "organization-shared-company": {
+      "tags": ["org:shared"]
+    },
+    "account-feature-onboarding": {
+      "tags": ["account:auth"]
+    },
+    "account-shared-user": {
+      "tags": ["account:user"]
+    },
+    "ui-kit-table-async-table": {
+      "tags": ["ui:table"]
+    },
+    "ui-kit-table-filter-async-table": {
+      "tags": ["ui:table"]
     }
   }
 }

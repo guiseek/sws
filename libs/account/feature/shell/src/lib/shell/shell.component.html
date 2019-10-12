@@ -1,0 +1,27 @@
+<sws-toolbar title="SWS" [iconHome]="iconHome" [search]="true">
+  <account-toolbar-menu></account-toolbar-menu>
+</sws-toolbar>
+
+<router-outlet></router-outlet>
+
+
+  <!-- <mat-menu #appMenu="matMenu" xPosition="before">
+    <a routerLink="perfil" mat-menu-item>Perfil</a>
+    <a routerLink="configuracoes" mat-menu-item>Configurações</a>
+    <mat-divider></mat-divider>
+    <a routerLink="/organizacao" mat-menu-item>Organização</a>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="logout()">
+      Sair
+    </button>
+  </mat-menu>
+
+  <button
+    *ngIf="user$ | async as user"
+    mat-button
+    class="dropdown-menu"
+    [matMenuTriggerFor]="appMenu"
+  >
+    <span>{{ user.email }}</span>
+    <mat-icon>more_vert</mat-icon>
+  </button> -->

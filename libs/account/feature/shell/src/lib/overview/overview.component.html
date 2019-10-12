@@ -1,0 +1,5 @@
+<p>overview works!</p>
+
+<ng-container *ngIf="users$ | async as users">
+  <pre>{{ users | json }}</pre>
+</ng-container>

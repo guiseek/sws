@@ -1,8 +1,11 @@
 # Sws
 
+<p align="center"><img src="https://raw.githubusercontent.com/guiseek/sws/develop/libs/shared/assets/logo/sws.png" width="350"></p>
+
+
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+<img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="150">
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
