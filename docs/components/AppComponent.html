@@ -278,9 +278,11 @@ export class AppComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;router-outlet&gt;&lt;/router-outlet&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;main&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/main&gt;
 
-&lt;code *ngIf&#x3D;&quot;isDev&quot;&gt;{{ (hello$ | async)?.message }}&lt;/code&gt;
+&lt;!-- &lt;code *ngIf&#x3D;&quot;isDev&quot;&gt;{{ (hello$ | async)?.message }}&lt;/code&gt; --&gt;
 </code></pre>
     </div>
 
@@ -288,7 +290,24 @@ export class AppComponent {
                 <p class="comment">
                     <code>./app.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">/*
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;~@angular/material/theming&#x27;;
+
+// :host {
+//   display: flex;
+//   flex-flow: column;
+//   height: 100%;
+// }
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &amp; &gt; main {
+    flex: 1;
+  }
+}
+
+
+/*
  * Remove template code below
  */
 code {
@@ -302,135 +321,30 @@ code {
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-// :host {
-//   display: block;
-//   font-family: sans-serif;
-//   min-width: 300px;
-//   max-width: 600px;
-//   margin: 50px auto;
-// }
 
-// .gutter-left {
-//   margin-left: 9px;
+// ::ng-deep router-outlet ~ * {
+//   &amp; &gt; .mat-toolbar {
+//     // z-index: 1;
+//     height: 50px;
+//     @include mat-elevation(2);
+//     margin-bottom: 4px;
+//     .mat-icon-button {
+//       height: 36px;
+//       line-height: 22px;
+//     }
+//   }
 // }
-
-// .col-span-2 {
-//   grid-column: span 2;
-// }
-
-// .flex {
+// ::ng-deep router-outlet ~ * {
 //   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// header {
-//   background-color: #143055;
-//   color: white;
-//   padding: 5px;
-//   border-radius: 3px;
-// }
-
-// main {
-//   padding: 0 36px;
-// }
-
-// p {
-//   text-align: center;
-// }
-
-// h1 {
-//   text-align: center;
-//   margin-left: 18px;
-//   font-size: 24px;
-// }
-
-// h2 {
-//   text-align: center;
-//   font-size: 20px;
-//   margin: 40px 0 10px 0;
-// }
-
-// .resources {
-//   text-align: center;
-//   list-style: none;
-//   padding: 0;
-//   display: grid;
-//   grid-gap: 9px;
-//   grid-template-columns: 1fr 1fr;
-// }
-
-// .resource {
-//   color: #0094ba;
-//   height: 36px;
-//   background-color: rgba(0, 0, 0, 0);
-//   border: 1px solid rgba(0, 0, 0, 0.12);
-//   border-radius: 4px;
-//   padding: 3px 9px;
-//   text-decoration: none;
-// }
-
-// .resource:hover {
-//   background-color: rgba(68, 138, 255, 0.04);
-// }
-
-// pre {
-//   padding: 9px;
-//   border-radius: 4px;
-//   background-color: black;
-//   color: #eee;
-// }
-
-// details {
-//   border-radius: 4px;
-//   color: #333;
-//   background-color: rgba(0, 0, 0, 0);
-//   border: 1px solid rgba(0, 0, 0, 0.12);
-//   padding: 3px 9px;
-//   margin-bottom: 9px;
-// }
-
-// summary {
-//   cursor: pointer;
-//   outline: none;
-//   height: 36px;
-//   line-height: 36px;
-// }
-
-// .github-star-container {
-//   margin-top: 12px;
-//   line-height: 20px;
-// }
-
-// .github-star-container a {
-//   display: flex;
-//   align-items: center;
-//   text-decoration: none;
-//   color: #333;
-// }
-
-// .github-star-badge {
-//   color: #24292e;
-//   display: flex;
-//   align-items: center;
-//   font-size: 12px;
-//   padding: 3px 10px;
-//   border: 1px solid rgba(27, 31, 35, 0.2);
-//   border-radius: 3px;
-//   background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-//   margin-left: 4px;
-//   font-weight: 600;
-// }
-
-// .github-star-badge:hover {
-//   background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-//   border-color: rgba(27, 31, 35, 0.35);
-//   background-position: -0.5em;
-// }
-// .github-star-badge .material-icons {
-//   height: 16px;
-//   width: 16px;
-//   margin-right: 4px;
+//   flex-flow: column;
+//   flex: 1;
+//   position: absolute;
+//   // width: 100%;
+//   // height: 100%;
+//   // overflow: auto;
+//   // &amp; &gt; *:first-child {
+//   //   position: relative !important;
+//   // }
 // }
 </code></pre>
     </div>
@@ -460,8 +374,8 @@ code {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet><code *ngIf="isDev">{{ (hello$ | async)?.message }}</code></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+        var COMPONENT_TEMPLATE = '<div><main>  <router-outlet></router-outlet></main><!-- <code *ngIf="isDev">{{ (hello$ | async)?.message }}</code> --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
     var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
