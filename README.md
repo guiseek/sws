@@ -12,4 +12,4 @@
 
 ## Contributing
 
-Want to contribute? [how to begin](./CONTRIBUTING.md)
+Want to contribute? [how to begin](CONTRIBUTING.md)
