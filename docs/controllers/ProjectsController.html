@@ -95,7 +95,9 @@ import { ProjectsService } from &#x27;../projects.service&#x27;;
   },
   query: {
     join: {
-      users: {}
+      users: {
+        eager: true
+      }
     }
   }
 })
