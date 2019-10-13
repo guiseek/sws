@@ -14,14 +14,23 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatProgressSpinnerModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule,
+  MatListModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { UiKitFormBuilderModule } from '@sws/ui-kit/form/builder';
+import { UiKitCardModule } from '@sws/ui-kit/card';
+import { CompanyResolverService } from '@sws/organization/shared/company';
+import { UiKitFloatingDialogModule } from '@sws/ui-kit/floating/dialog';
 
 const routes: Routes = [
   {
     path: '',
     component: CompanyShellComponent,
+    resolve: {
+      company: CompanyResolverService
+    },
     children: [
       { path: 'configuracoes', component: CompanySettingsComponent },
       { path: 'projetos', component: CompanyProjectsComponent },
@@ -38,6 +47,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    MatCardModule,
+    MatListModule,
     MatTabsModule,
     MatTableModule,
     MatFormFieldModule,
@@ -49,6 +60,9 @@ const routes: Routes = [
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
+    UiKitFloatingDialogModule,
+    UiKitFormBuilderModule,
+    UiKitCardModule,
     RouterModule.forChild(routes)
   ]
 })

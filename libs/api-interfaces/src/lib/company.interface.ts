@@ -11,4 +11,7 @@ export interface ICompany {
    */
   users: IUser[];
   projects: IProject[];
+
+  updatedAt?: Date
+  createdAt?: Date
 }

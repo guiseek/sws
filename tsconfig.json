@@ -56,7 +56,8 @@
       ],
       "@sws/ui-kit/table/filter-async-table": [
         "libs/ui-kit/table/filter-async-table/src/index.ts"
-      ]
+      ],
+      "@sws/ui-kit/card": ["libs/ui-kit/card/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
