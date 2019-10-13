@@ -1,4 +1,7 @@
 import { AsyncTableConfig } from '../interfaces/async-table-config.interface';
+import { AsyncTableBehavior } from '../interfaces';
+import { Subject, BehaviorSubject } from 'rxjs';
+import { QueryFilter } from '@nestjsx/crud-request';
 
 export const asyncTableConfig: AsyncTableConfig = {
   selectable: false,
@@ -9,6 +12,11 @@ export const asyncTableConfig: AsyncTableConfig = {
     color: 'primary',
     hidePageSize: false,
     showFirstLastButtons: true,
-    pageSize: 2
+    pageSize: 10
   }
+}
+
+export const asyncTableBehavior: AsyncTableBehavior = {
+  filters: new BehaviorSubject<QueryFilter[]>(null),
+  refresh: new Subject
 }

@@ -6,7 +6,7 @@
 <pre>{{ query.filters | json }}</pre>
 
 <div fxLayout="row" fxLayoutAlign="space-between">
-  <button type="button" mat-icon-button (click)="refresh.next(true)">
+  <button type="button" mat-icon-button (click)="table.behavior.refresh.next(true)">
     <mat-icon>refresh</mat-icon>
   </button>
 
@@ -15,9 +15,9 @@
   </button>
 </div>
 <sws-async-table
-  [meta]="tableConfig"
-  [refresh]="refresh"
-  [filters]="filters"
+  [meta]="table.meta"
+  [config]="table.config"
+  [behavior]="table.behavior"
 ></sws-async-table>
 
 <!-- <sws-form-builder [elements]="formConfig"></sws-form-builder> -->
@@ -26,3 +26,9 @@
 <ng-template #asyncFilterTable>
   <sws-form-builder [elements]="elements"></sws-form-builder>
 </ng-template>
+
+<!-- <sws-async-table
+  [meta]="tableConfig"
+  [refresh]="refresh"
+  [filters]="filters"
+></sws-async-table> -->

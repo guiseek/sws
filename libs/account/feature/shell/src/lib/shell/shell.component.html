@@ -2,10 +2,27 @@
   <account-toolbar-menu></account-toolbar-menu>
 </sws-toolbar>
 
+<nav mat-tab-nav-bar mat-stretch-tabs>
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+<pre>{{ user | async | json }}</pre>
+
+oi
+
+<hr>
+
 <router-outlet></router-outlet>
 
-
-  <!-- <mat-menu #appMenu="matMenu" xPosition="before">
+<!-- <mat-menu #appMenu="matMenu" xPosition="before">
     <a routerLink="perfil" mat-menu-item>Perfil</a>
     <a routerLink="configuracoes" mat-menu-item>Configurações</a>
     <mat-divider></mat-divider>

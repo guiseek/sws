@@ -15,7 +15,7 @@ import {
   encapsulation: ViewEncapsulation.None,
   styles: [`
     sws-toolbar { display: block; height: 50px; }
-    .sws-toolbar { position: fixed; }
+    .sws-toolbar { position: fixed; z-index: 10; }
     .sws-toolbar.mat-toolbar-single-row { height: 50px }
     .sws-toolbar > * { height: 100%; }
   `]

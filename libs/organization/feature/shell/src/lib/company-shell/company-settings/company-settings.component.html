@@ -8,7 +8,7 @@
               {{ company.name }}
             </mat-card-title>
             <mat-card-subtitle>
-              {{ company.updatedAt | date }}
+              {{ company.updatedAt | date: 'medium' }}
             </mat-card-subtitle>
             <button type="button" cardFlip mat-icon-button>
               <mat-icon>edit</mat-icon>
@@ -38,6 +38,14 @@
               </mat-list-item>
             </mat-list>
           </mat-card-content>
+          <mat-card-content>
+            <span class="mat-hint">
+              Data de cadastro
+              <em>
+                {{ company?.createdAt | date }}
+              </em>
+            </span>
+          </mat-card-content>
           <!-- <sws-form-builder
             [elements]="elements"
             #value="swsForm"
@@ -63,7 +71,12 @@
           <mat-card-subtitle>
             {{ company.users.length }} usuários
           </mat-card-subtitle>
-          <button type="button" cardFlip mat-icon-button (click)="openAddUser()">
+          <button
+            type="button"
+            cardFlip
+            mat-icon-button
+            (click)="openAddUser()"
+          >
             <mat-icon>plus_one</mat-icon>
           </button>
         </mat-card-header>
@@ -79,7 +92,6 @@
     </div>
   </div>
 </div>
-
 
 <ng-template #addUser let-dialog="dialog">
   <sws-form-builder [elements]="addUserFields"></sws-form-builder>

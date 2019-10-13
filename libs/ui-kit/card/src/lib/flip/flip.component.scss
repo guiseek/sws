@@ -30,10 +30,10 @@ card-flip {
   > .card-flip-back {
     display: block;
     position: absolute;
-    top: 12px;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     overflow: hidden;
     visibility: hidden;
     opacity: 0;

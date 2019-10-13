@@ -6,8 +6,9 @@ import { AsyncTableConfig } from './interfaces/async-table-config.interface';
 import { AsyncTableDataSource } from './async-table-data-source';
 import { AsyncTableMetadata } from './interfaces/async-table-metadata.interface';
 import { HttpClient } from '@angular/common/http';
-import { asyncTableConfig } from './configs/async-table.config';
+import { asyncTableConfig, asyncTableBehavior } from './configs/async-table.config';
 import { QueryFilter } from '@nestjsx/crud-request';
+import { AsyncTableBehavior } from './interfaces';
 
 @Component({
   selector: 'sws-async-table',
@@ -21,14 +22,15 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
 
   @Input() config: AsyncTableConfig
   @Input() meta: AsyncTableMetadata
+  @Input() behavior: AsyncTableBehavior
 
   displayedColumns = []
 
   selection = new SelectionModel<any>(true, [])
 
-  @Input() refresh: Subject<boolean>
+  // @Input() refresh: Subject<boolean>
 
-  @Input() filters: BehaviorSubject<QueryFilter[]>
+  // @Input() filters: BehaviorSubject<QueryFilter[]>
 
   @Output() selectionChanged = new EventEmitter()
 
@@ -43,16 +45,22 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
       {}, asyncTableConfig,
       this.config
     )
+
+    this.behavior = Object.assign(
+      {}, asyncTableBehavior,
+      this.behavior
+    )
+
     this.displayedColumns = this.meta.columns.map(c => c.columnDef)
 
     this.dataSource = new AsyncTableDataSource(this.http)
 
-    if (!this.refresh) {
-      this.refresh = new Subject
-    }
-    if (!this.filters) {
-      this.filters = new BehaviorSubject<QueryFilter[]>([])
-    }
+    // if (!this.refresh) {
+    //   this.refresh = new Subject
+    // }
+    // if (!this.filters) {
+    //   this.filters = new BehaviorSubject<QueryFilter[]>([])
+    // }
   }
 
   ngAfterViewInit() {
@@ -67,8 +75,9 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
       this.meta.endpoint,
       this.paginator,
       this.sort,
-      this.filters,
-      this.refresh
+      this.behavior.filters,
+      this.behavior.refresh
+      // this.refresh
     )
 
     // this.dataSource.

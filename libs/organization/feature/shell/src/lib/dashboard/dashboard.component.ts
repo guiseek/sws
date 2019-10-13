@@ -9,6 +9,8 @@ import { ForkFormBuilder, FormFieldControl, FormControlElement, FormElement } fr
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { DialogService } from '@sws/ui-kit/floating/dialog';
 import { FiltersAsyncService } from '@sws/ui-kit/table/filter-async-table';
+import { AsyncTableResource } from '@sws/ui-kit/table/async-table';
+import { companiesTable } from '@sws/organization/shared/company';
 
 const initForm: FormElement[] = [{
   type: 'select',
@@ -38,13 +40,13 @@ export class DashboardComponent implements OnInit {
     ]
   }
 
+  table: AsyncTableResource = companiesTable()
   elements = initForm
   filterConfig = [
     { field: 'name', label: 'Nome' },
     { field: 'domain', label: 'Domínio' }
   ]
 
-  refresh = new Subject
   filters = new BehaviorSubject<QueryFilter[]>([])
 
   formConfig = CreateCompanyFormSchema

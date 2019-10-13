@@ -23,6 +23,9 @@ import { UiKitFormBuilderModule } from '@sws/ui-kit/form/builder';
 import { UiKitCardModule } from '@sws/ui-kit/card';
 import { CompanyResolverService } from '@sws/organization/shared/company';
 import { UiKitFloatingDialogModule } from '@sws/ui-kit/floating/dialog';
+import { AsyncTableModule } from '@sws/ui-kit/table/async-table';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '@sws/account/shared/auth';
 
 const routes: Routes = [
   {
@@ -60,10 +63,14 @@ const routes: Routes = [
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
+    AsyncTableModule,
     UiKitFloatingDialogModule,
     UiKitFormBuilderModule,
     UiKitCardModule,
     RouterModule.forChild(routes)
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, multi: true, useClass: TokenInterceptor },
   ]
 })
 export class CompanyShellModule {}
