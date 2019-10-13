@@ -3,24 +3,31 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/guiseek/sws/develop/libs/shared/assets/logo/sws.png" width="350"></p>
 
+# Como contribuir (How to contribute)
 
-## TODO
+1. Faça o fork do repositório principal para sua conta (fork main repository)
+2. Clone seu repositório
+```bash
+git clone https://github.com/your-users/sws.git
+```
+3. Adicione o repositório principal como upstream (add main repository as upstream)
+```bash
+git remote add upstream https://github.com/guiseek/sws.git
 
-- Components
-  - [x] Form
-  - [x] Toolbar
-  - [x] Table
-  - [x] Dialog
-  - [x] Cards
-  - [ ] Sidebar
+# Confirm
+git remote -v
+origin    https://github.com/your-user/sws.git (fetch)
+origin    https://github.com/your-user/sws.git (push)
+upstream  https://github.com/guiseek/sws.git (fetch)
+upstream  https://github.com/guiseek/sws.git (push)
+```
 
-- Features
-  - [ ] Companies
-  - [ ] Users
-  - [ ] Projects
-  - [ ] Plans
-  - [ ] Licenses
+## Mantenha-se atualizado (how to stay up to date)
+```bash
+git fetch upstream
 
+git pull upstream master
+```
 
 ## Requirements
  
@@ -83,6 +90,24 @@ docker-compose up -d
 ```bash
 yarn dev
 ```
+
+
+## TODO
+
+- Components
+  - [x] Form
+  - [x] Toolbar
+  - [x] Table
+  - [x] Dialog
+  - [x] Cards
+  - [ ] Sidebar
+
+- Features
+  - [ ] Companies
+  - [ ] Users
+  - [ ] Projects
+  - [ ] Plans
+  - [ ] Licenses
 
 
 ---
