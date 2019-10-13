@@ -7,6 +7,9 @@
 @import 'libs/ui-kit/floating/dialog/src/lib/dialog.theme';
 @import './assets/swsapp';
 
+.w-full {
+  width: 100%;
+}
 // ::ng-deep router-outlet ~ * {
 //   & > .mat-toolbar:first-child {
 //     // z-index: 1;

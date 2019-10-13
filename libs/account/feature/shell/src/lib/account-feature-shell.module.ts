@@ -6,7 +6,8 @@ import {
   AccountSharedAuthModule,
   TokenInterceptor
 } from '@sws/account/shared/auth';
-import { AccountSharedUserModule} from '@sws/account/shared/user';
+import { UiKitCardModule } from '@sws/ui-kit/card';
+import { AccountSharedUserModule, UserCompanyGuard} from '@sws/account/shared/user';
 import { ShellComponent } from './shell/shell.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -15,7 +16,8 @@ import {
   MatMenuModule,
   MatIconModule,
   MatButtonModule,
-  MatDividerModule
+  MatDividerModule,
+  MatTabsModule
 } from '@angular/material';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -26,6 +28,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
+    MatTabsModule,
+    UiKitCardModule,
     AccountSharedAuthModule,
     AccountSharedUserModule,
     UiKitNavToolbarModule,
@@ -33,11 +37,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
       {
         path: '',
         component: ShellComponent,
+        canActivate: [UserCompanyGuard],
         children: [
           {
-            path: '',
+            path: 'geral',
             component: OverviewComponent,
-            pathMatch: 'full'
+            pathMatch: 'prefix'
           },
           {
             path: 'perfil',
@@ -46,6 +51,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
           {
             path: 'configuracoes',
             component: SettingsComponent
+          },
+          {
+            path: '',
+            redirectTo: 'geral'
           }
         ]
       }

@@ -20,7 +20,9 @@ import { ProjectsService } from '../projects.service';
   },
   query: {
     join: {
-      users: {}
+      users: {
+        eager: true
+      }
     }
   }
 })

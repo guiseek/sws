@@ -1,1 +1,98 @@
-<p>company-settings works!</p>
+<div class="page-container">
+  <div fxLayout="row" fxLayoutGap="32px" fxLayoutAlign="space-between">
+    <div fxFlex="40">
+      <card-flip #flip="cardFlip" (flip)="onFlip($event)">
+        <mat-card class="card-flip-front">
+          <mat-card-header>
+            <mat-card-title>
+              {{ company.name }}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{ company.updatedAt | date: 'medium' }}
+            </mat-card-subtitle>
+            <button type="button" cardFlip mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                <h3 mat-line>{{ company?.name }}</h3>
+                <p mat-line class="mat-hint">Nome</p>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 mat-line>{{ company?.domain }}</h3>
+                <p mat-line class="mat-hint">Domínio</p>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 mat-line>{{ company?.description || '...' }}</h3>
+                <p mat-line class="mat-hint">Descrição</p>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 mat-line>{{ company?.createdAt | date }}</h3>
+                <p mat-line class="mat-hint">Data de cadastro</p>
+              </mat-list-item>
+              <mat-list-item>
+                <h3 mat-line>{{ company?.updatedAt | date }}</h3>
+                <p mat-line class="mat-hint">Última alteração</p>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+          <mat-card-content>
+            <span class="mat-hint">
+              Data de cadastro
+              <em>
+                {{ company?.createdAt | date }}
+              </em>
+            </span>
+          </mat-card-content>
+          <!-- <sws-form-builder
+            [elements]="elements"
+            #value="swsForm"
+          ></sws-form-builder> -->
+        </mat-card>
+        <mat-card class="card-flip-back">
+          <mat-card-header>
+            <button cardFlip type="button" mat-icon-button>
+              <mat-icon>refresh</mat-icon>
+            </button>
+          </mat-card-header>
+          <sws-form-builder
+            [elements]="elements"
+            #value="swsForm"
+          ></sws-form-builder>
+        </mat-card>
+      </card-flip>
+    </div>
+    <div fxFlex>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Usuários</mat-card-title>
+          <mat-card-subtitle>
+            {{ company.users.length }} usuários
+          </mat-card-subtitle>
+          <button
+            type="button"
+            cardFlip
+            mat-icon-button
+            (click)="openAddUser()"
+          >
+            <mat-icon>plus_one</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-list>
+          <mat-list-item *ngFor="let u of company.users">
+            <h3 mat-line>{{ u.email }}</h3>
+            <p mat-line>
+              {{ u.createdAt | date }}
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<ng-template #addUser let-dialog="dialog">
+  <sws-form-builder [elements]="addUserFields"></sws-form-builder>
+</ng-template>

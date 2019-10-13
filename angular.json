@@ -872,6 +872,44 @@
           "styleext": "scss"
         }
       }
+    },
+    "ui-kit-card": {
+      "projectType": "library",
+      "root": "libs/ui-kit/card",
+      "sourceRoot": "libs/ui-kit/card/src",
+      "prefix": "card",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/card/tsconfig.lib.json",
+            "project": "libs/ui-kit/card/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/card/tsconfig.lib.json",
+              "libs/ui-kit/card/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/card/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/card/jest.config.js",
+            "tsConfig": "libs/ui-kit/card/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/card/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

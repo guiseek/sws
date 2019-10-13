@@ -1,3 +1,5 @@
+import { Subject } from 'rxjs';
+
 export interface AsyncTableColumn {
   columnDef: string
   header: string
@@ -8,4 +10,5 @@ export interface AsyncTableColumn {
 export interface AsyncTableMetadata {
   endpoint: string
   columns: AsyncTableColumn[]
+  refresh?: Subject<boolean>
 }

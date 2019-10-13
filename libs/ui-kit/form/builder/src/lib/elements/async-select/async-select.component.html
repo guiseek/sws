@@ -1,1 +1,13 @@
-<p>async-select works!</p>
+
+<mat-form-field
+  class="w-full"
+  [appearance]="field.appearance"
+  [formGroup]="group"
+>
+  <!-- <mat-label>{{field.label}}</mat-label> -->
+  <mat-select [placeholder]="field.label" [formControlName]="field.name">
+    <mat-option *ngFor="let item of options$ | async" [value]="item.value">{{
+      item.viewValue
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>

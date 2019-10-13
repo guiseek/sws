@@ -73,6 +73,9 @@
     },
     "ui-kit-table-filter-async-table": {
       "tags": ["ui:table"]
+    },
+    "ui-kit-card": {
+      "tags": []
     }
   }
 }

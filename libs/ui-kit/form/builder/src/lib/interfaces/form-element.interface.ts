@@ -12,6 +12,11 @@ export interface FormElement {
   value?: any;
   hint?: string;
   appearance?: string;
+  asyncConfig?: {
+    endpoint: string
+    value?: string
+    viewValue: string
+  }
   options?: FormFieldOption[]
   validators?: commonErrors | commonErrors[];
   validations?: FormValidator[];

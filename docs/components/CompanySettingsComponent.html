@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>sws-company-settings</code></td>
+                <td class="col-md-9"><code>org-company-settings</code></td>
             </tr>
 
             <tr>
@@ -121,6 +121,29 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addUserFields">addUserFields</a>
+                            </li>
+                            <li>
+                                <a href="#addUserTmpl">addUserTmpl</a>
+                            </li>
+                            <li>
+                                <a href="#company">company</a>
+                            </li>
+                            <li>
+                                <a href="#elements">elements</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -131,7 +154,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#flip">flip</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFlip">onFlip</a>
+                            </li>
+                            <li>
+                                <a href="#openAddUser">openAddUser</a>
                             </li>
                         </ul>
                     </td>
@@ -151,15 +183,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, dialogService: <a href="../injectables/DialogService.html">DialogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:27</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -173,6 +247,72 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="flip"></a>
+                    <span class="name">
+                        <b>
+                            flip
+                        </b>
+                        <a href="#flip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>flip(card)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>card</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -195,8 +335,113 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFlip"></a>
+                    <span class="name">
+                        <b>
+                            onFlip
+                        </b>
+                        <a href="#onFlip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFlip(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openAddUser"></a>
+                    <span class="name">
+                        <b>
+                            openAddUser
+                        </b>
+                        <a href="#openAddUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openAddUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -213,28 +458,310 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addUserFields"></a>
+                        <span class="name">
+                            <b>
+                            addUserFields</b>
+                            <a href="#addUserFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/FormElement.html" target="_self" >FormElement[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[{
+    type: &#x27;asyncSelect&#x27;,
+    name: &#x27;company&#x27;,
+    label: &#x27;Usuário&#x27;,
+    asyncConfig: {
+      endpoint: &#x27;/api/users&#x27;,
+      viewValue: &#x27;email&#x27;,
+      value: &#x27;id&#x27;
+    }
+  }]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addUserTmpl"></a>
+                        <span class="name">
+                            <b>
+                            addUserTmpl</b>
+                            <a href="#addUserTmpl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;addUser&#x27;, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="company"></a>
+                        <span class="name">
+                            <b>
+                            company</b>
+                            <a href="#company"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ICompany.html" target="_self" >ICompany</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="elements"></a>
+                        <span class="name">
+                            <b>
+                            elements</b>
+                            <a href="#elements"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CreateCompanyFormSchema</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-settings/company-settings.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, TemplateRef } from &#x27;@angular/core&#x27;;
+import { CreateCompanyFormSchema } from &#x27;@sws/organization/shared/company&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ICompany } from &#x27;@sws/api-interfaces&#x27;;
+import { FormElement } from &#x27;@sws/ui-kit/form/builder&#x27;;
+import { DialogService } from &#x27;@sws/ui-kit/floating/dialog&#x27;;
 
 @Component({
-  selector: &#x27;sws-company-settings&#x27;,
+  selector: &#x27;org-company-settings&#x27;,
   templateUrl: &#x27;./company-settings.component.html&#x27;,
   styleUrls: [&#x27;./company-settings.component.scss&#x27;]
 })
 export class CompanySettingsComponent implements OnInit {
-  constructor() {}
+  elements &#x3D; CreateCompanyFormSchema
+  company: ICompany
 
-  ngOnInit() {}
+  addUserFields: FormElement[] &#x3D; [{
+    type: &#x27;asyncSelect&#x27;,
+    name: &#x27;company&#x27;,
+    label: &#x27;Usuário&#x27;,
+    asyncConfig: {
+      endpoint: &#x27;/api/users&#x27;,
+      viewValue: &#x27;email&#x27;,
+      value: &#x27;id&#x27;
+    }
+  }]
+  @ViewChild(&#x27;addUser&#x27;, { static: true }) addUserTmpl: TemplateRef&lt;any&gt;
+  constructor(
+    private route: ActivatedRoute,
+    private dialogService: DialogService
+  ) {
+  }
+
+  ngOnInit() {
+    // const { company } &#x3D; this.route.snapshot.parent.data.company
+    // this.company &#x3D; {
+    //   name: &#x27;&#x27;
+    // }
+    this.company &#x3D; this.route.snapshot.parent.data.company
+    console.log(
+      this.company
+      // this.route.snapshot.parent.data.company
+    )
+    console.log(
+      this.addUserTmpl
+    )
+  }
+  openAddUser() {
+    const ref &#x3D; this.dialogService.open(
+      this.addUserTmpl, {
+        header: { title: &#x27;Adicionar usuário&#x27; }
+      }
+    )
+  }
+  onFlip(data) {
+    console.log(&#x27;flip: &#x27;, data)
+  }
+  flip(card) {
+    console.log(card)
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;company-settings works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;page-container&quot;&gt;
+  &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;32px&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+    &lt;div fxFlex&#x3D;&quot;40&quot;&gt;
+      &lt;card-flip #flip&#x3D;&quot;cardFlip&quot; (flip)&#x3D;&quot;onFlip($event)&quot;&gt;
+        &lt;mat-card class&#x3D;&quot;card-flip-front&quot;&gt;
+          &lt;mat-card-header&gt;
+            &lt;mat-card-title&gt;
+              {{ company.name }}
+            &lt;/mat-card-title&gt;
+            &lt;mat-card-subtitle&gt;
+              {{ company.updatedAt | date: &#x27;medium&#x27; }}
+            &lt;/mat-card-subtitle&gt;
+            &lt;button type&#x3D;&quot;button&quot; cardFlip mat-icon-button&gt;
+              &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/mat-card-header&gt;
+          &lt;mat-card-content&gt;
+            &lt;mat-list&gt;
+              &lt;mat-list-item&gt;
+                &lt;h3 mat-line&gt;{{ company?.name }}&lt;/h3&gt;
+                &lt;p mat-line class&#x3D;&quot;mat-hint&quot;&gt;Nome&lt;/p&gt;
+              &lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;
+                &lt;h3 mat-line&gt;{{ company?.domain }}&lt;/h3&gt;
+                &lt;p mat-line class&#x3D;&quot;mat-hint&quot;&gt;Domínio&lt;/p&gt;
+              &lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;
+                &lt;h3 mat-line&gt;{{ company?.description || &#x27;...&#x27; }}&lt;/h3&gt;
+                &lt;p mat-line class&#x3D;&quot;mat-hint&quot;&gt;Descrição&lt;/p&gt;
+              &lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;
+                &lt;h3 mat-line&gt;{{ company?.createdAt | date }}&lt;/h3&gt;
+                &lt;p mat-line class&#x3D;&quot;mat-hint&quot;&gt;Data de cadastro&lt;/p&gt;
+              &lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;
+                &lt;h3 mat-line&gt;{{ company?.updatedAt | date }}&lt;/h3&gt;
+                &lt;p mat-line class&#x3D;&quot;mat-hint&quot;&gt;Última alteração&lt;/p&gt;
+              &lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+          &lt;/mat-card-content&gt;
+          &lt;mat-card-content&gt;
+            &lt;span class&#x3D;&quot;mat-hint&quot;&gt;
+              Data de cadastro
+              &lt;em&gt;
+                {{ company?.createdAt | date }}
+              &lt;/em&gt;
+            &lt;/span&gt;
+          &lt;/mat-card-content&gt;
+          &lt;!-- &lt;sws-form-builder
+            [elements]&#x3D;&quot;elements&quot;
+            #value&#x3D;&quot;swsForm&quot;
+          &gt;&lt;/sws-form-builder&gt; --&gt;
+        &lt;/mat-card&gt;
+        &lt;mat-card class&#x3D;&quot;card-flip-back&quot;&gt;
+          &lt;mat-card-header&gt;
+            &lt;button cardFlip type&#x3D;&quot;button&quot; mat-icon-button&gt;
+              &lt;mat-icon&gt;refresh&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/mat-card-header&gt;
+          &lt;sws-form-builder
+            [elements]&#x3D;&quot;elements&quot;
+            #value&#x3D;&quot;swsForm&quot;
+          &gt;&lt;/sws-form-builder&gt;
+        &lt;/mat-card&gt;
+      &lt;/card-flip&gt;
+    &lt;/div&gt;
+    &lt;div fxFlex&gt;
+      &lt;mat-card&gt;
+        &lt;mat-card-header&gt;
+          &lt;mat-card-title&gt;Usuários&lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            {{ company.users.length }} usuários
+          &lt;/mat-card-subtitle&gt;
+          &lt;button
+            type&#x3D;&quot;button&quot;
+            cardFlip
+            mat-icon-button
+            (click)&#x3D;&quot;openAddUser()&quot;
+          &gt;
+            &lt;mat-icon&gt;plus_one&lt;/mat-icon&gt;
+          &lt;/button&gt;
+        &lt;/mat-card-header&gt;
+        &lt;mat-list&gt;
+          &lt;mat-list-item *ngFor&#x3D;&quot;let u of company.users&quot;&gt;
+            &lt;h3 mat-line&gt;{{ u.email }}&lt;/h3&gt;
+            &lt;p mat-line&gt;
+              {{ u.createdAt | date }}
+            &lt;/p&gt;
+          &lt;/mat-list-item&gt;
+        &lt;/mat-list&gt;
+      &lt;/mat-card&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ng-template #addUser let-dialog&#x3D;&quot;dialog&quot;&gt;
+  &lt;sws-form-builder [elements]&#x3D;&quot;addUserFields&quot;&gt;&lt;/sws-form-builder&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -242,7 +769,21 @@ export class CompanySettingsComponent implements OnInit {
                 <p class="comment">
                     <code>./company-settings.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: block;
+  .mat-card-header {
+    justify-content: space-between;
+  }
+}
+.page-container {
+  margin: 20px;
+}
+sws-form-builder {
+  .mat-form-field {
+    width: 100%;
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -270,9 +811,9 @@ export class CompanySettingsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>company-settings works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'sws-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
-    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="page-container">  <div fxLayout="row" fxLayoutGap="32px" fxLayoutAlign="space-between">    <div fxFlex="40">      <card-flip #flip="cardFlip" (flip)="onFlip($event)">        <mat-card class="card-flip-front">          <mat-card-header>            <mat-card-title>              {{ company.name }}            </mat-card-title>            <mat-card-subtitle>              {{ company.updatedAt | date: \'medium\' }}            </mat-card-subtitle>            <button type="button" cardFlip mat-icon-button>              <mat-icon>edit</mat-icon>            </button>          </mat-card-header>          <mat-card-content>            <mat-list>              <mat-list-item>                <h3 mat-line>{{ company?.name }}</h3>                <p mat-line class="mat-hint">Nome</p>              </mat-list-item>              <mat-list-item>                <h3 mat-line>{{ company?.domain }}</h3>                <p mat-line class="mat-hint">Domínio</p>              </mat-list-item>              <mat-list-item>                <h3 mat-line>{{ company?.description || \'...\' }}</h3>                <p mat-line class="mat-hint">Descrição</p>              </mat-list-item>              <mat-list-item>                <h3 mat-line>{{ company?.createdAt | date }}</h3>                <p mat-line class="mat-hint">Data de cadastro</p>              </mat-list-item>              <mat-list-item>                <h3 mat-line>{{ company?.updatedAt | date }}</h3>                <p mat-line class="mat-hint">Última alteração</p>              </mat-list-item>            </mat-list>          </mat-card-content>          <mat-card-content>            <span class="mat-hint">              Data de cadastro              <em>                {{ company?.createdAt | date }}              </em>            </span>          </mat-card-content>          <!-- <sws-form-builder            [elements]="elements"            #value="swsForm"          ></sws-form-builder> -->        </mat-card>        <mat-card class="card-flip-back">          <mat-card-header>            <button cardFlip type="button" mat-icon-button>              <mat-icon>refresh</mat-icon>            </button>          </mat-card-header>          <sws-form-builder            [elements]="elements"            #value="swsForm"          ></sws-form-builder>        </mat-card>      </card-flip>    </div>    <div fxFlex>      <mat-card>        <mat-card-header>          <mat-card-title>Usuários</mat-card-title>          <mat-card-subtitle>            {{ company.users.length }} usuários          </mat-card-subtitle>          <button            type="button"            cardFlip            mat-icon-button            (click)="openAddUser()"          >            <mat-icon>plus_one</mat-icon>          </button>        </mat-card-header>        <mat-list>          <mat-list-item *ngFor="let u of company.users">            <h3 mat-line>{{ u.email }}</h3>            <p mat-line>              {{ u.createdAt | date }}            </p>          </mat-list-item>        </mat-list>      </mat-card>    </div>  </div></div><ng-template #addUser let-dialog="dialog">  <sws-form-builder [elements]="addUserFields"></sws-form-builder></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
     var ACTUAL_COMPONENT = {'name': 'CompanySettingsComponent'};
 </script>
 <script src="../js/tree.js"></script>

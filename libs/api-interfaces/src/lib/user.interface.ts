@@ -21,6 +21,9 @@ export interface IUser {
   company?: any;
   projects?: {};
   userProjects?: {};
+
+  createdAt?: Date
+  updatedAt?: Date
   createPassword(): void;
   confirmCode(): void;
   hashPassword(password: string): string;

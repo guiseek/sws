@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  .mat-card-header {
+    justify-content: space-between;
+  }
+}
+.page-container {
+  margin: 20px;
+}
+sws-form-builder {
+  .mat-form-field {
+    width: 100%;
+  }
+}

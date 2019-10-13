@@ -1,5 +1,7 @@
 <p>overview works!</p>
 
+<!-- <card-details [details]="(user$ | async)" [props]="props"></card-details> -->
+
 <ng-container *ngIf="users$ | async as users">
   <pre>{{ users | json }}</pre>
 </ng-container>

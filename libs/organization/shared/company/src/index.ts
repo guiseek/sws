@@ -4,4 +4,5 @@ export * from './lib/resolvers/company-resolver.service';
 export * from './lib/services/project.service';
 export * from './lib/services/company.datasource';
 export * from './lib/services/project.datasource';
-export * from './lib/configs/create-company-form-schema';
+export * from './lib/configs/index';
+export * from './lib/configs/companies-table.config';
