@@ -12,14 +12,14 @@
   - [x] Table
   - [x] Dialog
   - [x] Cards
-  - [] Sidebar
+  - [ ] Sidebar
 
 - Features
-  - [] Companies
-  - [] Users
-  - [] Projects
-  - [] Plans
-  - [] Licenses
+  - [ ] Companies
+  - [ ] Users
+  - [ ] Projects
+  - [ ] Plans
+  - [ ] Licenses
 
 
 ## Requirements
