@@ -1,0 +1,41 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:100italic';
+
+.lato {
+  font-family: Lato, sans-serif;
+  &.100 {
+    font-weight: 100;
+  }
+  &.italic {
+    font-style: italic;
+  }
+  &.size-4 {
+    font-size: 4em;
+  }
+  &.size-10 {
+    font-size: 10em;
+  }
+}
+
+// .tehc {
+//   // color: #fff;
+//   // text-align: center;
+//   // background-color: #87c057;
+//   font-family: Lato, sans-serif;
+//   font-weight: 100;
+//   // padding-top: 10em;
+//   // padding-bottom: 11em;
+// }
+
+// .latita {
+//   font-size: 4em;
+//   font-weight: 100;
+//   line-height: 1em;
+//   font-style: italic;
+//   // color: #2c5608;
+// }
+
+// .tehc-r2 {
+//   font-size: 10em;
+//   line-height: 1em;
+//   font-weight: 100;
+// }
