@@ -11,7 +11,10 @@
         <mat-icon>{{ iconHome.icon }}</mat-icon>
       </a>
     </ng-container>
-    <span>{{ title }}</span>
+    <div class="brand">
+      <div class="logo"></div>
+      <span class="title">{{ title }}</span>
+    </div>
 
     <sws-search-bar
       *ngIf="search"

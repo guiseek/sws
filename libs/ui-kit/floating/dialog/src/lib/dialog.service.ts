@@ -15,12 +15,16 @@ import { DIALOG_CONFIG } from './configs/dialog.config';
 import { DialogRef } from './dialog-ref';
 import { DialogContainerComponent } from './dialog-container.component';
 import { DIALOG_DATA } from './configs/dialog.token';
+import { DialogShellComponent } from './dialog-shell/dialog-shell.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DialogService {
-  constructor(private overlay: Overlay, private injector: Injector) {}
+  constructor(
+    private overlay: Overlay,
+    private injector: Injector
+  ) {}
 
   open<D = any, R = any>(
     componentOrTemplate: ComponentType<any> | TemplateRef<any>,
@@ -45,7 +49,7 @@ export class DialogService {
 
     const dialog = overlayRef.attach(
       new ComponentPortal(
-        DialogContainerComponent,
+        !!config.withShell ? DialogShellComponent : DialogContainerComponent,
         null,
         new PortalInjector(
           this.injector,

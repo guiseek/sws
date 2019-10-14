@@ -40,6 +40,16 @@ export class Name {
   last: string;
 }
 
+export class ResetPassword {
+  @IsString({ always: true })
+  @Column({ nullable: true })
+  token: string;
+
+  @IsString({ always: true })
+  @Column({ nullable: true })
+  expires: Date;
+}
+
 @Entity('users')
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -112,6 +122,10 @@ export class User extends BaseEntity {
     onDelete: 'CASCADE'
   })
   userProjects?: UserProject[];
+
+  @Type(t => ResetPassword)
+  @Column(type => ResetPassword)
+  resetPassword: ResetPassword;
 
   @BeforeInsert()
   createPassword() {

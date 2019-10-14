@@ -1,1 +1,51 @@
-<p>dialog-shell works!</p>
+<div
+  cdkDrag
+  cdkDragRootElement=".cdk-overlay-pane"
+  [cdkDragDisabled]="!config.draggable"
+>
+  <ng-container *ngIf="config.header">
+    <mat-toolbar
+      class="sws dialog-header dialog-draggable"
+      cdkDragHandle
+      [ngClass]="{ 'dialog-draggable': config.draggable }"
+      [color]="config.header.color || 'accent'"
+    >
+      <mat-toolbar-row class="title">
+        <span>{{ config.header.title }}</span>
+        <button
+          *ngIf="!config.disableClose"
+          class="dialog-close-button"
+          mat-icon-button
+          (click)="ref.close()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="config.header.subtitle" class="subtitle">
+        <span>{{ config.header.subtitle }}</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </ng-container>
+  <div class="sws dialog-content">
+    <ng-container cdkPortalOutlet></ng-container>
+  </div>
+</div>
+
+
+<!-- <div cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+  <mat-toolbar
+    class="sws dialog-header dialog-draggable"
+    cdkDragHandle
+    color="accent"
+  >
+    <mat-toolbar-row class="title">
+      <span>Filtro</span>
+      <button class="dialog-close-button" mat-icon-button (click)="ref.close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div class="sws dialog-content">
+  <ng-container cdkPortalOutlet></ng-container>
+</div> -->

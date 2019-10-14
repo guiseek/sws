@@ -17,7 +17,6 @@ export class OnboardCompanyComponent implements OnInit {
 
   ngOnInit() {}
   onCreate(data) {
-    console.log('created: ', data)
     this.router.navigateByUrl('/conta')
   }
 }

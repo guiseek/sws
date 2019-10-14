@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from 'api/users';
+import * as crypto from 'crypto';
 
 @Injectable()
 export class AuthService {
@@ -29,5 +30,19 @@ export class AuthService {
     return await this.usersService.findOne(id, {
       relations: ['company']
     })
+  }
+  async forgotPassword(dto) {
+    try {
+      return await this.usersService.forgotPassword(dto)
+    } catch (err) {
+      throw new BadRequestException(err)
+    }
+  }
+  async resetPassword(dto) {
+    try {
+      return await this.usersService.resetPassword(dto)
+    } catch (err) {
+      throw new BadRequestException(err)
+    }
   }
 }

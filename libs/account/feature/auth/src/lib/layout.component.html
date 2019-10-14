@@ -18,16 +18,17 @@
       <auth-login (logged)="onLogged($event)"></auth-login>
     </mat-card>
     <a routerLink="embarque" mat-button>Criar conta</a>
-    <!-- <button mat-button (click)="openSignUp()">Criar conta</button> -->
+    <button mat-button (click)="forgotPassword()">Esqueci minha senha</button>
+    <button mat-button (click)="openResetPassword()">Resetar</button>
   </div>
 </div>
 
-<ng-template #signUp let-dialog="dialog">
+<ng-template #resetPassword let-dialog="dialog">
   <mat-card>
-    <mat-card-title>Criar conta</mat-card-title>
-    <auth-signup></auth-signup>
+    <mat-card-title>Recuperar conta</mat-card-title>
+    <!-- <auth-signup></auth-signup> -->
     <sws-form-builder
-      [elements]="formElements"
+      [elements]="resetPasswordElements"
       (submit)="dialog.close($event)"
     ></sws-form-builder>
   </mat-card>

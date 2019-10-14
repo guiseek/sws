@@ -3,7 +3,7 @@ import { FormElement } from '@sws/ui-kit/form/builder';
 import { Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DialogService } from '@sws/ui-kit/floating/dialog';
-import { SignupComponent } from '@sws/account/shared/auth';
+import { SignupComponent, ForgotPasswordComponent, PasswordResetComponent } from '@sws/account/shared/auth';
 import { swsAnimations } from '@sws/shared/utils';
 
 @Component({
@@ -13,7 +13,7 @@ import { swsAnimations } from '@sws/shared/utils';
   animations: [swsAnimations]
 })
 export class LayoutComponent implements OnInit {
-  formElements: FormElement[] = [
+  resetPasswordElements: FormElement[] = [
     {
       type: 'input',
       inputType: 'email',
@@ -39,7 +39,7 @@ export class LayoutComponent implements OnInit {
       label: 'Concordo com os termos'
     }
   ];
-  @ViewChild('signUp', { static: true }) signUp: TemplateRef<any>;
+  @ViewChild('resetPassword', { static: true }) resetPassword: TemplateRef<any>;
   private returnTo: string
   constructor(
     private router: Router,
@@ -48,7 +48,6 @@ export class LayoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.route.snapshot.queryParams)
     const { returnTo } = this.route.snapshot.queryParams
     if (returnTo) this.returnTo = returnTo ? returnTo : '/conta'
   }
@@ -57,18 +56,30 @@ export class LayoutComponent implements OnInit {
     // this.router.navigate(['/conta']);
   }
 
-  openSignUp() {
-    const ref = this.dialogService.open(this.signUp, {
-      hasBackdrop: false
+  forgotPassword() {
+    const ref = this.dialogService.open(
+      ForgotPasswordComponent, {
+        header: { title: 'Recuperar conta' },
+        withShell: true
     });
     const sub = ref.afterClosed().subscribe(result => {
-      console.log(result);
-      sub.unsubscribe();
+      sub.unsubscribe()
     });
     // const ref = this.dialogService.open(
     //   SignupComponent, {
     //     panelClass: 'bg-liquid-cheese'
     //   }
     // )
+  }
+  openResetPassword() {
+    const ref = this.dialogService.open(
+      PasswordResetComponent, {
+      header: { title: 'Nova senha' },
+      withShell: true
+    });
+    const sub = ref.afterClosed().subscribe(result => {
+      console.log('result: ', result)
+      sub.unsubscribe()
+    });
   }
 }
