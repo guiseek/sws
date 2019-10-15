@@ -8,5 +8,12 @@ export const environment = {
   ormConfig: ormConfig({
     database: 'seek_workspace',
     entities: [User, UserProfile, Company, Project, UserProject]
-  })
-};
+  }),
+  mailer: {
+    service: 'gmail',
+    auth: {
+      user: 'sender@gmail.com',
+      pass: 'password'
+    }
+  }
+}

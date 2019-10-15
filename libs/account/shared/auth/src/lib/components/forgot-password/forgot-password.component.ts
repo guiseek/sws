@@ -15,6 +15,7 @@ export class ForgotPasswordComponent {
 
   @Output() sended = new EventEmitter()
 
+  inProgress = false
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -22,14 +23,21 @@ export class ForgotPasswordComponent {
     @Optional() public dialogRef: DialogRef
   ) {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      lastPassword: ['', [Validators.minLength(4)]]
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      lastPassword: ['', [
+        Validators.required,
+        Validators.minLength(4)
+      ]]
     })
   }
 
   onSubmit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
+      this.inProgress = true
       this.service
         .forgotPassword(this.form.value)
         .pipe(
@@ -39,7 +47,7 @@ export class ForgotPasswordComponent {
         .subscribe((response) => {
           if (response)
             this.openSnack({
-              message: 'Link de recuperação enviado'
+              message: 'Código de recuperação enviado'
             }, 'sws-success')
 
           this.close(response)
@@ -59,6 +67,7 @@ export class ForgotPasswordComponent {
     return snack$
   }
   close(response?: any) {
+    this.inProgress = false
     if (this.dialogRef) {
       this.dialogRef.close(response)
     } else {

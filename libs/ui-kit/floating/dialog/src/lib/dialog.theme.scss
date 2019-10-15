@@ -59,6 +59,9 @@ $sws-dialog-button-margin: 8px !default;
       &.between {
         justify-content: space-between;
       }
+      &.end {
+        justify-content: flex-end;
+      }
       &[align='end'] {
         justify-content: flex-end;
       }

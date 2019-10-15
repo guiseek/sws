@@ -14,22 +14,25 @@
   >
     <mat-card>
       <mat-card-title>Login</mat-card-title>
-      <router-outlet></router-outlet>
+      <!-- <router-outlet></router-outlet> -->
       <auth-login (logged)="onLogged($event)"></auth-login>
     </mat-card>
-    <a routerLink="embarque" mat-button>Criar conta</a>
-    <button mat-button (click)="forgotPassword()">Esqueci minha senha</button>
-    <button mat-button (click)="openResetPassword()">Resetar</button>
+    <div fxFlex="row" fxLayoutAlign="space-between">
+      <a routerLink="embarque" mat-button>Criar conta</a>
+
+      <button mat-button [matMenuTriggerFor]="passwordMenu">
+        <span>Esqueceu?</span>
+      </button>
+    </div>
+    <!-- <button mat-button (click)="forgotPassword()">Esqueci minha senha</button>
+    <button mat-button (click)="openResetPassword()">Resetar</button> -->
   </div>
 </div>
+<mat-menu #passwordMenu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="openAlert()">Alert</button>
+  <button mat-menu-item (click)="forgotPassword()">Esqueci minha senha</button>
+  <button mat-menu-item (click)="openResetPassword()">Resetar</button>
 
-<ng-template #resetPassword let-dialog="dialog">
-  <mat-card>
-    <mat-card-title>Recuperar conta</mat-card-title>
-    <!-- <auth-signup></auth-signup> -->
-    <sws-form-builder
-      [elements]="resetPasswordElements"
-      (submit)="dialog.close($event)"
-    ></sws-form-builder>
-  </mat-card>
-</ng-template>
+  <!-- <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Help</button> -->
+</mat-menu>

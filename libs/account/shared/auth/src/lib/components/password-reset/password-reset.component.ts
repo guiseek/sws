@@ -39,7 +39,7 @@ export class PasswordResetComponent {
         .subscribe((response) => {
           if (response)
             this.openSnack({
-              message: 'Link de recuperação enviado'
+              message: 'Senha alterada'
             }, 'sws-success')
 
           this.close(response)

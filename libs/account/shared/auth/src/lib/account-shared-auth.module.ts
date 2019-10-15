@@ -6,7 +6,8 @@ import {
   MatInputModule,
   MatButtonModule,
   MatIconModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import { PasswordResetComponent } from './components/password-reset/password-res
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
+    MatProgressBarModule,
     FlexLayoutModule
   ],
   declarations: [LoginComponent, SignupComponent, ForgotPasswordComponent, PasswordResetComponent],

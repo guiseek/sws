@@ -1,0 +1,71 @@
+$info: #448aff;
+$warn: #f9c503;
+$danger: #fd6c61;
+
+::ng-deep .cdk-overlay-pane.dialog-alert {
+  .sws-dialog-container {
+    background: transparent;
+    padding: 0;
+    .info > .bg {
+      background-color: rgba($info, 0.1);
+    }
+    .warn > .bg {
+      background-color: rgba($warn, 0.1);
+    }
+    .danger > .bg {
+      background-color: rgba($danger, 0.1);
+    }
+  }
+}
+:host {
+  background: white;
+  display: block;
+  width: 250px;
+  position: relative;
+  .sws-alert-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .alert-icon {
+      margin-bottom: 32px;
+      // padding: 16px;
+      // background: rgba($danger, 0.1);
+      // border-radius: 50%;
+      svg {
+        &.info {
+          stroke: $info;
+        }
+        &.help {
+          stroke: $info;
+        }
+        &.warn {
+          stroke: $warn;
+        }
+        &.danger {
+          stroke: $danger;
+        }
+      }
+    }
+    h3 {
+      text-align: center;
+      opacity: 0.6;
+      margin-bottom: 0;
+    }
+  }
+  .sws-alert-action {
+    & > button {
+      width: 100%;
+    }
+  }
+  .bg {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 48%, 0 81%);
+    clip-path: polygon(0 0, 100% 0, 100% 48%, 0 81%);
+    width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    height: 64%;
+    width: 100%;
+  }
+}

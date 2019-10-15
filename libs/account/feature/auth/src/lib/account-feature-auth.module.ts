@@ -7,14 +7,19 @@ import { UiKitFormBuilderModule } from '@sws/ui-kit/form/builder';
 import {
   MatCardModule,
   MatButtonModule,
+  MatMenuModule,
+  MatIconModule,
 } from '@angular/material';
 import { UiKitFloatingDialogModule } from '@sws/ui-kit/floating/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   imports: [
     CommonModule,
     MatCardModule,
     MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
     FlexLayoutModule,
     UiKitFloatingDialogModule,
     AccountSharedAuthModule,
@@ -27,9 +32,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
           import('@sws/account/feature/onboarding').then(
             module => module.AccountFeatureOnboardingModule
           )
+      },
+      {
+        path: 'recuperar-conta',
+        component: ResetPasswordComponent
       }
     ])
   ],
-  declarations: [LayoutComponent]
+  declarations: [LayoutComponent, ResetPasswordComponent]
 })
 export class AccountFeatureAuthModule {}

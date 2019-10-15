@@ -69,7 +69,7 @@ export class UsersService extends TypeOrmCrudService<User> {
       throw new BadRequestException('Token inválido')
     } else {
       if (user.resetPassword.expires < now) {
-        throw new BadRequestException('Token expired')
+        throw new BadRequestException('Token expirou')
       }
       user.password = user.hashPassword(password)
       user.resetPassword = { token: null, expires: null }
