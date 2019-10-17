@@ -243,6 +243,12 @@
                             title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
+                            <a href="../components/DialogAlertComponent.html">DialogAlertComponent</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../components/DialogConfirmComponent.html">DialogConfirmComponent</a>
+                        </li>
+                        <li class="list-group-item">
                             <a href="../components/DialogContainerComponent.html">DialogContainerComponent</a>
                         </li>
                         <li class="list-group-item">
@@ -296,8 +302,10 @@ import { PortalModule } from &#x27;@angular/cdk/portal&#x27;;
 import { DialogService } from &#x27;./dialog.service&#x27;;
 import { DialogAlertComponent } from &#x27;./dialog-alert/dialog-alert.component&#x27;;
 import { DialogConfirmComponent } from &#x27;./dialog-confirm/dialog-confirm.component&#x27;;
+import { A11yModule } from &#x27;@angular/cdk/a11y&#x27;;
 
 const modules &#x3D; [
+  A11yModule,
   OverlayModule,
   PortalModule,
   MatToolbarModule,
@@ -316,7 +324,7 @@ const modules &#x3D; [
     DialogConfirmComponent
   ],
   providers: [DialogService],
-  entryComponents: [DialogContainerComponent, DialogShellComponent],
+  entryComponents: [DialogContainerComponent, DialogShellComponent, DialogAlertComponent, DialogConfirmComponent],
   exports: [DialogShellComponent, DialogCloseDirective]
 })
 export class UiKitFloatingDialogModule {}

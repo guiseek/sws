@@ -76,7 +76,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller } from &#x27;@nestjs/common&#x27;;
 import { Crud } from &#x27;@nestjsx/crud&#x27;;
 import { Project } from &#x27;../entities/project.entity&#x27;;
-import { ProjectsService } from &#x27;../projects.service&#x27;;
+import { ProjectsService } from &#x27;../services/projects.service&#x27;;
+import { ApiUseTags } from &#x27;@nestjs/swagger&#x27;;
 
 @Crud({
   model: {
@@ -101,6 +102,7 @@ import { ProjectsService } from &#x27;../projects.service&#x27;;
     }
   }
 })
+@ApiUseTags(&#x27;projects&#x27;)
 @Controller(&#x27;/companies/:companyId/projects&#x27;)
 export class ProjectsController {
   constructor(public service: ProjectsService) {}

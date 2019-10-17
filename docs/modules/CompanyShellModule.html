@@ -306,8 +306,13 @@ const routes: Routes &#x3D; [
     children: [
       { path: &#x27;configuracoes&#x27;, component: CompanySettingsComponent },
       { path: &#x27;projetos&#x27;, component: CompanyProjectsComponent },
-      { path: &#x27;&#x27;, redirectTo: &#x27;projetos&#x27;, pathMatch: &#x27;full&#x27; }
+      { path: &#x27;&#x27;, redirectTo: &#x27;projetos&#x27;, pathMatch: &#x27;full&#x27; },
     ]
+  },
+  {
+    path: &#x27;projeto&#x27;, loadChildren: () &#x3D;&gt;
+      &quot;import(&#x27;../project-shell/project-shell.module&#x27;)\
+        .then(m &#x3D;&gt; m.ProjectShellModule)&quot;
   }
 ];
 
@@ -342,7 +347,7 @@ const routes: Routes &#x3D; [
     { provide: HTTP_INTERCEPTORS, multi: true, useClass: TokenInterceptor },
   ]
 })
-export class CompanyShellModule {}
+export class CompanyShellModule { }
 </code></pre>
     </div>
 </div>

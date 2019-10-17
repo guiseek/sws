@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/organization/api/projects/src/projects.service.ts</code>
+            <code>libs/organization/api/projects/src/services/projects.service.ts</code>
         </p>
 
 
@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">libs/organization/api/projects/src/projects.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">libs/organization/api/projects/src/services/projects.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -124,7 +124,7 @@
 import { TypeOrmCrudService } from &#x27;@nestjsx/crud-typeorm&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 
-import { Project } from &#x27;./entities&#x27;;
+import { Project } from &#x27;../entities/project.entity&#x27;;
 
 @Injectable()
 export class ProjectsService extends TypeOrmCrudService&lt;Project&gt; {

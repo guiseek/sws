@@ -77,11 +77,19 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#forgotPassword">forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#getUser">getUser</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#login">login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword">resetPassword</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -105,12 +113,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(usersService: <a href="../injectables/UsersService.html">UsersService</a>, jwtService: JwtService)</code>
+<code>constructor(usersService: <a href="../injectables/UsersService.html">UsersService</a>, mailerService: <a href="../injectables/AuthMailerService.html">AuthMailerService</a>, jwtService: JwtService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">libs/account/api/auth/src/auth.service.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">libs/account/api/auth/src/auth.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -132,6 +140,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthMailerService.html" target="_self" >AuthMailerService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -169,6 +189,74 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            forgotPassword
+                        </b>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(dto)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dto</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getUser"></a>
                     <span class="name">
                         <b>
@@ -189,8 +277,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -261,8 +349,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -313,6 +401,74 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            resetPassword
+                        </b>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(dto)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dto</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="validateUser"></a>
                     <span class="name">
                         <b>
@@ -333,8 +489,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">libs/account/api/auth/src/auth.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -399,14 +555,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, BadRequestException } from &#x27;@nestjs/common&#x27;;
 import { JwtService } from &#x27;@nestjs/jwt&#x27;;
 import { UsersService } from &#x27;api/users&#x27;;
+import * as crypto from &#x27;crypto&#x27;;
+import { AuthMailerService } from &#x27;./services/auth-mailer.service&#x27;;
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly usersService: UsersService,
+    private readonly mailerService: AuthMailerService,
     private readonly jwtService: JwtService
   ) { }
 
@@ -430,6 +589,29 @@ export class AuthService {
     return await this.usersService.findOne(id, {
       relations: [&#x27;company&#x27;]
     })
+  }
+  async forgotPassword(dto) {
+    try {
+      const { resetPassword, ...data } &#x3D; await this.usersService.forgotPassword(dto)
+      if (resetPassword) {
+        await this.mailerService.forgotPassword(
+          resetPassword.token, dto.email
+        )
+        return {
+          ...data, resetPassword
+        }
+      }
+    } catch (err) {
+      throw new BadRequestException(err.message)
+    }
+  }
+  async resetPassword(dto) {
+    try {
+      return await this.usersService.resetPassword(dto)
+    } catch (err) {
+      // return err
+      throw new BadRequestException(err.message)
+    }
   }
 }
 </code></pre>

@@ -184,8 +184,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">libs/account/shared/auth/src/lib/interceptors/token.interceptor.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">libs/account/shared/auth/src/lib/interceptors/token.interceptor.ts:43</a></div>
                 </td>
             </tr>
 
@@ -254,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">libs/account/shared/auth/src/lib/interceptors/token.interceptor.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">libs/account/shared/auth/src/lib/interceptors/token.interceptor.ts:37</a></div>
                 </td>
             </tr>
 
@@ -430,6 +430,7 @@ export class TokenInterceptor implements HttpInterceptor {
     const token &#x3D; this._tokenService.token;
     if (token) request &#x3D; this.getCloneRequestWithToken(request, token);
 
+    console.log(request.url)
     return next.handle(request).pipe(
       catchError(err &#x3D;&gt; {
         this.catchRedirectError(err);

@@ -157,6 +157,9 @@
                         <li class="list-group-item">
                             <a href="../controllers/UsersController.html">UsersController</a>
                         </li>
+                        <li class="list-group-item">
+                            <a href="../controllers/MeController.html">MeController</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -182,12 +185,13 @@ import { UsersController } from &#x27;./controllers/users.controller&#x27;;
 import { TypeOrmModule } from &#x27;@nestjs/typeorm&#x27;;
 import { User } from &#x27;./entities/user.entity&#x27;;
 import { UserProfile } from &#x27;./entities/user-profile.entity&#x27;;
+import { MeController } from &#x27;./controllers/me.controller&#x27;;
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, UserProfile])],
   providers: [UsersService],
   exports: [UsersService],
-  controllers: [UsersController]
+  controllers: [UsersController, MeController]
 })
 export class UsersModule {}
 </code></pre>

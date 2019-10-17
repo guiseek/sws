@@ -130,16 +130,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#asyncTable">asyncTable</a>
-                            </li>
-                            <li>
                                 <a href="#company">company</a>
-                            </li>
-                            <li>
-                                <a href="#displayedColumns">displayedColumns</a>
-                            </li>
-                            <li>
-                                <a href="#input">input</a>
                             </li>
                             <li>
                                 <a href="#table">table</a>
@@ -158,6 +149,18 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClicked">onClicked</a>
+                            </li>
+                            <li>
+                                <a href="#onCreateProject">onCreateProject</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleted">onDeleted</a>
+                            </li>
+                            <li>
+                                <a href="#onEdited">onEdited</a>
                             </li>
                             <li>
                                 <a href="#onRefresh">onRefresh</a>
@@ -180,12 +183,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, service: <a href="../injectables/CompanyService.html">CompanyService</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, service: <a href="../classes/HttpService.html">HttpService</a>, dialogService: <a href="../injectables/DialogService.html">DialogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -215,10 +218,34 @@
                                                     
                                                 </tr>
                                                 <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CompanyService.html" target="_self" >CompanyService</a></code>
+                                                                        <code><a href="../classes/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -266,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -278,6 +305,243 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClicked"></a>
+                    <span class="name">
+                        <b>
+                            onClicked
+                        </b>
+                        <a href="#onClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClicked(row)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCreateProject"></a>
+                    <span class="name">
+                        <b>
+                            onCreateProject
+                        </b>
+                        <a href="#onCreateProject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCreateProject()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleted"></a>
+                    <span class="name">
+                        <b>
+                            onDeleted
+                        </b>
+                        <a href="#onDeleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeleted(row)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdited"></a>
+                    <span class="name">
+                        <b>
+                            onEdited
+                        </b>
+                        <a href="#onEdited"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEdited(row)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -305,8 +569,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -332,36 +596,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="asyncTable"></a>
-                        <span class="name">
-                            <b>
-                            asyncTable</b>
-                            <a href="#asyncTable"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @ViewChild(AsyncTableComponent, {static: true})<br />
-                            </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="company"></a>
                         <span class="name">
                             <b>
@@ -378,75 +612,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:25</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="displayedColumns"></a>
-                        <span class="name">
-                            <b>
-                            displayedColumns</b>
-                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>[]</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;name&#x27;, &#x27;description&#x27;]</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:27</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="input"></a>
-                        <span class="name">
-                            <b>
-                            input</b>
-                            <a href="#input"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../miscellaneous/functions.html#Element" target="_self" >ElementRef</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @ViewChild(&#x27;input&#x27;, {static: false})<br />
-                            </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -473,7 +639,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/organization/feature/shell/src/lib/company-shell/company-projects/company-projects.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -488,21 +654,18 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  AfterViewInit
+  OnInit
 } from &#x27;@angular/core&#x27;;
-import { ICompany } from &#x27;@sws/api-interfaces&#x27;;
+import { ICompany, IProject } from &#x27;@sws/api-interfaces&#x27;;
 import {
-  CompanyDataSource,
-  CompanyService,
-  ProjectDataSource,
-  companyProjectsTable
+  companyProjectsTable,
+  CreateProjectComponent
 } from &#x27;@sws/organization/shared/company&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { AsyncTableResource, AsyncTableComponent } from &#x27;@sws/ui-kit/table/async-table&#x27;;
-
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { AsyncTableResource } from &#x27;@sws/ui-kit/table/async-table&#x27;;
+import { DialogService } from &#x27;@sws/ui-kit/floating/dialog&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { HttpService } from &#x27;@sws/shared/utils&#x27;;
 
 @Component({
   selector: &#x27;org-company-projects&#x27;,
@@ -512,60 +675,98 @@ import { AsyncTableResource, AsyncTableComponent } from &#x27;@sws/ui-kit/table/
 export class CompanyProjectsComponent implements OnInit {
   company: ICompany;
 
-  displayedColumns &#x3D; [&#x27;id&#x27;, &#x27;name&#x27;, &#x27;description&#x27;];
-
   table: AsyncTableResource
-
-
-  @ViewChild(&#x27;input&#x27;, { static: false }) input: ElementRef;
-  @ViewChild(AsyncTableComponent, { static: true }) asyncTable
   constructor(
     private route: ActivatedRoute,
-    private service: CompanyService
-  ) {}
+    private router: Router,
+    private service: HttpService,
+    private dialogService: DialogService
+  ) { }
 
   ngOnInit() {
-    console.log(
-      &#x27;this.asyncTable: &#x27;,
-      this.asyncTable
-    )
-    // this.company &#x3D; this.route.snapshot.parent.data.company;
     const { id, ...company } &#x3D; this.route.snapshot.parent.data.company
-    this.company &#x3D; {
-      id, ...company
-    }
-    this.table &#x3D; companyProjectsTable(id)
-    console.log(
-      this.table
-    )
-    // this.table &#x3D; {
-    //   meta: {
-    //     endpoint: &#x60;/api/companies/${id}/projects&#x60;,
-    //     columns: [
-    //       { columnDef: &#x27;name&#x27;, header: &#x27;Nome&#x27;, cell: (element) &#x3D;&gt; element.name },
-    //       { columnDef: &#x27;domain&#x27;, header: &#x27;Domínio&#x27;, cell: (element) &#x3D;&gt; element.domain }
-    //     ]
-    //   },
-    //   config: {
+    this.company &#x3D; { id, ...company }
+    this.table &#x3D; companyProjectsTable(id, {
+      clickable: true,
+      editable: true,
+      deletable: true,
+      paginator: {
+        pageSize: 2
+      }
+    })
 
-    //   }
-    // }
-    // this.dataSource &#x3D; new ProjectDataSource(this.service);
-    // this.dataSource.loadProjects(this.company.id, &#x27;&#x27;, &#x27;ASC&#x27;, 0, 3);
+    // this.table.behavior.rowClicked.subscribe((row) &#x3D;&gt; {
+    //   console.log(&#x27;row: &#x27;, row)
+    //   // this.router.navigate([&#x27;..&#x27;,&#x27;projeto&#x27;, row.id], { relativeTo: this.route })
+    // })
+  }
+  onClicked(row) {
+    console.log(row)
+    this.router.navigate([&#x27;..&#x27;, &#x27;projeto&#x27;, row.id], { relativeTo: this.route })
+  }
+  onEdited(row) {
+    console.table(row)
+  }
+  onDeleted(row) {
+    console.table(row)
+    this.dialogService.openConfirm({
+      message: &#x60;Tem certeza que deseja remover ${row.name}?&#x60;,
+      color: &#x27;warn&#x27;
+    }).afterClosed().subscribe((confirm) &#x3D;&gt; {
+      if (confirm) {
+        this.service.delete(
+          &#x60;/api/companies/${row.companyId}/projects/${row.id}&#x60;
+        ).subscribe((res) &#x3D;&gt; {
+          console.log(res)
+          this.onRefresh()
+        })
+      }
+    })
   }
   onRefresh() {
     this.table.behavior.refresh.next(true)
+  }
+  onCreateProject() {
+    const ref &#x3D; this.dialogService.open(
+      CreateProjectComponent, {
+      withShell: true,
+      header: { title: &#x27;Criar projeto&#x27; },
+      data: {
+        company: this.company,
+        companyId: this.company.id
+      },
+      draggable: true
+    })
+    const sub &#x3D; ref.afterClosed()
+      .subscribe((result) &#x3D;&gt; {
+        if (result) {
+          this.onRefresh()
+          sub.unsubscribe()
+        }
+      })
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;button type&#x3D;&quot;button&quot; mat-button (click)&#x3D;&quot;onRefresh()&quot;&gt;
-  Atualizar
-&lt;/button&gt;
-
-&lt;sws-async-table [config]&#x3D;&quot;table.config&quot; [meta]&#x3D;&quot;table.meta&quot; &gt;&lt;/sws-async-table&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;page-container&quot;&gt;
+  &lt;mat-card class&#x3D;&quot;card-table-container&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Projetos&lt;/mat-card-title&gt;
+      &lt;button mat-fab type&#x3D;&quot;button&quot; (click)&#x3D;&quot;onCreateProject()&quot;&gt;
+        &lt;mat-icon&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/mat-card-header&gt;
+    &lt;sws-async-table
+      [config]&#x3D;&quot;table.config&quot;
+      [meta]&#x3D;&quot;table.meta&quot;
+      (clicked)&#x3D;&quot;onClicked($event)&quot;
+      (edit)&#x3D;&quot;onEdited($event)&quot;
+      (delete)&#x3D;&quot;onDeleted($event)&quot;
+    &gt;&lt;/sws-async-table&gt;
+  &lt;/mat-card&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -573,7 +774,9 @@ export class CompanyProjectsComponent implements OnInit {
                 <p class="comment">
                     <code>./company-projects.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -601,8 +804,8 @@ export class CompanyProjectsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button type="button" mat-button (click)="onRefresh()">  Atualizar</button><sws-async-table [config]="table.config" [meta]="table.meta" ></sws-async-table></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+        var COMPONENT_TEMPLATE = '<div><div class="page-container">  <mat-card class="card-table-container">    <mat-card-header>      <mat-card-title>Projetos</mat-card-title>      <button mat-fab type="button" (click)="onCreateProject()">        <mat-icon>add</mat-icon>      </button>    </mat-card-header>    <sws-async-table      [config]="table.config"      [meta]="table.meta"      (clicked)="onClicked($event)"      (edit)="onEdited($event)"      (delete)="onDeleted($event)"    ></sws-async-table>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
     var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
     var ACTUAL_COMPONENT = {'name': 'CompanyProjectsComponent'};
 </script>

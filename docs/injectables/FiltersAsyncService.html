@@ -238,7 +238,8 @@ export class FiltersAsyncService {
   openFilters&lt;T &#x3D; any&gt;(fields) {
     return this.dialogService.open&lt;T&gt;(
       FiltersComponent, {
-        data: { fields }
+        data: { fields },
+        panelClass: [&#x27;no-padding&#x27;]
       }
     )
   }

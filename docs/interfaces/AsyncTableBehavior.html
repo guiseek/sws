@@ -86,6 +86,10 @@
                                             <span class="modifier">Optional</span>
                                         <a href="#refresh">refresh</a>
                                 </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#rowClicked">rowClicked</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -165,6 +169,40 @@
 
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="rowClicked"></a>
+                                        <span class="name"><b>rowClicked</b><a href="#rowClicked"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>rowClicked:     <code>BehaviorSubject&lt;T&gt;</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>BehaviorSubject&lt;T&gt;</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
             </section>
     </div>
 
@@ -173,9 +211,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject, BehaviorSubject } from &#x27;rxjs&#x27;;
 import { QueryFilter } from &#x27;@nestjsx/crud-request&#x27;;
 
-export interface AsyncTableBehavior {
+export interface AsyncTableBehavior&lt;T &#x3D; any&gt; {
   refresh?: Subject&lt;boolean&gt;
   filters?: BehaviorSubject&lt;QueryFilter[]&gt;
+  rowClicked?: BehaviorSubject&lt;T&gt;
 }</code></pre>
     </div>
 </div>
