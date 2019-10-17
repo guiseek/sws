@@ -21,11 +21,9 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
     const { returnTo } = this.route.snapshot.queryParams
     if (returnTo) this.returnTo = returnTo ? returnTo : '/conta'
-    this.openAlert()
   }
   onLogged() {
     this.router.navigateByUrl(this.returnTo)
-    // this.router.navigate(['/conta']);
   }
 
   forgotPassword() {
@@ -33,30 +31,26 @@ export class LayoutComponent implements OnInit {
       ForgotPasswordComponent, {
       header: { title: 'Recuperar conta' },
       withShell: true
-    });
+    })
     const sub = ref.afterClosed().subscribe(result => {
       if (result) {
-        this.openResetPassword()
+        this.openAlert()
       }
       sub.unsubscribe()
-    });
-    // const ref = this.dialogService.open(
-    //   SignupComponent, {
-    //     panelClass: 'bg-liquid-cheese'
-    //   }
-    // )
+    })
   }
   openAlert() {
-    
     const ref = this.dialogService.openAlert({
-      type: 'warn',
-      message: 'Use o código recebido no email para alterar sua senha'
+      type: 'info',
+      message: 'Acesse seu email, copie o código enviado e volte para configurar sua nova senha, ok?'
     })
 
     const sub = ref.afterClosed()
       .subscribe((result) => {
-        console.log(result)
         sub.unsubscribe()
+        if (result) {
+          this.openResetPassword()
+        }
       })
   }
   openResetPassword() {
@@ -67,10 +61,10 @@ export class LayoutComponent implements OnInit {
         title: 'Nova senha',
         subtitle: 'Use o código recebido no email'
       }
-    });
+    })
     const sub = ref.afterClosed().subscribe(result => {
       console.log('result: ', result)
       sub.unsubscribe()
-    });
+    })
   }
 }

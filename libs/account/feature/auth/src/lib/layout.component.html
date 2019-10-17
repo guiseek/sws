@@ -14,7 +14,6 @@
   >
     <mat-card>
       <mat-card-title>Login</mat-card-title>
-      <!-- <router-outlet></router-outlet> -->
       <auth-login (logged)="onLogged($event)"></auth-login>
     </mat-card>
     <div fxFlex="row" fxLayoutAlign="space-between">
@@ -24,15 +23,9 @@
         <span>Esqueceu?</span>
       </button>
     </div>
-    <!-- <button mat-button (click)="forgotPassword()">Esqueci minha senha</button>
-    <button mat-button (click)="openResetPassword()">Resetar</button> -->
   </div>
 </div>
 <mat-menu #passwordMenu="matMenu" xPosition="before">
-  <button mat-menu-item (click)="openAlert()">Alert</button>
   <button mat-menu-item (click)="forgotPassword()">Esqueci minha senha</button>
-  <button mat-menu-item (click)="openResetPassword()">Resetar</button>
-
-  <!-- <button mat-menu-item>Settings</button>
-  <button mat-menu-item>Help</button> -->
+  <button mat-menu-item (click)="openResetPassword()">Configurar nova senha</button>
 </mat-menu>

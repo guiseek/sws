@@ -1,35 +1,10 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import {
-  trigger,
-  transition,
-  query,
-  animate,
-  style
-} from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
-// import { IceCreamComponent, ProjectSchema } from '@sws/organization/shared/schema';
 
 @Component({
   selector: 'org-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss'],
-  animations: [
-    trigger('fadeAnimation', [
-      transition('* => *', [
-        query(':enter', [style({ opacity: 0 })], { optional: true }),
-        query(
-          ':leave',
-          [style({ opacity: 1 }), animate('0.5s', style({ opacity: 0 }))],
-          { optional: true }
-        ),
-        query(
-          ':enter',
-          [style({ opacity: 0 }), animate('0.5s', style({ opacity: 1 }))],
-          { optional: true }
-        )
-      ])
-    ])
-  ]
+  styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
   // company = new CompanySchema()

@@ -3,18 +3,32 @@ import { HttpService } from '@sws/shared/utils';
 import { ICompany, IProject } from '@sws/api-interfaces';
 import { HttpParams } from '@angular/common/http';
 import { RequestQueryBuilder } from '@nestjsx/crud-request';
+import { Company } from '../models';
+import { plainToClass } from 'class-transformer';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class CompanyService {
   private api = '/api/companies';
+  private _company: Company
   constructor(
     private httpService: HttpService
   ) {}
+
+  public get company(): Company {
+    return this._company
+  }
+  
   getMany() {
     return this.httpService.get<ICompany[]>('/api/companies')
   }
   getOne(id: number) {
     return this.httpService.get<ICompany>(`/api/companies/${id}`)
+      .pipe(
+        tap((company) => {
+          this._company = plainToClass(Company, company)
+        })
+      )
   }
   createOne(company: ICompany) {
     return this.httpService.post('/api/companies', company)
@@ -63,6 +77,13 @@ export class CompanyService {
     // }).pipe(
     //   map(res => res["payload"])
     // );
+  }
+
+  createProject(companyId: number, project: IProject) {
+    return this.httpService.post(
+      `${this.api}/${companyId}/projects`,
+      project
+    )
   }
 
   findProjects(

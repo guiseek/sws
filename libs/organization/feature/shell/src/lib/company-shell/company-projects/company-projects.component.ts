@@ -1,20 +1,17 @@
 import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  AfterViewInit
+  OnInit
 } from '@angular/core';
-import { ICompany } from '@sws/api-interfaces';
+import { ICompany, IProject } from '@sws/api-interfaces';
 import {
-  CompanyDataSource,
-  CompanyService,
-  ProjectDataSource,
-  companyProjectsTable
+  companyProjectsTable,
+  CreateProjectComponent
 } from '@sws/organization/shared/company';
-import { ActivatedRoute } from '@angular/router';
-import { AsyncTableResource, AsyncTableComponent } from '@sws/ui-kit/table/async-table';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { AsyncTableResource } from '@sws/ui-kit/table/async-table';
+import { DialogService } from '@sws/ui-kit/floating/dialog';
+import { BehaviorSubject } from 'rxjs';
+import { HttpService } from '@sws/shared/utils';
 
 @Component({
   selector: 'org-company-projects',
@@ -24,48 +21,74 @@ import { AsyncTableResource, AsyncTableComponent } from '@sws/ui-kit/table/async
 export class CompanyProjectsComponent implements OnInit {
   company: ICompany;
 
-  displayedColumns = ['id', 'name', 'description'];
-
   table: AsyncTableResource
-
-
-  @ViewChild('input', { static: false }) input: ElementRef;
-  @ViewChild(AsyncTableComponent, { static: true }) asyncTable
   constructor(
     private route: ActivatedRoute,
-    private service: CompanyService
-  ) {}
+    private router: Router,
+    private service: HttpService,
+    private dialogService: DialogService
+  ) { }
 
   ngOnInit() {
-    console.log(
-      'this.asyncTable: ',
-      this.asyncTable
-    )
-    // this.company = this.route.snapshot.parent.data.company;
     const { id, ...company } = this.route.snapshot.parent.data.company
-    this.company = {
-      id, ...company
-    }
-    this.table = companyProjectsTable(id)
-    console.log(
-      this.table
-    )
-    // this.table = {
-    //   meta: {
-    //     endpoint: `/api/companies/${id}/projects`,
-    //     columns: [
-    //       { columnDef: 'name', header: 'Nome', cell: (element) => element.name },
-    //       { columnDef: 'domain', header: 'Domínio', cell: (element) => element.domain }
-    //     ]
-    //   },
-    //   config: {
+    this.company = { id, ...company }
+    this.table = companyProjectsTable(id, {
+      clickable: true,
+      editable: true,
+      deletable: true,
+      paginator: {
+        pageSize: 2
+      }
+    })
 
-    //   }
-    // }
-    // this.dataSource = new ProjectDataSource(this.service);
-    // this.dataSource.loadProjects(this.company.id, '', 'ASC', 0, 3);
+    // this.table.behavior.rowClicked.subscribe((row) => {
+    //   console.log('row: ', row)
+    //   // this.router.navigate(['..','projeto', row.id], { relativeTo: this.route })
+    // })
+  }
+  onClicked(row) {
+    console.log(row)
+    this.router.navigate(['..', 'projeto', row.id], { relativeTo: this.route })
+  }
+  onEdited(row) {
+    console.table(row)
+  }
+  onDeleted(row) {
+    console.table(row)
+    this.dialogService.openConfirm({
+      message: `Tem certeza que deseja remover ${row.name}?`,
+      color: 'warn'
+    }).afterClosed().subscribe((confirm) => {
+      if (confirm) {
+        this.service.delete(
+          `/api/companies/${row.companyId}/projects/${row.id}`
+        ).subscribe((res) => {
+          console.log(res)
+          this.onRefresh()
+        })
+      }
+    })
   }
   onRefresh() {
     this.table.behavior.refresh.next(true)
+  }
+  onCreateProject() {
+    const ref = this.dialogService.open(
+      CreateProjectComponent, {
+      withShell: true,
+      header: { title: 'Criar projeto' },
+      data: {
+        company: this.company,
+        companyId: this.company.id
+      },
+      draggable: true
+    })
+    const sub = ref.afterClosed()
+      .subscribe((result) => {
+        if (result) {
+          this.onRefresh()
+          sub.unsubscribe()
+        }
+      })
   }
 }

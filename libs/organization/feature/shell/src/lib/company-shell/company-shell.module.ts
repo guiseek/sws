@@ -37,8 +37,13 @@ const routes: Routes = [
     children: [
       { path: 'configuracoes', component: CompanySettingsComponent },
       { path: 'projetos', component: CompanyProjectsComponent },
-      { path: '', redirectTo: 'projetos', pathMatch: 'full' }
+      { path: '', redirectTo: 'projetos', pathMatch: 'full' },
     ]
+  },
+  {
+    path: 'projeto', loadChildren: () =>
+      import('../project-shell/project-shell.module')
+        .then(m => m.ProjectShellModule)
   }
 ];
 
@@ -73,4 +78,4 @@ const routes: Routes = [
     { provide: HTTP_INTERCEPTORS, multi: true, useClass: TokenInterceptor },
   ]
 })
-export class CompanyShellModule {}
+export class CompanyShellModule { }

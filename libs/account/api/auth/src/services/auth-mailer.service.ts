@@ -1,10 +1,16 @@
 import { Injectable, BadGatewayException } from '@nestjs/common';
-import { createTransport } from 'nodemailer';
+import { createTransport, Transporter } from 'nodemailer';
 import { environment } from '@env/api';
 
-const transporter = createTransport(
-  environment.mailer
-);
+// const transporter = createTransport(
+//   environment.mailer
+// );
+// const mailOptions = (to: string | string[]) => {
+//   return {
+//     from: 'no-reply-seek.workspace@gmail.com',
+//     to: `${Array.isArray(to) ? to.join(',') : to}`
+//   }
+// }
 const mailOptions = (to: string | string[]) => {
   return {
     from: 'no-reply-seek.workspace@gmail.com',
@@ -13,6 +19,12 @@ const mailOptions = (to: string | string[]) => {
 }
 @Injectable()
 export class AuthMailerService {
+  transporter: Transporter
+  constructor() {
+    this.transporter = createTransport(
+      environment.mailer
+    );
+  }
   async forgotPassword(token: string, email: string) {
     const options = Object.assign(
       mailOptions(email),
@@ -28,7 +40,7 @@ export class AuthMailerService {
       }
     )
     try {
-      const send = await transporter.sendMail(options)
+      const send = await this.transporter.sendMail(options)
       if (send) {
         return send
       }

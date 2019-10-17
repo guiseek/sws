@@ -44,8 +44,9 @@
       width: 100%;
     }
   }
-  .dialog-actions {
+  ::ng-deep .dialog-actions {
     display: flex;
     justify-content: space-between;
+    margin: -8px;
   }
 }

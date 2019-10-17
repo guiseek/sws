@@ -1,1 +1,12 @@
-<p>dialog-confirm works!</p>
+<h3 class="mat-h3">
+  {{ data.message }}
+</h3>
+
+<div class="sws dialog-actions">
+  <button type="button" mat-flat-button (click)="onCancel()">
+    Cancelar
+  </button>
+  <button type="button" mat-button [color]="data.color" (click)="onConfirm()">
+    Confirmar
+  </button>
+</div>

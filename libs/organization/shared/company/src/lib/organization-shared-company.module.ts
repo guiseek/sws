@@ -9,7 +9,7 @@ import { ProjectDataSource } from './services/project.datasource';
 import { CompanyDataSource } from './services/company.datasource';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountSharedAuthModule } from '@sws/account/shared/auth';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, MatIconModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, MatIconModule, MatSelectModule, MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -18,9 +18,11 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   providers: [
     HttpService,
@@ -30,6 +32,9 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule,
     ProjectDataSource
   ],
   declarations: [CreateCompanyComponent, CreateProjectComponent],
+  entryComponents: [
+    CreateProjectComponent
+  ],
   exports: [CreateCompanyComponent, CreateProjectComponent]
 })
 export class OrganizationSharedCompanyModule {}

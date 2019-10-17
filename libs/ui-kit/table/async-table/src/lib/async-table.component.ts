@@ -33,6 +33,9 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
   // @Input() filters: BehaviorSubject<QueryFilter[]>
 
   @Output() selectionChanged = new EventEmitter()
+  @Output() clicked = new EventEmitter()
+  @Output() edit = new EventEmitter()
+  @Output() delete = new EventEmitter()
 
   dataSource: AsyncTableDataSource
 
@@ -55,6 +58,12 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
 
     this.dataSource = new AsyncTableDataSource(this.http)
 
+    if (this.config.editable) {
+      this.displayedColumns.push('edit')
+    }
+    if (this.config.deletable) {
+      this.displayedColumns.push('delete')
+    }
     // if (!this.refresh) {
     //   this.refresh = new Subject
     // }
@@ -62,7 +71,6 @@ export class AsyncTableComponent implements OnInit, AfterViewInit {
     //   this.filters = new BehaviorSubject<QueryFilter[]>([])
     // }
   }
-
   ngAfterViewInit() {
     console.log(
       'this.meta: ', this.meta

@@ -10,9 +10,23 @@ services:
     ports:
       - 5455:5432
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
+      POSTGRES_USER: sws
+      POSTGRES_PASSWORD: sws!@#pg
       POSTGRES_DB: seek_workspace
+    volumes:
+      - /Users/guiseek/Docker/PostgrelSQL:/var/lib/postgresql/data
+    networks:
+      - seek_workspace
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "sws"
+      PGADMIN_DEFAULT_PASSWORD: "sws!@#pg"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
     networks:
       - seek_workspace
 

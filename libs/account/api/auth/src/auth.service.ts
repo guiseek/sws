@@ -45,14 +45,15 @@ export class AuthService {
         }
       }
     } catch (err) {
-      throw new BadRequestException(err)
+      throw new BadRequestException(err.message)
     }
   }
   async resetPassword(dto) {
     try {
       return await this.usersService.resetPassword(dto)
     } catch (err) {
-      throw new BadRequestException(err)
+      // return err
+      throw new BadRequestException(err.message)
     }
   }
 }

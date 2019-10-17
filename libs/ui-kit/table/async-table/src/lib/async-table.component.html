@@ -7,7 +7,8 @@
     matSortActive="id"
     matSortDisableClear
     matSortDirection="desc"
-    class="mat-table"
+    class="mat-table simple"
+    [ngClass]="{ clickable: config.clickable }"
   >
     <!-- <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
@@ -33,27 +34,34 @@
       *ngFor="let column of meta.columns"
       [cdkColumnDef]="column.columnDef"
     >
-      <th class="mat-header-cell" *cdkHeaderCellDef mat-sort-header>{{ column.header }}</th>
-      <td class="mat-cell" *cdkCellDef="let row">
+      <th class="mat-header-cell" *cdkHeaderCellDef mat-sort-header>
+        {{ column.header }}
+      </th>
+      <td
+        class="mat-cell"
+        *cdkCellDef="let row"
+        [ngClass]="column?.cellClass"
+        (click)="clicked.emit(row)"
+      >
         {{ column.cell(row) | formatCell: column.format }}
       </td>
     </ng-container>
-    <!-- <ng-container matColumnDef="edit">
-    <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
-    <td mat-cell *matCellDef="let row">
-      <button type="button" mat-icon-button (click)="editClicked(row)">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let row">
-      <button type="button" mat-icon-button (click)="delete.emit(row)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </td>
-  </ng-container> -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+      <td mat-cell *matCellDef="let row">
+        <button type="button" mat-icon-button (click)="edit.emit(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button type="button" mat-icon-button (click)="delete.emit(row)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
@@ -65,3 +73,5 @@
     [showFirstLastButtons]="config.paginator.showFirstLastButtons"
   ></mat-paginator>
 </div>
+
+<ng-template #iconCell let-column> </ng-template>

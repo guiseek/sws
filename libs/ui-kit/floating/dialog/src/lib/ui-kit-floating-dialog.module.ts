@@ -37,7 +37,7 @@ const modules = [
     DialogConfirmComponent
   ],
   providers: [DialogService],
-  entryComponents: [DialogContainerComponent, DialogShellComponent, DialogAlertComponent],
+  entryComponents: [DialogContainerComponent, DialogShellComponent, DialogAlertComponent, DialogConfirmComponent],
   exports: [DialogShellComponent, DialogCloseDirective]
 })
 export class UiKitFloatingDialogModule {}
