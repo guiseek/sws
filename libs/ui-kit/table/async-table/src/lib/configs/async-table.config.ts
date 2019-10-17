@@ -17,6 +17,7 @@ export const asyncTableConfig: AsyncTableConfig = {
 }
 
 export const asyncTableBehavior: AsyncTableBehavior = {
-  filters: new BehaviorSubject<QueryFilter[]>(null),
-  refresh: new Subject
+  filters: new BehaviorSubject<QueryFilter[]>([]),
+  refresh: new Subject,
+  // rowClicked: new BehaviorSubject(null)
 }

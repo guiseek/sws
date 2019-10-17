@@ -1,3 +1,5 @@
+// @import 'https://fonts.googleapis.com/css?family=Rancho&effect=3d';
+
 // -----------------------------------------------------------------------------------------------------
 // @ Theming
 // -----------------------------------------------------------------------------------------------------
@@ -6,7 +8,7 @@
   $foreground: map-get($theme, foreground);
 
   $primary: map-get($theme, primary);
-  // 
+  //
 
   .light-blue-fg {
     color: mat-color($primary, 300);
@@ -137,6 +139,10 @@
         tr {
           td {
             border-bottom: 1px solid map-get($foreground, divider);
+          }
+          &.off {
+            color: map-get($foreground, secondary-text);
+            background-color: map-get($foreground, divider);
           }
         }
       }
@@ -546,7 +552,7 @@ table {
     tbody {
       tr {
         td {
-          padding: 16px 8px;
+          padding: 4px 8px;
 
           &:first-child {
             padding-left: 24px;
@@ -572,5 +578,35 @@ table {
         }
       }
     }
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+}
+.mat-card.card-table-container {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  .mat-card-header {
+    // z-index: 100;
+    position: relative;
+    padding: 8px 16px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    .mat-fab {
+      position: absolute;
+      z-index: 1000;
+      right: 16px;
+      bottom: -16px;
+    }
+  }
+  .sws-table-container {
+    border-radius: 0;
+    box-shadow: none;
   }
 }

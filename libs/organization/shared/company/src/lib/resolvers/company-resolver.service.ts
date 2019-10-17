@@ -15,6 +15,6 @@ export class CompanyResolverService implements Resolve<ICompany> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<ICompany> {
-    return this.service.findCompanyById(route.params['id']);
+    return this.service.getOne(route.params['id']);
   }
 }

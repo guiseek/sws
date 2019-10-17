@@ -12,7 +12,8 @@ export class FiltersAsyncService {
   openFilters<T = any>(fields) {
     return this.dialogService.open<T>(
       FiltersComponent, {
-        data: { fields }
+        data: { fields },
+        panelClass: ['no-padding']
       }
     )
   }

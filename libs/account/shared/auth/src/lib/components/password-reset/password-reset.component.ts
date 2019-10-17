@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { take, catchError, tap } from 'rxjs/operators';
 import { DialogRef } from '@sws/ui-kit/floating/dialog';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'auth-password-reset',
@@ -15,6 +16,7 @@ export class PasswordResetComponent {
 
   @Output() updated = new EventEmitter()
 
+  inProgress = false
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -30,27 +32,31 @@ export class PasswordResetComponent {
   onSubmit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
+      this.inProgress = true
       this.service
         .resetPassword(this.form.value)
         .pipe(
           take(1),
-          catchError((error) => this.openSnack(error, 'sws-warn'))
+          catchError(({ error }) => {
+            this.openSnack(error)
+            return throwError(error)
+          })
         )
         .subscribe((response) => {
           if (response)
             this.openSnack({
-              message: 'Link de recuperação enviado'
-            }, 'sws-success')
+              message: 'Senha alterada'
+            })
 
           this.close(response)
         })
     }
   }
-  openSnack({ message }, panelClass = '') {
-    console.log('snack: ', message)
+  openSnack(error) {
+    this.inProgress = false
     const snack$ = this.snackBar
-      .open(message, 'Fechar', {
-        duration: 10000, panelClass: [panelClass]
+      .open(error.message, 'Fechar', {
+        duration: 10000
       })
       .onAction()
 
@@ -59,11 +65,11 @@ export class PasswordResetComponent {
     return snack$
   }
   close(response?: any) {
+    this.inProgress = false
     if (this.dialogRef) {
       this.dialogRef.close(response)
     } else {
       this.updated.emit(response)
     }
   }
-
 }

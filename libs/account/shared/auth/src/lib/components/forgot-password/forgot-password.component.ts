@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { take, catchError, tap } from 'rxjs/operators';
 import { DialogRef } from '@sws/ui-kit/floating/dialog';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'auth-forgot-password',
@@ -15,6 +16,7 @@ export class ForgotPasswordComponent {
 
   @Output() sended = new EventEmitter()
 
+  inProgress = false
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -22,35 +24,46 @@ export class ForgotPasswordComponent {
     @Optional() public dialogRef: DialogRef
   ) {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      lastPassword: ['', [Validators.minLength(4)]]
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      lastPassword: ['', [
+        Validators.required,
+        Validators.minLength(4)
+      ]]
     })
   }
 
   onSubmit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
+      this.inProgress = true
       this.service
         .forgotPassword(this.form.value)
         .pipe(
           take(1),
-          catchError((error) => this.openSnack(error, 'sws-warn'))
+          catchError((error) => {
+            this.openSnack(error)
+            return throwError(error)
+          })
         )
         .subscribe((response) => {
           if (response)
             this.openSnack({
-              message: 'Link de recuperação enviado'
-            }, 'sws-success')
+              message: 'Código de recuperação enviado'
+            })
 
           this.close(response)
         });
     }
   }
 
-  openSnack({ message }, panelClass = '') {
+  openSnack(error) {
+    this.inProgress = false
     const snack$ = this.snackBar
-      .open(message, 'Fechar', {
-        duration: 10000, panelClass: [panelClass]
+      .open(error.message, 'Fechar', {
+        duration: 10000
       })
       .onAction()
 
@@ -59,6 +72,7 @@ export class ForgotPasswordComponent {
     return snack$
   }
   close(response?: any) {
+    this.inProgress = false
     if (this.dialogRef) {
       this.dialogRef.close(response)
     } else {

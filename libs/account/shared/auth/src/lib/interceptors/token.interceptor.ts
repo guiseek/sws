@@ -26,6 +26,7 @@ export class TokenInterceptor implements HttpInterceptor {
     const token = this._tokenService.token;
     if (token) request = this.getCloneRequestWithToken(request, token);
 
+    console.log(request.url)
     return next.handle(request).pipe(
       catchError(err => {
         this.catchRedirectError(err);

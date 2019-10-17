@@ -3,7 +3,8 @@ import {
   ViewChild,
   ElementRef,
   ComponentRef,
-  EmbeddedViewRef
+  EmbeddedViewRef,
+  HostBinding
 } from '@angular/core';
 import {
   CdkPortalOutlet,
@@ -25,6 +26,10 @@ import { DialogRef } from './dialog-ref';
   }`]
 })
 export class DialogContainerComponent extends BasePortalOutlet {
+  @HostBinding('class')
+  get containerClass() {
+    return 'sws-dialog-container'
+  }
   @ViewChild(CdkPortalOutlet, { static: true }) portalOutlet: CdkPortalOutlet;
   config: DialogConfig;
   constructor(public ref: DialogRef, public _elementRef: ElementRef) {

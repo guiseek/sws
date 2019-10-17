@@ -16,6 +16,11 @@ import { DialogRef } from './dialog-ref';
 import { DialogContainerComponent } from './dialog-container.component';
 import { DIALOG_DATA } from './configs/dialog.token';
 import { DialogShellComponent } from './dialog-shell/dialog-shell.component';
+import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
+import { DialogHeader } from './interfaces/dialog-header.interface';
+import { DialogAlert } from './interfaces/dialog-alert.interface';
+import { DialogConfirm } from './interfaces/dialog-confirm.interface';
+import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +29,7 @@ export class DialogService {
   constructor(
     private overlay: Overlay,
     private injector: Injector
-  ) {}
+  ) { }
 
   open<D = any, R = any>(
     componentOrTemplate: ComponentType<any> | TemplateRef<any>,
@@ -37,13 +42,11 @@ export class DialogService {
       .global()
       .centerVertically()
       .centerHorizontally();
-    const overlayRef = this.overlay.create({
-      hasBackdrop: dialogConfig.hasBackdrop,
+
+    const overlayRef = this.getOverlay(
       positionStrategy,
-      width: dialogConfig.width,
-      height: dialogConfig.height,
-      panelClass: dialogConfig.panelClass
-    });
+      dialogConfig
+    )
 
     const dialogRef = new DialogRef<R>(overlayRef, positionStrategy, dialogConfig);
 
@@ -95,5 +98,31 @@ export class DialogService {
     //   .updatePosition()
 
     return dialogRef;
+  }
+  getOverlay(positionStrategy, dialogConfig) {
+    return this.overlay.create({
+      hasBackdrop: dialogConfig.hasBackdrop,
+      positionStrategy,
+      width: dialogConfig.width,
+      height: dialogConfig.height,
+      panelClass: dialogConfig.panelClass
+    });
+  }
+  openAlert(data: DialogAlert) {
+    return this.open(
+      DialogAlertComponent, { data, panelClass: 'dialog-alert' }
+    )
+  }
+  openConfirm(data: DialogConfirm) {
+    return this.open(
+      DialogConfirmComponent, {
+        data, withShell: true,
+        header: {
+          title: 'Confirmação',
+          color: data.color
+        },
+        draggable: true
+      }
+    )
   }
 }

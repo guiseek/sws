@@ -4,7 +4,9 @@ export interface AsyncTableColumn {
   columnDef: string
   header: string
   cell: (element: any) => string,
-  format?: string
+  format?: string,
+  cellClass?: string | string[],
+  cellState?: (element: any) => string
 }
 
 export interface AsyncTableMetadata {

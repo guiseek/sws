@@ -1487,31 +1487,32 @@
   dependencies:
     uuid "3.3.3"
 
-"@nestjsx/crud-request@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjsx/crud-request/-/crud-request-4.2.0.tgz#82d81d406157e83e7fa9816ce1f24d03824c24a6"
-  integrity sha512-Zw3yFgy0ycU7k3rAOmUNVKW54JGdZySxNd7Y3/Om+mJ6RybTnapht0e0qDe+fG9m2vyx8wYiheA0L7FNwn4VEQ==
+"@nestjsx/crud-request@^4.3.0-alpha.0":
+  version "4.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@nestjsx/crud-request/-/crud-request-4.3.0-alpha.0.tgz#69f6b9249e3f899d14df3386e1df5d693d2ec404"
+  integrity sha512-WH3yYVkmH61XFOxdCqxPlV8WdYiXyvs2J/8sFRo14/k4KuTcBa8tZ2AMzHnS9l5vNYgDGUZHhp8qwRWZoAcSJg==
   dependencies:
-    "@nestjsx/util" "^4.2.0"
+    "@nestjsx/util" "^4.3.0-alpha.0"
+    qs "^6.8.0"
 
-"@nestjsx/crud-typeorm@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjsx/crud-typeorm/-/crud-typeorm-4.2.0.tgz#1b0b176b5ef7b56c255bc2e0d3c911ca23673cfa"
-  integrity sha512-hii/SXnLUrgq73OuSlDwEc6iDTClX6bi554FjjHPQgl2PSm+W7D/mjr4mqfqgQHCqLH1ZvuGsT7Kv3gWGJD+bw==
+"@nestjsx/crud-typeorm@^4.3.0-alpha.0":
+  version "4.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@nestjsx/crud-typeorm/-/crud-typeorm-4.3.0-alpha.0.tgz#744e7112b2ed66614d8fa3dc732c3766bdd9b96e"
+  integrity sha512-KCDrV4d4BGSIcLf2pqga4Tz2vbVuLnQtKCPNQi3fHXLlPnu90TfapBvP0XLXTw7V1i9rks6KAylTE/3XDteLIg==
 
-"@nestjsx/crud@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjsx/crud/-/crud-4.2.0.tgz#8cb94716f6f7eaa32ad72645056b386468ac71c7"
-  integrity sha512-PBh5rxoc3Ep7uS8cT4zoE71ZUptE9DBedEvXr9gy/uII/bTCfAEZGIe8UR0zxSHTovT+GtsfL+GNx9YjISBYnw==
+"@nestjsx/crud@^4.3.0-alpha.0":
+  version "4.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@nestjsx/crud/-/crud-4.3.0-alpha.0.tgz#a483800e153b4ae6bd3b49e71d36ffdc20e9b220"
+  integrity sha512-JVe0Na72KM3H/rC2OG3FX86W1yGgUPfJhOwWryepztSTwl+bP5T6rQ0H+KAauqQTxPO7/bvR0cE+7tQpsmGaoQ==
   dependencies:
-    "@nestjsx/crud-request" "^4.2.0"
-    "@nestjsx/util" "^4.2.0"
+    "@nestjsx/crud-request" "^4.3.0-alpha.0"
+    "@nestjsx/util" "^4.3.0-alpha.0"
     deepmerge "^3.2.0"
 
-"@nestjsx/util@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjsx/util/-/util-4.2.0.tgz#28a9eab85e01390dcc0d8fd32074256b08ff6c1d"
-  integrity sha512-dGu4UlHibcv4nWfYpIdbY4CEHe87mua3QTu43FFE/F76BIwQc0Bq9ohnUnR0Cgp4MjutNGXff9L9DakQaE7eWQ==
+"@nestjsx/util@^4.3.0-alpha.0":
+  version "4.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@nestjsx/util/-/util-4.3.0-alpha.0.tgz#062d4d750233924495b0bf86cbdf629657b9752d"
+  integrity sha512-H8+WKqZkvm4Yj6EpjQAZVLI5hKcpJLZ5/iwYXdc9Cch6OSuZeuTZuGwQJ2q4dZlM46XkRNHKXQjy0uL2MFkFZQ==
 
 "@ngtools/webpack@8.3.2":
   version "8.3.2"
@@ -1884,6 +1885,13 @@
   version "8.9.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.9.5.tgz#162b864bc70be077e6db212b322754917929e976"
   integrity sha512-jRHfWsvyMtXdbhnz5CVHxaBgnV6duZnPlQuRSo/dm/GnmikNcmZhxIES4E9OZjUmQ8C+HCl4KJux+cXN/ErGDQ==
+
+"@types/nodemailer@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.2.1.tgz#8f089bf0ef826f04b9d8dd8750233b04978cb675"
+  integrity sha512-6f46rxxaFwyOW39psPoQiM7jHjL7apDRNT5WPHIuv+TZFv+7sBGSI9J7blIC3/NWff4O9/VSzgoQtO6aPLUdvQ==
+  dependencies:
+    "@types/node" "*"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -8046,6 +8054,11 @@ marked@^0.7.0:
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
   integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
+material-design-icons@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/material-design-icons/-/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
+  integrity sha1-mnHEh0chjrylHlGmbaaCA4zct78=
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -8603,6 +8616,11 @@ node-sass-tilde-importer@^1.0.0:
   integrity sha512-Swcmr38Y7uB78itQeBm3mThjxBy9/Ah/ykPIaURY/L6Nec9AyRoL/jJ7ECfMR+oZeCTVQNxVMu/aHU+TLRVbdg==
   dependencies:
     find-parent-dir "^0.3.0"
+
+nodemailer@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.3.1.tgz#2784beebac6b9f014c424c54dbdcc5c4d1221346"
+  integrity sha512-j0BsSyaMlyadEDEypK/F+xlne2K5m6wzPYMXS/yxKI0s7jmT1kBx6GEKRVbZmyYfKOsjkeC/TiMVDJBI/w5gMQ==
 
 nopt@^4.0.1:
   version "4.0.1"
@@ -9762,6 +9780,11 @@ qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+
+qs@^6.8.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
+  integrity sha512-27RP4UotQORTpmNQDX8BHPukOnBP3p1uUJY5UnDhaJB+rMt9iMsok724XL+UHU23bEFOHRMQ2ZhI99qOWUMGFA==
 
 qs@~6.5.2:
   version "6.5.2"

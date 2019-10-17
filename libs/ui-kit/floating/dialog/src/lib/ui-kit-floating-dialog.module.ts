@@ -15,8 +15,10 @@ import { PortalModule } from '@angular/cdk/portal';
 import { DialogService } from './dialog.service';
 import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
 import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
+import { A11yModule } from '@angular/cdk/a11y';
 
 const modules = [
+  A11yModule,
   OverlayModule,
   PortalModule,
   MatToolbarModule,
@@ -35,7 +37,7 @@ const modules = [
     DialogConfirmComponent
   ],
   providers: [DialogService],
-  entryComponents: [DialogContainerComponent, DialogShellComponent],
+  entryComponents: [DialogContainerComponent, DialogShellComponent, DialogAlertComponent, DialogConfirmComponent],
   exports: [DialogShellComponent, DialogCloseDirective]
 })
 export class UiKitFloatingDialogModule {}

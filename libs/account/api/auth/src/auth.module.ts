@@ -7,6 +7,9 @@ import { UsersModule } from 'api/users';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './config/constants';
+import { AuthMailerService } from './services/auth-mailer.service';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from './guards';
 
 @Module({
   imports: [
@@ -19,7 +22,10 @@ import { jwtConstants } from './config/constants';
       signOptions: { expiresIn: '2h' }
     })
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy, AuthMailerService, {
+    provide: APP_GUARD,
+    useClass: AuthGuard
+  }],
   exports: [AuthService],
   controllers: [AuthController]
 })

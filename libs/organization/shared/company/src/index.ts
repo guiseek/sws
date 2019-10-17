@@ -6,3 +6,5 @@ export * from './lib/services/company.datasource';
 export * from './lib/services/project.datasource';
 export * from './lib/configs/index';
 export * from './lib/configs/companies-table.config';
+export * from './lib/components/index';
+export * from './lib/models/index';
