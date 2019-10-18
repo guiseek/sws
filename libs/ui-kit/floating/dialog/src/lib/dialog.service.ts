@@ -21,10 +21,10 @@ import { DialogHeader } from './interfaces/dialog-header.interface';
 import { DialogAlert } from './interfaces/dialog-alert.interface';
 import { DialogConfirm } from './interfaces/dialog-confirm.interface';
 import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
+import { DialogDelete } from './interfaces/dialog-delete.interface';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DialogService {
   constructor(
     private overlay: Overlay,
@@ -116,13 +116,28 @@ export class DialogService {
   openConfirm(data: DialogConfirm) {
     return this.open(
       DialogConfirmComponent, {
-        data, withShell: true,
-        header: {
-          title: 'Confirmação',
-          color: data.color
-        },
-        draggable: true
-      }
-    )
+      data, withShell: true,
+      header: {
+        title: 'Confirmação',
+        color: data.color
+      },
+      draggable: true
+    })
+  }
+  openDelete(data?: DialogDelete) {
+    data = Object.assign({
+      message: 'Para continuar, confirme o código abaixo.',
+      confirmCode: ('' + Math.random()).substring(2, 7),
+      color: 'warn'
+    }, data)
+    return this.open(
+      DialogDeleteComponent, {
+      data, withShell: true,
+      header: {
+        title: 'Apagar registro',
+        color: data.color
+      },
+      draggable: true
+    })
   }
 }

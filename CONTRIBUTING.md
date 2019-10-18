@@ -1,7 +1,26 @@
-# Sws
+# S. WS
 ## Seek Workspace
 
 <p align="center"><img src="https://raw.githubusercontent.com/guiseek/sws/develop/libs/shared/assets/logo/sws.png" width="350"></p>
+
+
+## TODO
+
+- Components
+  - [x] Form
+  - [x] Toolbar
+  - [x] Table
+  - [x] Dialog
+  - [x] Cards
+  - [ ] Sidebar
+
+- Features
+  - [x] Companies
+  - [x] Users
+  - [x] Projects
+  - [ ] Plans
+  - [-] Licenses (<small>Em progresso</small>)
+
 
 # Como contribuir (How to contribute)
 
@@ -90,24 +109,6 @@ docker-compose up -d
 ```bash
 yarn dev
 ```
-
-
-## TODO
-
-- Components
-  - [x] Form
-  - [x] Toolbar
-  - [x] Table
-  - [x] Dialog
-  - [x] Cards
-  - [ ] Sidebar
-
-- Features
-  - [ ] Companies
-  - [ ] Users
-  - [ ] Projects
-  - [ ] Plans
-  - [ ] Licenses
 
 
 ---

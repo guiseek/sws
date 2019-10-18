@@ -6,11 +6,17 @@ import {
   MatIconModule,
   MatMenuModule,
   MatDividerModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 import { UserService } from './services/user.service';
 import { AccountSharedAuthModule } from '@sws/account/shared/auth';
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PopoverMenuComponent } from './components/popover-menu/popover-menu.component';
+import { UiKitFloatingDialogModule } from '@sws/ui-kit/floating/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const modules = [
   MatButtonModule,
@@ -23,12 +29,18 @@ const modules = [
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     AccountSharedAuthModule,
+    UiKitFloatingDialogModule,
     ...modules,
     RouterModule
   ],
-  declarations: [ToolbarMenuComponent],
+  declarations: [ToolbarMenuComponent, ProfileComponent, PopoverMenuComponent],
   providers: [UserService],
-  exports: [ToolbarMenuComponent]
+  exports: [ToolbarMenuComponent, ProfileComponent, PopoverMenuComponent],
+  entryComponents: [ProfileComponent, PopoverMenuComponent]
 })
 export class AccountSharedUserModule {}

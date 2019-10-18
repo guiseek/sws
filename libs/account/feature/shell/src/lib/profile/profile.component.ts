@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@sws/account/shared/auth';
+import { accountProfileForm } from '@sws/account/shared/user';
 
 @Component({
   selector: 'sws-profile',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  profileForm = accountProfileForm
+  constructor(
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {}
 }

@@ -3,6 +3,7 @@ import { IUser } from './user.interface';
 import { IUserProject } from './user-project.interface';
 
 export interface IProject {
+  id?: number;
   name?: String;
   description?: String;
   isActive?: Boolean;

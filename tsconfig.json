@@ -26,6 +26,8 @@
       "org/companies/*": ["libs/organization/api/companies/src/*"],
       "org/projects": ["libs/organization/api/projects/src"],
       "org/projects/*": ["libs/organization/api/projects/src/*"],
+      "org/licenses": ["libs/organization/api/licenses/src"],
+      "org/licenses/*": ["libs/organization/api/licenses/src/*"],
       "@sws/shared/api/entities": ["libs/shared/api/entities/src/index.ts"],
       "@sws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
       "@sws/account/feature/auth": ["libs/account/feature/auth/src/index.ts"],
@@ -58,7 +60,11 @@
       "@sws/ui-kit/table/filter-async-table": [
         "libs/ui-kit/table/filter-async-table/src/index.ts"
       ],
-      "@sws/ui-kit/card": ["libs/ui-kit/card/src/index.ts"]
+      "@sws/ui-kit/card": ["libs/ui-kit/card/src/index.ts"],
+      "@sws/ui-kit/form/search": ["libs/ui-kit/form/search/src/index.ts"],
+      "@sws/ui-kit/floating/popover": [
+        "libs/ui-kit/floating/popover/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

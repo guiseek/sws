@@ -17,9 +17,11 @@ import {
   MatIconModule,
   MatButtonModule,
   MatDividerModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCardModule
 } from '@angular/material';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -29,10 +31,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MatButtonModule,
     MatDividerModule,
     MatTabsModule,
+    MatCardModule,
     UiKitCardModule,
     AccountSharedAuthModule,
     AccountSharedUserModule,
     UiKitNavToolbarModule,
+    FlexLayoutModule,
     RouterModule.forChild([
       {
         path: '',

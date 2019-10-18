@@ -1,5 +1,5 @@
 import { ICompany, IProject, IUser, IUserProject } from '@sws/api-interfaces';
-import { validator } from '@sws/shared/utils';
+import { validator, required } from '@sws/shared/utils';
 import { plainToClass, classToPlainFromExist, plainToClassFromExist, serialize } from 'class-transformer';
 
 export class Project {
@@ -26,6 +26,10 @@ export class Project {
     return this._company
   }
 
+  @validator
+  addUser(@required user: IUser) {
+    this.users.push(user)
+  }
   patchValue(value: IProject) {
     return plainToClass(Project, value, {
       excludePrefixes: ["", "__"]

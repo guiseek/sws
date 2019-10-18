@@ -76,6 +76,12 @@
     },
     "ui-kit-card": {
       "tags": []
+    },
+    "ui-kit-form-search": {
+      "tags": ["ui:form"]
+    },
+    "ui-kit-floating-popover": {
+      "tags": ["ui:floating"]
     }
   }
 }

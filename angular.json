@@ -910,6 +910,78 @@
           "styleext": "scss"
         }
       }
+    },
+    "ui-kit-form-search": {
+      "projectType": "library",
+      "root": "libs/ui-kit/form/search",
+      "sourceRoot": "libs/ui-kit/form/search/src",
+      "prefix": "sws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/form/search/tsconfig.lib.json",
+              "libs/ui-kit/form/search/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/form/search/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/form/search/jest.config.js",
+            "tsConfig": "libs/ui-kit/form/search/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/form/search/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-kit-floating-popover": {
+      "projectType": "library",
+      "root": "libs/ui-kit/floating/popover",
+      "sourceRoot": "libs/ui-kit/floating/popover/src",
+      "prefix": "sws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui-kit/floating/popover/tsconfig.lib.json",
+            "project": "libs/ui-kit/floating/popover/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/floating/popover/tsconfig.lib.json",
+              "libs/ui-kit/floating/popover/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/floating/popover/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/floating/popover/jest.config.js",
+            "tsConfig": "libs/ui-kit/floating/popover/tsconfig.spec.json",
+            "setupFile": "libs/ui-kit/floating/popover/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

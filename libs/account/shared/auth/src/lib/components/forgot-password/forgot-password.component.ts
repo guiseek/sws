@@ -1,9 +1,9 @@
-import { Component, Output, EventEmitter, Optional } from '@angular/core';
+import { Component, Output, EventEmitter, Optional, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { take, catchError, tap } from 'rxjs/operators';
-import { DialogRef } from '@sws/ui-kit/floating/dialog';
+import { DialogRef, DIALOG_DATA } from '@sws/ui-kit/floating/dialog';
 import { throwError } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { throwError } from 'rxjs';
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss']
 })
-export class ForgotPasswordComponent {
+export class ForgotPasswordComponent implements OnInit {
   form: FormGroup
 
   @Output() sended = new EventEmitter()
@@ -21,7 +21,8 @@ export class ForgotPasswordComponent {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private service: AuthService,
-    @Optional() public dialogRef: DialogRef
+    @Optional() public dialogRef: DialogRef,
+    @Optional() @Inject(DIALOG_DATA) public data
   ) {
     this.form = this.fb.group({
       email: ['', [
@@ -35,6 +36,11 @@ export class ForgotPasswordComponent {
     })
   }
 
+  ngOnInit() {
+    if (this.data) {
+      this.form.patchValue(this.data)
+    }
+  }
   onSubmit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {

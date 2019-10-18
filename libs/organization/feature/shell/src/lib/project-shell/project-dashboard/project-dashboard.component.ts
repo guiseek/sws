@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { swsAnimations } from '@sws/shared/utils';
 
 @Component({
   selector: 'org-project-dashboard',
   templateUrl: './project-dashboard.component.html',
-  styleUrls: ['./project-dashboard.component.scss']
+  styleUrls: ['./project-dashboard.component.scss'],
+  animations: swsAnimations
 })
 export class ProjectDashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */

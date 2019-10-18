@@ -21,6 +21,10 @@
         {{ user.company.name }}
       </a>
       <mat-divider></mat-divider>
+      <button mat-menu-item type="button" (click)="changePassword()">
+        Alterar senha
+      </button>
+      <mat-divider></mat-divider>
       <button mat-menu-item type="button" (click)="logout()">
         Sair
       </button>

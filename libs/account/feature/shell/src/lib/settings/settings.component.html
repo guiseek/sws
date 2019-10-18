@@ -1,1 +1,10 @@
-<p>settings works!</p>
+<div class="page-container">
+  <div fxLayout="row" fxLayoutGap="16px" fxLayout="space-between">
+    <mat-card fxFlex>
+      <auth-password-reset></auth-password-reset>
+    </mat-card>
+    <mat-card fxFlex>
+      <pre>{{ user | json }}</pre>
+    </mat-card>
+  </div>
+</div>

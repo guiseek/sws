@@ -12,7 +12,7 @@ export const ormConfig = (config = {}): TypeOrmModuleOptions => {
       password: 'sws!@#pg',
       database: 'seek_workspace',
       synchronize: true,
-      // logging: true,
+      logging: true,
       cache: {
         type: 'redis',
         options: {

@@ -26,8 +26,8 @@ export class ProjectService {
   getMany() {
     return this.httpService.get<IProject[]>('/api/companies')
   }
-  getOne(id: number) {
-    return this.httpService.get<IProject>(`/api/companies/${id}/projects`)
+  getOne(companyId: number, id: number) {
+    return this.httpService.get<IProject>(`/api/companies/${companyId}/projects/${id}`)
       .pipe(
         tap((project) => {
           this._project = plainToClass(Project, project)
@@ -38,10 +38,10 @@ export class ProjectService {
     return this.httpService.post(`/api/companies/${project.companyId}/projects`, project)
   }
   updateOne(project: Partial<IProject>) {
-    return this.httpService.put(`/api/companies/${project.companyId}/projects`, project)
+    return this.httpService.put(`/api/companies/${project.companyId}/projects/${project.id}`, project)
   }
-  deleteOne(id: number) {
-    return this.httpService.delete(`/api/companies/${id}/projects`)
+  deleteOne(project: IProject) {
+    return this.httpService.delete(`/api/companies/${project.companyId}/projects/${project.id}`)
   }
   addProject(project: IProject) {
     return this.httpService.put(`/api/companies/${project.companyId}/projects`, project)
