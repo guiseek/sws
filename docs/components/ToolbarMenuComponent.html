@@ -145,10 +145,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#changePassword">changePassword</a>
+                            </li>
+                            <li>
                                 <a href="#logout">logout</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openAlert">openAlert</a>
+                            </li>
+                            <li>
+                                <a href="#openResetPassword">openResetPassword</a>
                             </li>
                         </ul>
                     </td>
@@ -182,12 +191,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html">AuthService</a>, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+<code>constructor(authService: <a href="../injectables/AuthService.html">AuthService</a>, dialogService: <a href="../injectables/DialogService.html">DialogService</a>, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -209,6 +218,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -249,7 +270,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:15</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -263,6 +284,45 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                        <b>
+                            changePassword
+                        </b>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePassword()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -285,8 +345,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -324,8 +384,86 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openAlert"></a>
+                    <span class="name">
+                        <b>
+                            openAlert
+                        </b>
+                        <a href="#openAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openResetPassword"></a>
+                    <span class="name">
+                        <b>
+                            openResetPassword
+                        </b>
+                        <a href="#openResetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openResetPassword()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -367,7 +505,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">libs/account/shared/user/src/lib/components/toolbar-menu/toolbar-menu.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -382,9 +520,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { IUser } from &#x27;@sws/api-interfaces&#x27;;
-import { AuthService } from &#x27;@sws/account/shared/auth&#x27;;
+import { AuthService, ForgotPasswordComponent, PasswordResetComponent } from &#x27;@sws/account/shared/auth&#x27;;
 import { UserService } from &#x27;../../services/user.service&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
+import { DialogService } from &#x27;@sws/ui-kit/floating/dialog&#x27;;
 
 @Component({
   selector: &#x27;account-toolbar-menu&#x27;,
@@ -397,14 +536,62 @@ export class ToolbarMenuComponent implements OnInit {
   user$: Observable&lt;IUser&gt;
   constructor(
     private authService: AuthService,
+    private dialogService: DialogService,
     private userService: UserService
   ) { }
 
   ngOnInit() {
     this.user$ &#x3D; this.authService.info()
   }
+  changePassword() {
+    console.log(
+      this.authService.user
+    )
+    const ref &#x3D; this.dialogService.open(
+      ForgotPasswordComponent, {
+      header: { title: &#x27;Alterar senha&#x27; },
+      withShell: true,
+      data: {
+        email: this.authService.user.email
+      }
+    })
+    const sub &#x3D; ref.afterClosed().subscribe(result &#x3D;&gt; {
+      if (result) {
+        this.openAlert()
+      }
+      sub.unsubscribe()
+    })
+  }
   logout() {
     this.authService.logout()
+  }
+  openAlert() {
+    const ref &#x3D; this.dialogService.openAlert({
+      type: &#x27;info&#x27;,
+      message: &#x27;Copie o código enviado e volte para configurar sua nova senha, ok?&#x27;
+    })
+
+    const sub &#x3D; ref.afterClosed()
+      .subscribe((result) &#x3D;&gt; {
+        sub.unsubscribe()
+        if (result) {
+          this.openResetPassword()
+        }
+      })
+  }
+  openResetPassword() {
+    const ref &#x3D; this.dialogService.open(
+      PasswordResetComponent, {
+      withShell: true,
+      header: {
+        title: &#x27;Nova senha&#x27;,
+        subtitle: &#x27;Use o código recebido no email&#x27;
+      }
+    })
+    const sub &#x3D; ref.afterClosed().subscribe(result &#x3D;&gt; {
+      console.log(&#x27;result: &#x27;, result)
+      sub.unsubscribe()
+    })
   }
 }
 </code></pre>
@@ -433,6 +620,10 @@ export class ToolbarMenuComponent implements OnInit {
       &lt;a mat-menu-item [routerLink]&#x3D;&quot;[&#x27;/organizacao&#x27;,&#x27;empresas&#x27;, user.company.id]&quot;&gt;
         {{ user.company.name }}
       &lt;/a&gt;
+      &lt;mat-divider&gt;&lt;/mat-divider&gt;
+      &lt;button mat-menu-item type&#x3D;&quot;button&quot; (click)&#x3D;&quot;changePassword()&quot;&gt;
+        Alterar senha
+      &lt;/button&gt;
       &lt;mat-divider&gt;&lt;/mat-divider&gt;
       &lt;button mat-menu-item type&#x3D;&quot;button&quot; (click)&#x3D;&quot;logout()&quot;&gt;
         Sair
@@ -511,9 +702,9 @@ export class ToolbarMenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="account-toolbar-menu-container">  <ng-container *ngIf="user$ | async as user">    <button      type="button"      mat-button      [matMenuTriggerFor]="accountMenu"      #menu="matMenuTrigger"      [class.open]="menu.menuOpen"    >      {{ user.email }}    </button>    <mat-menu      [class]="\'account-toolbar-menu\'"      #accountMenu="matMenu"      xPosition="before"    >      <a mat-menu-item routerLink="/conta">Conta</a>      <mat-divider></mat-divider>      <button mat-menu-item disabled>Organização</button>      <a mat-menu-item [routerLink]="[\'/organizacao\',\'empresas\', user.company.id]">        {{ user.company.name }}      </a>      <mat-divider></mat-divider>      <button mat-menu-item type="button" (click)="logout()">        Sair      </button>    </mat-menu>  </ng-container></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
-    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="account-toolbar-menu-container">  <ng-container *ngIf="user$ | async as user">    <button      type="button"      mat-button      [matMenuTriggerFor]="accountMenu"      #menu="matMenuTrigger"      [class.open]="menu.menuOpen"    >      {{ user.email }}    </button>    <mat-menu      [class]="\'account-toolbar-menu\'"      #accountMenu="matMenu"      xPosition="before"    >      <a mat-menu-item routerLink="/conta">Conta</a>      <mat-divider></mat-divider>      <button mat-menu-item disabled>Organização</button>      <a mat-menu-item [routerLink]="[\'/organizacao\',\'empresas\', user.company.id]">        {{ user.company.name }}      </a>      <mat-divider></mat-divider>      <button mat-menu-item type="button" (click)="changePassword()">        Alterar senha      </button>      <mat-divider></mat-divider>      <button mat-menu-item type="button" (click)="logout()">        Sair      </button>    </mat-menu>  </ng-container></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncCompleteComponent', 'selector': 'sws-async-complete'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogDeleteComponent', 'selector': 'sws-dialog-delete'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'PopoverMenuComponent', 'selector': 'account-popover-menu'},{'name': 'PopoverShellComponent', 'selector': 'sws-popover-shell'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProfileComponent', 'selector': 'account-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectSettingsComponent', 'selector': 'org-project-settings'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'},{'name': 'PopoverArrowDirective', 'selector': '[swsPopoverArrow]'},{'name': 'PopoverCloseDirective', 'selector': '[swsPopoverClose]'}];
     var ACTUAL_COMPONENT = {'name': 'ToolbarMenuComponent'};
 </script>
 <script src="../js/tree.js"></script>

@@ -87,6 +87,9 @@
                             <li>
                                 <a href="#openConfirm">openConfirm</a>
                             </li>
+                            <li>
+                                <a href="#openDelete">openDelete</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -477,6 +480,76 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDelete"></a>
+                    <span class="name">
+                        <b>
+                            openDelete
+                        </b>
+                        <a href="#openDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDelete(data?: <a href="../interfaces/DialogDelete.html">DialogDelete</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">libs/ui-kit/floating/dialog/src/lib/dialog.service.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/DialogDelete.html" target="_self" >DialogDelete</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -506,10 +579,10 @@ import { DialogHeader } from &#x27;./interfaces/dialog-header.interface&#x27;;
 import { DialogAlert } from &#x27;./interfaces/dialog-alert.interface&#x27;;
 import { DialogConfirm } from &#x27;./interfaces/dialog-confirm.interface&#x27;;
 import { DialogConfirmComponent } from &#x27;./dialog-confirm/dialog-confirm.component&#x27;;
+import { DialogDelete } from &#x27;./interfaces/dialog-delete.interface&#x27;;
+import { DialogDeleteComponent } from &#x27;./dialog-delete/dialog-delete.component&#x27;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
+@Injectable()
 export class DialogService {
   constructor(
     private overlay: Overlay,
@@ -601,14 +674,29 @@ export class DialogService {
   openConfirm(data: DialogConfirm) {
     return this.open(
       DialogConfirmComponent, {
-        data, withShell: true,
-        header: {
-          title: &#x27;Confirmação&#x27;,
-          color: data.color
-        },
-        draggable: true
-      }
-    )
+      data, withShell: true,
+      header: {
+        title: &#x27;Confirmação&#x27;,
+        color: data.color
+      },
+      draggable: true
+    })
+  }
+  openDelete(data?: DialogDelete) {
+    data &#x3D; Object.assign({
+      message: &#x27;Para continuar, confirme o código abaixo.&#x27;,
+      confirmCode: (&#x27;&#x27; + Math.random()).substring(2, 7),
+      color: &#x27;warn&#x27;
+    }, data)
+    return this.open(
+      DialogDeleteComponent, {
+      data, withShell: true,
+      header: {
+        title: &#x27;Apagar registro&#x27;,
+        color: data.color
+      },
+      draggable: true
+    })
   }
 }
 </code></pre>

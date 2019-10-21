@@ -97,7 +97,8 @@ import { ApiUseTags } from &#x27;@nestjs/swagger&#x27;;
   query: {
     join: {
       users: {
-        eager: true
+        eager: true,
+        exclude: [&#x27;password&#x27;]
       }
     }
   }

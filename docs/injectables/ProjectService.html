@@ -350,7 +350,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>deleteOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>deleteOne(project: <a href="../interfaces/IProject.html">IProject</a>)</code>
                 </td>
             </tr>
 
@@ -378,9 +378,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>project</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="../interfaces/IProject.html" target="_self" >IProject</a></code>
                                     </td>
 
                                     <td>
@@ -459,7 +459,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getOne(companyId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
@@ -486,6 +486,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>companyId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                                 <tr>
                                     <td>id</td>
                                     <td>
@@ -751,8 +763,8 @@ export class ProjectService {
   getMany() {
     return this.httpService.get&lt;IProject[]&gt;(&#x27;/api/companies&#x27;)
   }
-  getOne(id: number) {
-    return this.httpService.get&lt;IProject&gt;(&#x60;/api/companies/${id}/projects&#x60;)
+  getOne(companyId: number, id: number) {
+    return this.httpService.get&lt;IProject&gt;(&#x60;/api/companies/${companyId}/projects/${id}&#x60;)
       .pipe(
         tap((project) &#x3D;&gt; {
           this._project &#x3D; plainToClass(Project, project)
@@ -763,10 +775,10 @@ export class ProjectService {
     return this.httpService.post(&#x60;/api/companies/${project.companyId}/projects&#x60;, project)
   }
   updateOne(project: Partial&lt;IProject&gt;) {
-    return this.httpService.put(&#x60;/api/companies/${project.companyId}/projects&#x60;, project)
+    return this.httpService.put(&#x60;/api/companies/${project.companyId}/projects/${project.id}&#x60;, project)
   }
-  deleteOne(id: number) {
-    return this.httpService.delete(&#x60;/api/companies/${id}/projects&#x60;)
+  deleteOne(project: IProject) {
+    return this.httpService.delete(&#x60;/api/companies/${project.companyId}/projects/${project.id}&#x60;)
   }
   addProject(project: IProject) {
     return this.httpService.put(&#x60;/api/companies/${project.companyId}/projects&#x60;, project)

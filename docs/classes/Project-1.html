@@ -122,6 +122,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addUser">addUser</a>
+                            </li>
+                            <li>
                                 <a href="#patchValue">patchValue</a>
                             </li>
                             <li>
@@ -409,6 +412,83 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="addUser"></a>
+                    <span class="name">
+                        <b>
+                            addUser
+                        </b>
+                        <a href="#addUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addUser(user: <a href="../interfaces/IUser.html">IUser</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@validator()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">libs/organization/shared/company/src/lib/models/project.model.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="patchValue"></a>
                     <span class="name">
                         <b>
@@ -427,8 +507,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">libs/organization/shared/company/src/lib/models/project.model.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">libs/organization/shared/company/src/lib/models/project.model.ts:33</a></div>
                 </td>
             </tr>
 
@@ -497,8 +577,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">libs/organization/shared/company/src/lib/models/project.model.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">libs/organization/shared/company/src/lib/models/project.model.ts:38</a></div>
                 </td>
             </tr>
 
@@ -626,7 +706,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ICompany, IProject, IUser, IUserProject } from &#x27;@sws/api-interfaces&#x27;;
-import { validator } from &#x27;@sws/shared/utils&#x27;;
+import { validator, required } from &#x27;@sws/shared/utils&#x27;;
 import { plainToClass, classToPlainFromExist, plainToClassFromExist, serialize } from &#x27;class-transformer&#x27;;
 
 export class Project {
@@ -653,6 +733,10 @@ export class Project {
     return this._company
   }
 
+  @validator
+  addUser(@required user: IUser) {
+    this.users.push(user)
+  }
   patchValue(value: IProject) {
     return plainToClass(Project, value, {
       excludePrefixes: [&quot;&quot;, &quot;__&quot;]

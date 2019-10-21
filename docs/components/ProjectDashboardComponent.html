@@ -150,7 +150,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-dashboard/project-dashboard.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-dashboard/project-dashboard.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -235,7 +235,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-dashboard/project-dashboard.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-dashboard/project-dashboard.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -257,11 +257,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { map } from &#x27;rxjs/operators&#x27;;
 import { Breakpoints, BreakpointObserver } from &#x27;@angular/cdk/layout&#x27;;
+import { swsAnimations } from &#x27;@sws/shared/utils&#x27;;
 
 @Component({
   selector: &#x27;org-project-dashboard&#x27;,
   templateUrl: &#x27;./project-dashboard.component.html&#x27;,
-  styleUrls: [&#x27;./project-dashboard.component.scss&#x27;]
+  styleUrls: [&#x27;./project-dashboard.component.scss&#x27;],
+  animations: swsAnimations
 })
 export class ProjectDashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */
@@ -291,29 +293,43 @@ export class ProjectDashboardComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;grid-container&quot;&gt;
-  &lt;h1 class&#x3D;&quot;mat-h1&quot;&gt;Dashboard&lt;/h1&gt;
-  &lt;mat-grid-list cols&#x3D;&quot;2&quot; rowHeight&#x3D;&quot;350px&quot;&gt;
-    &lt;mat-grid-tile *ngFor&#x3D;&quot;let card of cards | async&quot; [colspan]&#x3D;&quot;card.cols&quot; [rowspan]&#x3D;&quot;card.rows&quot;&gt;
-      &lt;mat-card class&#x3D;&quot;dashboard-card&quot;&gt;
-        &lt;mat-card-header&gt;
-          &lt;mat-card-title&gt;
-            {{card.title}}
-            &lt;button mat-icon-button class&#x3D;&quot;more-button&quot; [matMenuTriggerFor]&#x3D;&quot;menu&quot; aria-label&#x3D;&quot;Toggle menu&quot;&gt;
-              &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
-            &lt;/button&gt;
-            &lt;mat-menu #menu&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
-              &lt;button mat-menu-item&gt;Expand&lt;/button&gt;
-              &lt;button mat-menu-item&gt;Remove&lt;/button&gt;
-            &lt;/mat-menu&gt;
-          &lt;/mat-card-title&gt;
-        &lt;/mat-card-header&gt;
-        &lt;mat-card-content class&#x3D;&quot;dashboard-card-content&quot;&gt;
-          &lt;div&gt;Card Content Here&lt;/div&gt;
-        &lt;/mat-card-content&gt;
-      &lt;/mat-card&gt;
-    &lt;/mat-grid-tile&gt;
-  &lt;/mat-grid-list&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [@animateStagger]&#x3D;&quot;{ value: &#x27;50&#x27; }&quot;&gt;
+  &lt;div
+    class&#x3D;&quot;grid-container&quot;
+    [@animate]&#x3D;&quot;{ value: &#x27;*&#x27;, params: { y: &#x27;100%&#x27; } }&quot;
+  &gt;
+    &lt;h1 class&#x3D;&quot;mat-h1&quot;&gt;Dashboard&lt;/h1&gt;
+    &lt;mat-grid-list cols&#x3D;&quot;2&quot; rowHeight&#x3D;&quot;350px&quot;&gt;
+      &lt;mat-grid-tile
+        *ngFor&#x3D;&quot;let card of cards | async&quot;
+        [colspan]&#x3D;&quot;card.cols&quot;
+        [rowspan]&#x3D;&quot;card.rows&quot;
+      &gt;
+        &lt;mat-card class&#x3D;&quot;dashboard-card&quot;&gt;
+          &lt;mat-card-header&gt;
+            &lt;mat-card-title&gt;
+              {{ card.title }}
+              &lt;button
+                mat-icon-button
+                class&#x3D;&quot;more-button&quot;
+                [matMenuTriggerFor]&#x3D;&quot;menu&quot;
+                aria-label&#x3D;&quot;Toggle menu&quot;
+              &gt;
+                &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;mat-menu #menu&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
+                &lt;button mat-menu-item&gt;Expand&lt;/button&gt;
+                &lt;button mat-menu-item&gt;Remove&lt;/button&gt;
+              &lt;/mat-menu&gt;
+            &lt;/mat-card-title&gt;
+          &lt;/mat-card-header&gt;
+          &lt;mat-card-content class&#x3D;&quot;dashboard-card-content&quot;&gt;
+            &lt;div&gt;Card Content Here&lt;/div&gt;
+          &lt;/mat-card-content&gt;
+        &lt;/mat-card&gt;
+      &lt;/mat-grid-tile&gt;
+    &lt;/mat-grid-list&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -371,9 +387,9 @@ export class ProjectDashboardComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="grid-container">  <h1 class="mat-h1">Dashboard</h1>  <mat-grid-list cols="2" rowHeight="350px">    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">      <mat-card class="dashboard-card">        <mat-card-header>          <mat-card-title>            {{card.title}}            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">              <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #menu="matMenu" xPosition="before">              <button mat-menu-item>Expand</button>              <button mat-menu-item>Remove</button>            </mat-menu>          </mat-card-title>        </mat-card-header>        <mat-card-content class="dashboard-card-content">          <div>Card Content Here</div>        </mat-card-content>      </mat-card>    </mat-grid-tile>  </mat-grid-list></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
-    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
+        var COMPONENT_TEMPLATE = '<div><div [@animateStagger]="{ value: \'50\' }">  <div    class="grid-container"    [@animate]="{ value: \'*\', params: { y: \'100%\' } }"  >    <h1 class="mat-h1">Dashboard</h1>    <mat-grid-list cols="2" rowHeight="350px">      <mat-grid-tile        *ngFor="let card of cards | async"        [colspan]="card.cols"        [rowspan]="card.rows"      >        <mat-card class="dashboard-card">          <mat-card-header>            <mat-card-title>              {{ card.title }}              <button                mat-icon-button                class="more-button"                [matMenuTriggerFor]="menu"                aria-label="Toggle menu"              >                <mat-icon>more_vert</mat-icon>              </button>              <mat-menu #menu="matMenu" xPosition="before">                <button mat-menu-item>Expand</button>                <button mat-menu-item>Remove</button>              </mat-menu>            </mat-card-title>          </mat-card-header>          <mat-card-content class="dashboard-card-content">            <div>Card Content Here</div>          </mat-card-content>        </mat-card>      </mat-grid-tile>    </mat-grid-list>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncCompleteComponent', 'selector': 'sws-async-complete'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogDeleteComponent', 'selector': 'sws-dialog-delete'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'PopoverMenuComponent', 'selector': 'account-popover-menu'},{'name': 'PopoverShellComponent', 'selector': 'sws-popover-shell'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProfileComponent', 'selector': 'account-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectSettingsComponent', 'selector': 'org-project-settings'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'},{'name': 'PopoverArrowDirective', 'selector': '[swsPopoverArrow]'},{'name': 'PopoverCloseDirective', 'selector': '[swsPopoverClose]'}];
     var ACTUAL_COMPONENT = {'name': 'ProjectDashboardComponent'};
 </script>
 <script src="../js/tree.js"></script>

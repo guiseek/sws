@@ -313,6 +313,7 @@ import { CompanyDataSource } from &#x27;./services/company.datasource&#x27;;
 import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { AccountSharedAuthModule } from &#x27;@sws/account/shared/auth&#x27;;
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, MatIconModule, MatSelectModule, MatProgressBarModule } from &#x27;@angular/material&#x27;;
+import { ProjectResolverService } from &#x27;./resolvers/project-resolver.service&#x27;;
 
 @NgModule({
   imports: [
@@ -332,7 +333,8 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule,
     CompanyService,
     CompanyDataSource,
     ProjectService,
-    ProjectDataSource
+    ProjectDataSource,
+    ProjectResolverService
   ],
   declarations: [CreateCompanyComponent, CreateProjectComponent],
   entryComponents: [

@@ -251,7 +251,10 @@ export class ProjectResolverService implements Resolve&lt;IProject&gt; {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable&lt;IProject&gt; {
-    return this.service.getOne(route.params[&#x27;id&#x27;]);
+    console.table(route.parent.params)
+    const companyId &#x3D; route.parent.params[&#x27;id&#x27;]
+    const projectId &#x3D; route.params[&#x27;id&#x27;]
+    return this.service.getOne(companyId, projectId)
   }
 }
 </code></pre>

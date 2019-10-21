@@ -1,0 +1,816 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SWS - Global documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">SWS - Global documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AsyncCompleteComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>sws-async-complete</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./async-complete.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./async-complete.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#control">control</a>
+                            </li>
+                            <li>
+                                <a href="#filteredOptions">filteredOptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_search">_search</a>
+                            </li>
+                            <li>
+                                <a href="#displayFn">displayFn</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSelect">onSelect</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#config">config</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#optionSelected">optionSelected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../classes/HttpService.html">HttpService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="config"></a>
+                        <b>config</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AsyncCompleteConfig.html" target="_self" >AsyncCompleteConfig</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:21</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionSelected"></a>
+                        <b>optionSelected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_search"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            _search
+                        </b>
+                        <a href="#_search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>_search(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;&#x27;</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayFn"></a>
+                    <span class="name">
+                        <b>
+                            displayFn
+                        </b>
+                        <a href="#displayFn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayFn(value?)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelect"></a>
+                    <span class="name">
+                        <b>
+                            onSelect
+                        </b>
+                        <a href="#onSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelect(undefined: MatAutocompleteSelectedEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                            <code>MatAutocompleteSelectedEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="control"></a>
+                        <span class="name">
+                            <b>
+                            control</b>
+                            <a href="#control"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [
+    Validators.required
+  ])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredOptions"></a>
+                        <span class="name">
+                            <b>
+                            filteredOptions</b>
+                            <a href="#filteredOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;any[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">libs/ui-kit/form/search/src/lib/async-complete/async-complete.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { HttpService } from &#x27;@sws/shared/utils&#x27;;
+import { FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { startWith, map, filter, switchMap, debounceTime } from &#x27;rxjs/operators&#x27;;
+import { MatAutocompleteSelectedEvent } from &#x27;@angular/material&#x27;;
+import { AsyncCompleteConfig } from &#x27;../interfaces/async-complete-config.interface&#x27;;
+import { asyncCompleteConfig } from &#x27;../configs/async-complete.config&#x27;;
+
+@Component({
+  selector: &#x27;sws-async-complete&#x27;,
+  templateUrl: &#x27;./async-complete.component.html&#x27;,
+  styleUrls: [&#x27;./async-complete.component.scss&#x27;]
+})
+export class AsyncCompleteComponent implements OnInit {
+  control &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required
+  ])
+  filteredOptions: Observable&lt;any[]&gt;
+
+  @Input() config: AsyncCompleteConfig
+
+
+  @Output() optionSelected &#x3D; new EventEmitter()
+
+  constructor(
+    private http: HttpService
+  ) { }
+
+  ngOnInit() {
+    this.config &#x3D; Object.assign({}, asyncCompleteConfig, this.config)
+    this.filteredOptions &#x3D; this.control.valueChanges
+      .pipe(
+        startWith(&#x27;&#x27;),
+        filter(value &#x3D;&gt; this.config.regex ? this.config.regex.test(value) : value.length &gt; 2),
+        map(value &#x3D;&gt; typeof value &#x3D;&#x3D;&#x3D; &#x27;string&#x27; ? value : value[this.config.viewValue]),
+        debounceTime(this.config.debounce),
+        switchMap(value &#x3D;&gt; this._search(value)),
+      )
+  }
+  onSelect({ option }: MatAutocompleteSelectedEvent) {
+    console.log(&#x27;option: &#x27;, option)
+    this.optionSelected.emit(option.value)
+  }
+  displayFn(value?): string | undefined {
+    console.log(&#x27;value: &#x27;, this.config, value)
+    if (value &amp;&amp; this.config) {
+      return this.config.viewValue ? value[this.config.viewValue] : value
+    } else {
+      return undefined
+    }
+  }
+  private _search(value: string &#x3D; &#x27;&#x27;): Observable&lt;any[]&gt; {
+    return this.http.read&lt;any&gt;(&#x27;/api/users&#x27;, {
+      filter: [{
+        field: this.config.field, operator: &#x27;eq&#x27;, value
+      }]
+    })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-form-field&gt;
+  &lt;input
+    type&#x3D;&quot;text&quot;
+    placeholder&#x3D;&quot;Buscar&quot;
+    aria-label&#x3D;&quot;Buscar&quot;
+    matInput
+    [formControl]&#x3D;&quot;control&quot;
+    [matAutocomplete]&#x3D;&quot;auto&quot;
+  /&gt;
+  &lt;mat-autocomplete
+    #auto&#x3D;&quot;matAutocomplete&quot;
+    (optionSelected)&#x3D;&quot;onSelect($event)&quot;
+    [displayWith]&#x3D;&quot;displayFn&quot;
+  &gt;
+    &lt;ng-container *ngIf&#x3D;&quot;filteredOptions | async as filtered&quot;&gt;
+      &lt;mat-option *ngFor&#x3D;&quot;let option of filtered&quot; [value]&#x3D;&quot;option&quot;&gt;
+        {{ option[config.viewValue] }}
+      &lt;/mat-option&gt;
+      &lt;mat-option disabled *ngIf&#x3D;&quot;!filtered.length&quot;&gt;
+        Nenhum resultado
+      &lt;/mat-option&gt;
+    &lt;/ng-container&gt;
+  &lt;/mat-autocomplete&gt;
+&lt;/mat-form-field&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./async-complete.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-form-field>  <input    type="text"    placeholder="Buscar"    aria-label="Buscar"    matInput    [formControl]="control"    [matAutocomplete]="auto"  />  <mat-autocomplete    #auto="matAutocomplete"    (optionSelected)="onSelect($event)"    [displayWith]="displayFn"  >    <ng-container *ngIf="filteredOptions | async as filtered">      <mat-option *ngFor="let option of filtered" [value]="option">        {{ option[config.viewValue] }}      </mat-option>      <mat-option disabled *ngIf="!filtered.length">        Nenhum resultado      </mat-option>    </ng-container>  </mat-autocomplete></mat-form-field></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncCompleteComponent', 'selector': 'sws-async-complete'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogDeleteComponent', 'selector': 'sws-dialog-delete'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'PopoverMenuComponent', 'selector': 'account-popover-menu'},{'name': 'PopoverShellComponent', 'selector': 'sws-popover-shell'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProfileComponent', 'selector': 'account-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectSettingsComponent', 'selector': 'org-project-settings'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'},{'name': 'PopoverArrowDirective', 'selector': '[swsPopoverArrow]'},{'name': 'PopoverCloseDirective', 'selector': '[swsPopoverClose]'}];
+    var ACTUAL_COMPONENT = {'name': 'AsyncCompleteComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AsyncCompleteComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
