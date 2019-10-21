@@ -251,7 +251,7 @@ export class CompanyResolverService implements Resolve&lt;ICompany&gt; {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable&lt;ICompany&gt; {
-    return this.service.findCompanyById(route.params[&#x27;id&#x27;]);
+    return this.service.getOne(route.params[&#x27;id&#x27;]);
   }
 }
 </code></pre>

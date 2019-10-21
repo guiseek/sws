@@ -1,5 +1,17 @@
-<button type="button" mat-button (click)="onRefresh()">
-  Atualizar
-</button>
-
-<sws-async-table [config]="table.config" [meta]="table.meta" ></sws-async-table>
+<div class="page-container">
+  <mat-card class="card-table-container">
+    <mat-card-header>
+      <mat-card-title>Projetos</mat-card-title>
+      <button mat-fab type="button" (click)="onCreateProject()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-header>
+    <sws-async-table
+      [config]="table.config"
+      [meta]="table.meta"
+      (clicked)="onClicked($event)"
+      (edit)="onEdited($event)"
+      (delete)="onDeleted($event)"
+    ></sws-async-table>
+  </mat-card>
+</div>

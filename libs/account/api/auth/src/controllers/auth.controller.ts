@@ -11,18 +11,14 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from '../auth.service';
 import { LoginDto } from '../dtos/login.dto';
-import { CreateUserDto } from '../dtos/create-user.dto';
+import { ForgotPasswordDto } from '../dtos/forgot-password.dto';
+import { ResetPasswordDto } from '../dtos/reset-password.dto';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
-
-  // @Post('signup')
-  // @HttpCode(HttpStatus.CREATED)
-  // async signup(@Body() dto: CreateUserDto) {
-  //   console.log('dto: ', dto)
-  //   return await this.authService.signup(dto);
-  // }
+  constructor(
+    private readonly authService: AuthService
+  ) {}
 
   @Post('login')
   @HttpCode(HttpStatus.ACCEPTED)
@@ -40,5 +36,16 @@ export class AuthController {
     return await this.authService.getUser(
       req.user.id
     )
+  }
+
+  @Post('forgot-password')
+  async forgotPassword(@Body() dto: ForgotPasswordDto) {
+    return await this.authService.forgotPassword(dto)
+  }
+
+
+  @Post('reset-password')
+  async resetPassword(@Body() dto: ResetPasswordDto) {
+    return await this.authService.resetPassword(dto)
   }
 }

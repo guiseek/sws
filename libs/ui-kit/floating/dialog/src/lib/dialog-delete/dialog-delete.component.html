@@ -1,0 +1,22 @@
+<h3 class="mat-h3">
+  {{ data.message }}
+</h3>
+<h2 class="mat-h2">{{ data.confirmCode }}</h2>
+<mat-form-field appearance="outline">
+  <mat-label>Código</mat-label>
+  <input type="text" [placeholder]="data.confirmCode" matInput #code />
+</mat-form-field>
+<div class="sws dialog-actions">
+  <button type="button" mat-flat-button (click)="onCancel()">
+    Cancelar
+  </button>
+  <button
+    type="button"
+    mat-button
+    [disabled]="data.confirmCode !== code.value"
+    [color]="data.color"
+    (click)="onDelete()"
+  >
+    Confirmar
+  </button>
+</div>

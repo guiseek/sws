@@ -6,6 +6,7 @@ export interface DialogConfig<T = any> {
   data?: T;
   width?: string;
   height?: string;
+  withShell?:  boolean;
   disableClose: boolean;
   panelClass: string | string[];
   hasBackdrop?: boolean;

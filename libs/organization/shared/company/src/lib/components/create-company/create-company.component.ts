@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material';
 import { CompanyService } from '../../services/company.service';
 import { take, catchError } from 'rxjs/operators';
 import { AuthService } from '@sws/account/shared/auth';
+import { validateSubdomain } from '@sws/shared/utils';
 
 @Component({
   selector: 'org-create-company',
@@ -27,7 +28,8 @@ export class CreateCompanyComponent implements OnInit {
       ]],
       domain: ['', [
         Validators.required,
-        Validators.maxLength(100)
+        Validators.maxLength(100),
+        validateSubdomain
       ]],
       description: [],
       users: this.fb.array([])

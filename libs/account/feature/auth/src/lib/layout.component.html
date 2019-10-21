@@ -14,21 +14,18 @@
   >
     <mat-card>
       <mat-card-title>Login</mat-card-title>
-      <router-outlet></router-outlet>
       <auth-login (logged)="onLogged($event)"></auth-login>
     </mat-card>
-    <a routerLink="embarque" mat-button>Criar conta</a>
-    <!-- <button mat-button (click)="openSignUp()">Criar conta</button> -->
+    <div fxFlex="row" fxLayoutAlign="space-between">
+      <a routerLink="embarque" mat-button>Criar conta</a>
+
+      <button mat-button [matMenuTriggerFor]="passwordMenu">
+        <span>Esqueceu?</span>
+      </button>
+    </div>
   </div>
 </div>
-
-<ng-template #signUp let-dialog="dialog">
-  <mat-card>
-    <mat-card-title>Criar conta</mat-card-title>
-    <auth-signup></auth-signup>
-    <sws-form-builder
-      [elements]="formElements"
-      (submit)="dialog.close($event)"
-    ></sws-form-builder>
-  </mat-card>
-</ng-template>
+<mat-menu #passwordMenu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="forgotPassword()">Esqueci minha senha</button>
+  <button mat-menu-item (click)="openResetPassword()">Configurar nova senha</button>
+</mat-menu>

@@ -1,0 +1,835 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SWS - Global documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">SWS - Global documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProjectUsersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>org-project-users</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./project-users.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./project-users.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#project">project</a>
+                            </li>
+                            <li>
+                                <a href="#searchConfig">searchConfig</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDelete">onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onPopover">onPopover</a>
+                            </li>
+                            <li>
+                                <a href="#onSave">onSave</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectUser">onSelectUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../classes/HttpService.html">HttpService</a>, service: <a href="../injectables/ProjectService.html">ProjectService</a>, dialogService: <a href="../injectables/DialogService.html">DialogService</a>, popoverService: <a href="../injectables/PopoverService.html">PopoverService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>popoverService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PopoverService.html" target="_self" >PopoverService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDelete"></a>
+                    <span class="name">
+                        <b>
+                            onDelete
+                        </b>
+                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDelete(user)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPopover"></a>
+                    <span class="name">
+                        <b>
+                            onPopover
+                        </b>
+                        <a href="#onPopover"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPopover(user, target)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>target</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSave"></a>
+                    <span class="name">
+                        <b>
+                            onSave
+                        </b>
+                        <a href="#onSave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSave()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectUser"></a>
+                    <span class="name">
+                        <b>
+                            onSelectUser
+                        </b>
+                        <a href="#onSelectUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectUser(user)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="project"></a>
+                        <span class="name">
+                            <b>
+                            project</b>
+                            <a href="#project"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Project.html" target="_self" >Project</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchConfig"></a>
+                        <span class="name">
+                            <b>
+                            searchConfig</b>
+                            <a href="#searchConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    field: &#x27;email&#x27;,
+    viewValue: &#x27;email&#x27;,
+    regex: EMAIL_REGEXP
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">libs/organization/feature/shell/src/lib/project-shell/project-users/project-users.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ProjectService, Project } from &#x27;@sws/organization/shared/company&#x27;;
+import { HttpService, swsAnimations } from &#x27;@sws/shared/utils&#x27;;
+import { DialogService } from &#x27;@sws/ui-kit/floating/dialog&#x27;;
+import { PopoverService } from &#x27;@sws/ui-kit/floating/popover&#x27;;
+import { PopoverMenuComponent } from &#x27;@sws/account/shared/user&#x27;;
+
+const EMAIL_REGEXP &#x3D; /^[a-zA-Z0-9.!#$%&amp;’*+/&#x3D;?^_&#x60;{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+@Component({
+  selector: &#x27;org-project-users&#x27;,
+  templateUrl: &#x27;./project-users.component.html&#x27;,
+  styleUrls: [&#x27;./project-users.component.scss&#x27;],
+  animations: swsAnimations
+})
+export class ProjectUsersComponent implements OnInit {
+
+  searchConfig &#x3D; {
+    field: &#x27;email&#x27;,
+    viewValue: &#x27;email&#x27;,
+    regex: EMAIL_REGEXP
+  }
+  
+  project: Project
+  constructor(
+    private http: HttpService,
+    private service: ProjectService,
+    private dialogService: DialogService,
+    private popoverService: PopoverService
+  ) { }
+
+  ngOnInit() {
+    this.project &#x3D; this.service.project
+    console.log(
+      this.service.project
+    ) 
+  }
+  onSelectUser(user) {
+    console.log(user)
+    this.service.project.addUser(user)
+  }
+  onDelete(user) {
+    console.log(user)
+    const ref &#x3D; this.dialogService.openDelete()
+    const sub &#x3D; ref.afterClosed().subscribe((res) &#x3D;&gt; {
+      console.log(res)
+      sub.unsubscribe()
+    })
+  }
+  onPopover(user, target) {
+    const ref &#x3D; this.popoverService.open(
+      PopoverMenuComponent, target, {
+        data: user
+      }
+    )
+  }
+  onSave() {
+    this.service.updateOne(
+      this.project
+    ).subscribe((console.log))
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div [@animateStagger]&#x3D;&quot;{ value: &#x27;50&#x27; }&quot;&gt;
+  &lt;div
+    class&#x3D;&quot;page-container&quot;
+    [@animate]&#x3D;&quot;{ value: &#x27;*&#x27;, params: { y: &#x27;100%&#x27; } }&quot;
+  &gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;16px&quot;&gt;
+      &lt;mat-card fxFlex&gt;
+        &lt;mat-card-title&gt;project-users works!&lt;/mat-card-title&gt;
+        &lt;sws-async-complete
+          [config]&#x3D;&quot;searchConfig&quot;
+          (optionSelected)&#x3D;&quot;onSelectUser($event)&quot;
+        &gt;&lt;/sws-async-complete&gt;
+        &lt;mat-card-actions&gt;
+          &lt;button mat-button (click)&#x3D;&quot;onSave()&quot;&gt;
+            Salvar
+          &lt;/button&gt;
+        &lt;/mat-card-actions&gt;
+      &lt;/mat-card&gt;
+      &lt;mat-card fxFlex&gt;
+        &lt;mat-list&gt;
+          &lt;mat-list-item *ngFor&#x3D;&quot;let user of project.users&quot;&gt;
+            &lt;mat-icon mat-list-icon (click)&#x3D;&quot;onPopover(user, $event.target)&quot;
+              &gt;account_circle&lt;/mat-icon
+            &gt;
+            &lt;h4 mat-line&gt;{{ user.email }}&lt;/h4&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onDelete(user)&quot;&gt;
+              &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/mat-list-item&gt;
+        &lt;/mat-list&gt;
+      &lt;/mat-card&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./project-users.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div [@animateStagger]="{ value: \'50\' }">  <div    class="page-container"    [@animate]="{ value: \'*\', params: { y: \'100%\' } }"  >    <div fxLayout="row" fxLayoutGap="16px">      <mat-card fxFlex>        <mat-card-title>project-users works!</mat-card-title>        <sws-async-complete          [config]="searchConfig"          (optionSelected)="onSelectUser($event)"        ></sws-async-complete>        <mat-card-actions>          <button mat-button (click)="onSave()">            Salvar          </button>        </mat-card-actions>      </mat-card>      <mat-card fxFlex>        <mat-list>          <mat-list-item *ngFor="let user of project.users">            <mat-icon mat-list-icon (click)="onPopover(user, $event.target)"              >account_circle</mat-icon            >            <h4 mat-line>{{ user.email }}</h4>            <button mat-icon-button color="warn" (click)="onDelete(user)">              <mat-icon>close</mat-icon>            </button>          </mat-list-item>        </mat-list>      </mat-card>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncCompleteComponent', 'selector': 'sws-async-complete'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogDeleteComponent', 'selector': 'sws-dialog-delete'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'PopoverMenuComponent', 'selector': 'account-popover-menu'},{'name': 'PopoverShellComponent', 'selector': 'sws-popover-shell'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProfileComponent', 'selector': 'account-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectSettingsComponent', 'selector': 'org-project-settings'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'},{'name': 'PopoverArrowDirective', 'selector': '[swsPopoverArrow]'},{'name': 'PopoverCloseDirective', 'selector': '[swsPopoverClose]'}];
+    var ACTUAL_COMPONENT = {'name': 'ProjectUsersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectUsersComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

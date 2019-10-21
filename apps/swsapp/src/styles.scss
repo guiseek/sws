@@ -1,7 +1,10 @@
 @import '~@angular/material/theming';
+@import '~material-design-icons/iconfont/material-icons.css';
 @import 'libs/shared/assets/scss/palettes';
 @import 'libs/shared/assets/scss/patterns';
+// @import 'libs/shared/assets/scss/fonts';
 @import 'libs/shared/assets/scss/components';
+@import 'libs/shared/assets/scss/animations';
 
 @import 'libs/ui-kit/nav/toolbar/src/lib/toolbar.theme';
 @import 'libs/ui-kit/floating/dialog/src/lib/dialog.theme';

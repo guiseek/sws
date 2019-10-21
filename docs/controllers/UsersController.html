@@ -133,14 +133,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Put(&#x27;:id/change-password&#x27;)<br /></code>
+                    <code>@UseGuards(undefined)<br />@Put(&#x27;:id/change-password&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">libs/account/api/users/src/controllers/users.controller.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">libs/account/api/users/src/controllers/users.controller.ts:87</a></div>
                 </td>
             </tr>
 
@@ -441,6 +441,7 @@ export class UsersController implements CrudController&lt;User&gt; {
     return this.base.getOneBase(req);
   }
 
+  @UseGuards(AuthGuard(&#x27;jwt&#x27;))
   @Put(&#x27;:id/change-password&#x27;)
   async changePassword(
     @Param(&#x27;id&#x27;) id: string,

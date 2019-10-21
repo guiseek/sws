@@ -8,11 +8,11 @@ export const ormConfig = (config = {}): TypeOrmModuleOptions => {
       type: 'postgres',
       host: '127.0.0.1',
       port: 5455,
-      username: 'root',
-      password: 'root',
+      username: 'sws',
+      password: 'sws!@#pg',
       database: 'seek_workspace',
-      synchronize: false,
-      // logging: true,
+      synchronize: true,
+      logging: true,
       cache: {
         type: 'redis',
         options: {

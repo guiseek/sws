@@ -35,6 +35,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/organization/api/projects/tsconfig.lib.json"
       }
+    },
+    "licenses": {
+      "type": "library",
+      "root": "libs/organization/api/licenses",
+      "entryFile": "index",
+      "sourceRoot": "libs/organization/api/licenses/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/organization/api/licenses/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

@@ -6,7 +6,9 @@ import { DialogShellComponent } from './dialog-shell/dialog-shell.component';
 import {
   MatToolbarModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DialogCloseDirective } from './dialog-close.directive';
@@ -15,13 +17,18 @@ import { PortalModule } from '@angular/cdk/portal';
 import { DialogService } from './dialog.service';
 import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
 import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
+import { A11yModule } from '@angular/cdk/a11y';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 
 const modules = [
+  A11yModule,
   OverlayModule,
   PortalModule,
   MatToolbarModule,
   MatIconModule,
   MatButtonModule,
+  MatInputModule,
+  MatFormFieldModule,
   DragDropModule
 ];
 
@@ -32,10 +39,11 @@ const modules = [
     DialogShellComponent,
     DialogCloseDirective,
     DialogAlertComponent,
-    DialogConfirmComponent
+    DialogConfirmComponent,
+    DialogDeleteComponent
   ],
   providers: [DialogService],
-  entryComponents: [DialogContainerComponent, DialogShellComponent],
-  exports: [DialogShellComponent, DialogCloseDirective]
+  entryComponents: [DialogContainerComponent, DialogShellComponent, DialogAlertComponent, DialogConfirmComponent, DialogDeleteComponent],
+  exports: [DialogShellComponent, DialogCloseDirective, DialogDeleteComponent]
 })
 export class UiKitFloatingDialogModule {}

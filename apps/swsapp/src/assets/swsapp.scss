@@ -18,6 +18,7 @@ $sws-theme: mat-light-theme(
 @include sws-toolbar-theme($sws-theme);
 @include sws-dialog-theme($sws-theme);
 @include sws-cards-theme($sws-theme);
+@include sws-material-theme($sws-theme);
 
 
 $background: map-get($sws-theme, background);

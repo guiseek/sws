@@ -10,5 +10,36 @@
     // Use mat-color to extract individual colors from a palette.
     background-color: mat-color($primary);
     border-color: mat-color($accent, A400);
+    .brand {
+      display: inline-flex;
+      position: relative;
+
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 100%;
+      .logo {
+        content: ' ';
+        transition: 400ms opacity ease-in-out;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/logo/sws-simple.svg');
+        background-size: cover;
+        opacity: 0.06;
+      }
+      .title {
+        position: absolute;
+        transition: 300ms opacity ease-in-out, 300ms width ease-in-out;
+        opacity: 1;
+      }
+      &:hover {
+        .logo {
+          opacity: 1;
+        }
+        .title {
+          opacity: 0;
+        }
+      }
+    }
   }
 }

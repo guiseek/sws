@@ -1,3 +1,3 @@
 export * from './projects.module';
-export * from './projects.service';
+export * from './services/index';
 export * from './entities/index';

@@ -6,7 +6,8 @@ import {
   MatInputModule,
   MatButtonModule,
   MatIconModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,8 @@ import { TokenService } from './services/token.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupComponent } from './components/signup/signup.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 
 @NgModule({
   imports: [
@@ -27,12 +30,13 @@ import { SignupComponent } from './components/signup/signup.component';
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
+    MatProgressBarModule,
     FlexLayoutModule
   ],
-  declarations: [LoginComponent, SignupComponent],
+  declarations: [LoginComponent, SignupComponent, ForgotPasswordComponent, PasswordResetComponent],
   providers: [AuthService, TokenService],
-  exports: [LoginComponent, SignupComponent],
-  entryComponents: [LoginComponent, SignupComponent]
+  exports: [LoginComponent, SignupComponent, ForgotPasswordComponent, PasswordResetComponent],
+  entryComponents: [LoginComponent, SignupComponent, ForgotPasswordComponent, PasswordResetComponent]
 })
 export class AccountSharedAuthModule {
   static forRoot(options?: {}): ModuleWithProviders {

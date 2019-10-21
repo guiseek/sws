@@ -82,6 +82,7 @@ export class UsersController implements CrudController<User> {
     return this.base.getOneBase(req);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Put(':id/change-password')
   async changePassword(
     @Param('id') id: string,

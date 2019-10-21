@@ -7,6 +7,7 @@ import { UsersModule } from 'api/users';
 import { CompaniesModule } from 'org/companies';
 import { ProjectsModule } from 'org/projects';
 import { AuthModule } from 'api/auth';
+import { LicensesModule } from 'org/licenses';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { AuthModule } from 'api/auth';
     AuthModule,
     CompaniesModule,
     ProjectsModule,
+    LicensesModule,
     TypeOrmModule.forRootAsync({
       useFactory: () => environment.ormConfig
     })

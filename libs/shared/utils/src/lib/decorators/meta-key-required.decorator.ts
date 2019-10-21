@@ -15,11 +15,22 @@ export function validate(target: any, propertyName: string, descriptor: TypedPro
     if (requiredParameters) {
       for (const parameterIndex of requiredParameters) {
         if (parameterIndex >= arguments.length || arguments[parameterIndex] === undefined) {
-          throw new Error("Missing required argument.");
+          throw new Error(`Missing required argument.`);
         }
       }
     }
 
     return method.apply(this, arguments);
+  }
+}
+
+export function validator<T>(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<T>) {
+  const set = descriptor.set;
+  descriptor.set = function (value: T) {
+    const type = Reflect.getMetadata("design:type", target, propertyKey);
+    if (!(value instanceof type)) {
+      throw new TypeError(`${propertyKey}: Invalid type.`);
+    }
+    set.call(target, value);
   }
 }

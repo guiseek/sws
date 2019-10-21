@@ -301,9 +301,11 @@ import {
   MatIconModule,
   MatButtonModule,
   MatDividerModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCardModule
 } from &#x27;@angular/material&#x27;;
 import { HTTP_INTERCEPTORS } from &#x27;@angular/common/http&#x27;;
+import { FlexLayoutModule } from &#x27;@angular/flex-layout&#x27;;
 
 @NgModule({
   imports: [
@@ -313,10 +315,12 @@ import { HTTP_INTERCEPTORS } from &#x27;@angular/common/http&#x27;;
     MatButtonModule,
     MatDividerModule,
     MatTabsModule,
+    MatCardModule,
     UiKitCardModule,
     AccountSharedAuthModule,
     AccountSharedUserModule,
     UiKitNavToolbarModule,
+    FlexLayoutModule,
     RouterModule.forChild([
       {
         path: &#x27;&#x27;,

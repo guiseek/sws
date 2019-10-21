@@ -1,15 +1,17 @@
 import { ICompany } from './company.interface';
 import { IUser } from './user.interface';
+import { IUserProject } from './user-project.interface';
 
 export interface IProject {
-  name?: string;
-  description?: string;
-  isActive?: boolean;
-  companyId?: number;
+  id?: number;
+  name?: String;
+  description?: String;
+  isActive?: Boolean;
+  companyId?: Number;
   /**
    * Relations
    */
   company?: ICompany;
   users?: IUser[];
-  userProjects: {};
+  userProjects?: IUserProject[];
 }

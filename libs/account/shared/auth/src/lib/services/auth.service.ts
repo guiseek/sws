@@ -28,6 +28,12 @@ export class AuthService {
       tap(response => this.tokenService.setToken(response))
     )
   }
+  forgotPassword(data) {
+    return this.http.post('/api/auth/forgot-password', data)
+  }
+  resetPassword(data) {
+    return this.http.post('/api/auth/reset-password', data)
+  }
   me() {
     return this.http.get<IJwtPayload>('/api/auth/me');
   }

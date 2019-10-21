@@ -121,6 +121,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -151,15 +165,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">libs/account/feature/shell/src/lib/settings/settings.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">libs/account/feature/shell/src/lib/settings/settings.component.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -195,8 +251,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">libs/account/feature/shell/src/lib/settings/settings.component.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">libs/account/feature/shell/src/lib/settings/settings.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -213,12 +269,48 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">libs/account/feature/shell/src/lib/settings/settings.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { UserService } from &#x27;@sws/account/shared/user&#x27;;
+import { IUser } from &#x27;@sws/api-interfaces&#x27;;
+import { AuthService } from &#x27;@sws/account/shared/auth&#x27;;
 
 @Component({
   selector: &#x27;sws-settings&#x27;,
@@ -226,15 +318,30 @@
   styleUrls: [&#x27;./settings.component.scss&#x27;]
 })
 export class SettingsComponent implements OnInit {
-  constructor() {}
+  user: IUser
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.user &#x3D; this.authService.user
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;settings works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;page-container&quot;&gt;
+  &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;16px&quot; fxLayout&#x3D;&quot;space-between&quot;&gt;
+    &lt;mat-card fxFlex&gt;
+      &lt;auth-password-reset&gt;&lt;/auth-password-reset&gt;
+    &lt;/mat-card&gt;
+    &lt;mat-card fxFlex&gt;
+      &lt;pre&gt;{{ user | json }}&lt;/pre&gt;
+    &lt;/mat-card&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -270,9 +377,9 @@ export class SettingsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>settings works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
-    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="page-container">  <div fxLayout="row" fxLayoutGap="16px" fxLayout="space-between">    <mat-card fxFlex>      <auth-password-reset></auth-password-reset>    </mat-card>    <mat-card fxFlex>      <pre>{{ user | json }}</pre>    </mat-card>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'sws-root'},{'name': 'AppShellComponent', 'selector': 'sws-app-shell'},{'name': 'AsyncCompleteComponent', 'selector': 'sws-async-complete'},{'name': 'AsyncSelectComponent', 'selector': 'sws-async-select'},{'name': 'AsyncTableComponent', 'selector': 'sws-async-table'},{'name': 'ButtonComponent', 'selector': 'sws-button'},{'name': 'CheckboxComponent', 'selector': 'sws-checkbox'},{'name': 'CompaniesComponent', 'selector': 'org-companies'},{'name': 'CompanyProjectsComponent', 'selector': 'org-company-projects'},{'name': 'CompanySettingsComponent', 'selector': 'org-company-settings'},{'name': 'CompanyShellComponent', 'selector': 'org-company-shell'},{'name': 'CreateCompanyComponent', 'selector': 'org-create-company'},{'name': 'CreateProjectComponent', 'selector': 'org-create-project'},{'name': 'DashboardComponent', 'selector': 'org-dashboard'},{'name': 'DateComponent', 'selector': 'sws-date'},{'name': 'DetailsComponent', 'selector': 'card-details'},{'name': 'DialogAlertComponent', 'selector': 'sws-dialog-alert'},{'name': 'DialogConfirmComponent', 'selector': 'sws-dialog-confirm'},{'name': 'DialogContainerComponent', 'selector': 'sws-dialog-container'},{'name': 'DialogDeleteComponent', 'selector': 'sws-dialog-delete'},{'name': 'DialogShellComponent', 'selector': 'sws-dialog-shell'},{'name': 'FilterAsyncTableComponent', 'selector': 'sws-filter-async-table'},{'name': 'FilterComponent', 'selector': 'sws-filter'},{'name': 'FiltersComponent', 'selector': 'sws-filters'},{'name': 'FlipComponent', 'selector': 'card-flip'},{'name': 'ForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'FormBuilderComponent', 'selector': 'sws-form-builder'},{'name': 'InputComponent', 'selector': 'sws-input'},{'name': 'LayoutComponent', 'selector': 'auth-layout'},{'name': 'LoginComponent', 'selector': 'auth-login'},{'name': 'OnboardCompanyComponent', 'selector': 'sws-onboard-company'},{'name': 'OnboardUserComponent', 'selector': 'sws-onboard-user'},{'name': 'OverviewComponent', 'selector': 'sws-overview'},{'name': 'PasswordResetComponent', 'selector': 'auth-password-reset'},{'name': 'PopoverMenuComponent', 'selector': 'account-popover-menu'},{'name': 'PopoverShellComponent', 'selector': 'sws-popover-shell'},{'name': 'ProfileComponent', 'selector': 'sws-profile'},{'name': 'ProfileComponent', 'selector': 'account-profile'},{'name': 'ProjectDashboardComponent', 'selector': 'org-project-dashboard'},{'name': 'ProjectSettingsComponent', 'selector': 'org-project-settings'},{'name': 'ProjectShellComponent', 'selector': 'org-project-shell'},{'name': 'ProjectUsersComponent', 'selector': 'org-project-users'},{'name': 'RadiobuttonComponent', 'selector': 'sws-radiobutton'},{'name': 'ResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'SearchBarComponent', 'selector': 'sws-search-bar'},{'name': 'SelectComponent', 'selector': 'sws-select'},{'name': 'SettingsComponent', 'selector': 'sws-settings'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'ShellComponent', 'selector': 'org-shell'},{'name': 'ShellComponent', 'selector': 'sws-shell'},{'name': 'SignupComponent', 'selector': 'auth-signup'},{'name': 'SvgViewerComponent', 'selector': 'svg-viewer'},{'name': 'TextareaComponent', 'selector': 'sws-textarea'},{'name': 'ToolbarComponent', 'selector': 'sws-toolbar'},{'name': 'ToolbarMenuComponent', 'selector': 'account-toolbar-menu'}];
+    var DIRECTIVES = [{'name': 'DialogCloseDirective', 'selector': '[swsDialogClose], [sws-dialog-close], sws-dialog-close'},{'name': 'FieldBuilderDirective', 'selector': '[swsFieldBuilder]'},{'name': 'FlipDirective', 'selector': '[cardFlip]'},{'name': 'FormErrorDirective', 'selector': '[swsFormError] [formControlName], [formControl]'},{'name': 'PopoverArrowDirective', 'selector': '[swsPopoverArrow]'},{'name': 'PopoverCloseDirective', 'selector': '[swsPopoverClose]'}];
     var ACTUAL_COMPONENT = {'name': 'SettingsComponent'};
 </script>
 <script src="../js/tree.js"></script>
