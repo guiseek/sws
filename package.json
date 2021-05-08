@@ -100,7 +100,7 @@
     "eslint": "6.1.0",
     "jest": "24.1.0",
     "jest-preset-angular": "^7.1.1",
-    "ng-packagr": "^5.7.0",
+    "ng-packagr": "^10.1.1",
     "npm-force-resolutions": "0.0.3",
     "prettier": "1.18.2",
     "swagger-ui-express": "^4.1.2",
